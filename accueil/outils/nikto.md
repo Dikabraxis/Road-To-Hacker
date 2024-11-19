@@ -1,137 +1,321 @@
 # Nikto
 
-#### Introduction
+## Nikto - Guide Complet pour le Scannage de Vulnérabilités Web
 
-Nikto est un outil de scan de vulnérabilités pour les serveurs web. Il recherche des problèmes courants tels que des fichiers ou des répertoires vulnérables, des versions de logiciels obsolètes et des configurations de sécurité incorrectes. Nikto est efficace pour une première évaluation de la sécurité des serveurs web.
+***
 
-#### Installation de Nikto
+### Introduction
 
-**Installation sur Linux**
+**Nikto** est un scanner open-source conçu pour identifier les vulnérabilités sur des serveurs web. Il permet de :
 
-1.  **Installer via `apt` (pour les distributions basées sur Debian)**
+* Détecter des configurations incorrectes.
+* Identifier des versions vulnérables de logiciels.
+* Trouver des fichiers sensibles ou des répertoires exposés.
+
+⚠️ **Note** : Nikto est un outil puissant. Son utilisation doit être accompagnée d'une autorisation légitime du propriétaire du serveur.
+
+***
+
+### 🚀 Étape 1 : Installation de Nikto
+
+***
+
+#### Installation sur Linux (Debian/Ubuntu)
+
+**Via les dépôts apt**
+
+1.  **Mettre à jour la liste des paquets** :
 
     ```bash
     sudo apt update
+    ```
+2.  **Installer Nikto** :
+
+    ```bash
     sudo apt install nikto
     ```
-2.  **Installer via `git`**
+3.  **Vérifier l'installation** :
+
+    ```bash
+    nikto -Version
+    ```
+
+***
+
+#### Installation via Git (Linux/macOS/Windows)
+
+1.  **Cloner le dépôt officiel** :
 
     ```bash
     git clone https://github.com/sullo/nikto.git
-    cd nikto
+    ```
+2.  **Naviguer dans le répertoire** :
+
+    ```bash
+    cd nikto/program
+    ```
+3.  **Lancer Nikto** :
+
+    ```bash
+    perl nikto.pl
+    ```
+4. (Facultatif) Ajouter le chemin au `PATH` pour exécuter Nikto directement depuis n’importe quel répertoire.
+
+***
+
+#### Installation sur Windows
+
+1. **Installer Perl** :
+   * Téléchargez ActivePerl et installez-le.
+2. **Cloner Nikto** via Git ou téléchargez-le directement depuis GitHub.
+3.  **Exécuter Nikto** :
+
+    ```cmd
+    perl nikto.pl -Version
     ```
 
-#### Commandes de Base
+***
 
-**Scan de Base d'un Serveur Web**
+### 🚀 Étape 2 : Commandes de Base
 
-1.  **Effectuer un scan de base sur un serveur web**
+***
+
+#### 1. Effectuer un Scan de Base
+
+*   **Commande** :
 
     ```bash
     nikto -h <URL>
     ```
-
-    * **Explication** : `-h` spécifie l'URL ou l'adresse IP du serveur web à scanner.
-
-
-
-**Scan en Mode Verbose**
-
-1.  **Activer le mode verbose pour des détails supplémentaires**
-
-    ```bash
-    nikto -h <URL> -v
-    ```
-
-    * **Explication** : `-v` active le mode verbose pour afficher plus de détails sur le scan et les résultats.
-
-
-
-**Scan avec une Liste de Mots Personnalisée**
-
-1.  **Utiliser une liste de mots personnalisée pour les tests**
-
-    ```bash
-    nikto -h <URL> -w <wordlist>
-    ```
-
-    * **Explication** : `-w` spécifie le chemin vers un fichier de liste de mots personnalisé pour les tests.
-
-
-
-**Exclusion de Fichiers et Répertoires**
-
-1.  **Exclure certains fichiers et répertoires du scan**
-
-    ```bash
-    nikto -h <URL> -x <path>
-    ```
-
-    * **Explication** : `-x` permet de spécifier un ou plusieurs chemins à exclure du scan.
-
-
-
-**Sauvegarder les Résultats dans un Fichier**
-
-1.  **Enregistrer les résultats du scan dans un fichier**
-
-    ```bash
-    nikto -h <URL> -o <outputfile>
-    ```
-
-    * **Explication** : `-o` spécifie le chemin vers le fichier de sortie où les résultats du scan seront enregistrés.
-
-
-
-#### Exemples de Scénarios
-
-**Scan de Base**
-
-1.  **Scanner un serveur web**
+*   **Exemple** :
 
     ```bash
     nikto -h http://example.com
     ```
+* **Explication** :
+  * `-h` : Spécifie l'hôte ou l'adresse IP du serveur cible.
 
-**Scan Verbose**
+***
 
-1.  **Effectuer un scan détaillé avec des informations supplémentaires**
+#### 2. Activer le Mode Verbose
+
+*   **Commande** :
+
+    ```bash
+    nikto -h <URL> -v
+    ```
+*   **Exemple** :
 
     ```bash
     nikto -h http://example.com -v
     ```
+* **Explication** :
+  * `-v` : Affiche des détails supplémentaires pendant le scan.
 
-**Scan avec Liste de Mots**
+***
 
-1.  **Utiliser une liste de mots personnalisée pour le scan**
+#### 3. Utiliser une Liste de Mots Personnalisée
+
+*   **Commande** :
+
+    ```bash
+    nikto -h <URL> -w <wordlist>
+    ```
+*   **Exemple** :
 
     ```bash
     nikto -h http://example.com -w /path/to/wordlist.txt
     ```
+* **Explication** :
+  * `-w` : Utilise une liste de mots spécifique pour découvrir des chemins ou fichiers supplémentaires.
 
-**Exclusion de Chemins**
+***
 
-1.  **Exclure certains chemins du scan**
+#### 4. Exclure des Fichiers ou Répertoires
+
+*   **Commande** :
+
+    ```bash
+    nikto -h <URL> -x <path>
+    ```
+*   **Exemple** :
 
     ```bash
     nikto -h http://example.com -x /excluded/path
     ```
+* **Explication** :
+  * `-x` : Exclut certains chemins pour éviter de scanner des fichiers ou répertoires spécifiques.
 
-**Sauvegarde des Résultats**
+***
 
-1.  **Enregistrer les résultats du scan dans un fichier**
+#### 5. Sauvegarder les Résultats
+
+*   **Commande** :
+
+    ```bash
+    nikto -h <URL> -o <outputfile>
+    ```
+*   **Exemple** :
 
     ```bash
     nikto -h http://example.com -o results.txt
     ```
+* **Explication** :
+  * `-o` : Enregistre les résultats dans un fichier.
 
-#### Bonnes Pratiques
+***
 
-1. **Obtenir des Autorisations**
-   * **Assurez-vous d'avoir l'autorisation** de scanner le serveur web avant de lancer un scan.
-   * **Respectez les lois et les politiques** de sécurité applicables.
-2. **Limiter l'Impact**
-   * **Configurez le scan pour ne pas surcharger le serveur** en ajustant les options comme la vitesse de scan.
-   * **Excluez les chemins non pertinents** pour éviter de générer du bruit inutile.
-3. **Analyser les Résultats avec Prudence**
-   * **Examinez les résultats** pour identifier les failles et les vulnérabilités potentielles sans générer de faux positifs.
+### 🚀 Étape 3 : Options Avancées
+
+***
+
+#### 1. Spécifier un Port
+
+*   **Commande** :
+
+    ```bash
+    nikto -h <URL> -p <port>
+    ```
+*   **Exemple** :
+
+    ```bash
+    nikto -h http://example.com -p 8080
+    ```
+* **Explication** :
+  * `-p` : Spécifie un port particulier à scanner.
+
+***
+
+#### 2. Forcer une Connexion SSL/TLS
+
+*   **Commande** :
+
+    ```bash
+    nikto -h <URL> -ssl
+    ```
+*   **Exemple** :
+
+    ```bash
+    nikto -h https://example.com -ssl
+    ```
+* **Explication** :
+  * Forcer l'utilisation du protocole HTTPS pour le scan.
+
+***
+
+#### 3. Utiliser un Proxy
+
+*   **Commande** :
+
+    ```bash
+    nikto -h <URL> -useproxy <proxy>
+    ```
+*   **Exemple** :
+
+    ```bash
+    nikto -h http://example.com -useproxy http://127.0.0.1:8080
+    ```
+* **Explication** :
+  * `-useproxy` : Acheminer le trafic via un proxy, utile pour masquer l'origine.
+
+***
+
+#### 4. Limiter les Tests à des Plugins Spécifiques
+
+*   **Commande** :
+
+    ```bash
+    nikto -h <URL> -Tuning <options>
+    ```
+*   **Exemple** :
+
+    ```bash
+    nikto -h http://example.com -Tuning 123
+    ```
+* **Explication** :
+  * `-Tuning` : Limite les tests à certains types de vulnérabilités.
+  * Les options disponibles :
+    * `1` : Tests de fichiers dangereux.
+    * `2` : Tests d'injections CGI.
+    * `3` : Tests de fichiers intéressants.
+
+***
+
+### 📋 Étape 4 : Exemples de Scénarios
+
+***
+
+#### 1. Scan Complet avec Résultats Sauvegardés
+
+*   **Commande** :
+
+    ```bash
+    nikto -h http://example.com -o results.txt -v
+    ```
+* **Explication** :
+  * Effectue un scan détaillé et enregistre les résultats dans `results.txt`.
+
+***
+
+#### 2. Scanner un Serveur sur un Port Non Standard
+
+*   **Commande** :
+
+    ```bash
+    nikto -h http://example.com -p 8080
+    ```
+* **Explication** :
+  * Scanne le serveur web sur le port 8080.
+
+***
+
+#### 3. Scanner via HTTPS avec un Proxy
+
+*   **Commande** :
+
+    ```bash
+    nikto -h https://example.com -useproxy http://127.0.0.1:8080
+    ```
+* **Explication** :
+  * Force le protocole HTTPS et redirige le trafic via un proxy local.
+
+***
+
+#### 4. Scanner en Excluant des Chemins Sensibles
+
+*   **Commande** :
+
+    ```bash
+    nikto -h http://example.com -x /admin,/config
+    ```
+* **Explication** :
+  * Exclut `/admin` et `/config` du scan pour éviter de surcharger ces sections.
+
+***
+
+### 📖 Bonnes Pratiques
+
+***
+
+#### 1. Obtenir des Autorisations
+
+* Scannez uniquement des serveurs avec une autorisation légale.
+* Documentez vos activités pour éviter tout malentendu.
+
+#### 2. Limiter l’Impact sur le Serveur
+
+* Ajustez les paramètres pour éviter de surcharger la cible :
+  * Réduisez la vitesse du scan si nécessaire.
+  * Excluez les chemins inutiles.
+
+#### 3. Analyser les Résultats avec Soin
+
+* Examinez les résultats pour identifier :
+  * Des versions obsolètes de logiciels.
+  * Des fichiers exposés non intentionnellement.
+  * Des configurations incorrectes.
+
+#### 4. Utiliser avec des Outils Complémentaires
+
+* Combinez Nikto avec d'autres outils comme **Nmap** pour une analyse plus complète :
+  * Utilisez Nmap pour identifier les ports ouverts et Nikto pour analyser les services web spécifiques.
