@@ -203,3 +203,12 @@ Burp Suite agit comme un proxy entre votre navigateur et l'application cible, pe
 #### 3. **Décoder un jeton JWT**
 
 * Utilisez **Decoder** pour décoder un token JWT et analyser son contenu.
+
+### 📖 Bonnes Pratiques
+
+1. **Limiter la vitesse des attaques** :
+   * Ajoutez des délais entre les requêtes pour éviter d’être détecté par le serveur cible.
+2. **Utiliser un proxy ou un VPN** :
+   * Masquez votre adresse IP lors des tests.
+3. **Obtenir des autorisations** :
+   * Testez uniquement avec des permissions légales pour éviter des conséquences juridiques.
