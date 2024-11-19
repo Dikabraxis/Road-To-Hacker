@@ -1,184 +1,198 @@
 # OpenVAS
 
-#### Introduction
+## OpenVAS - Guide Complet pour la Gestion des Vulnérabilités
 
-OpenVAS (Open Vulnerability Assessment System) est un scanner de vulnérabilités open-source utilisé pour identifier et gérer les vulnérabilités dans les systèmes et les réseaux. Il fait partie de la suite Greenbone Vulnerability Management (GVM).
+***
 
-#### Installation d'OpenVAS
+### 🚀 Introduction
 
-**Installation sur Debian/Ubuntu**
+**OpenVAS** (Open Vulnerability Assessment System) est un scanner de vulnérabilités open-source utilisé pour évaluer la sécurité des réseaux. Il permet de :
 
-1.  **Ajouter le dépôt Greenbone** :
+* Identifier les failles de sécurité sur des serveurs, applications, et réseaux.
+* Fournir des recommandations pour la correction des vulnérabilités.
+* Gérer et suivre les vulnérabilités à travers des rapports détaillés.
+
+***
+
+### 🚀 Étape 1 : Installation d’OpenVAS
+
+***
+
+#### Installation sur Linux (Debian/Ubuntu)
+
+1.  **Mettre à jour les paquets** :
 
     ```bash
-    sudo add-apt-repository ppa:mrazavi/gvm
+    sudo apt update && sudo apt upgrade
     ```
-
-    * **Explication** : Ajoute le dépôt PPA pour installer les paquets OpenVAS.
-
-
-2.  **Mettre à jour les paquets et installer OpenVAS** :
+2.  **Installer OpenVAS** :
 
     ```bash
-    sudo apt update
-    sudo apt install gvm
+    sudo apt install openvas
     ```
-
-    * **Explication** : Met à jour la liste des paquets et installe OpenVAS.
-
-
-3.  **Configurer et initialiser OpenVAS** :
+3.  **Configurer OpenVAS** :
 
     ```bash
     sudo gvm-setup
     ```
 
-    * **Explication** : Configure et initialise OpenVAS.
-
-
-4.  **Vérifier l'installation** :
+    * Cette commande initialise OpenVAS et télécharge les définitions de vulnérabilités.
+4.  **Vérifier les services** :
 
     ```bash
     sudo gvm-check-setup
     ```
 
-    * **Explication** : Vérifie que l'installation d'OpenVAS a été effectuée correctement.
+#### Accéder à l’interface web
 
+1.  Ouvrez votre navigateur et accédez à :
 
+    ```arduino
+    https://localhost:9392
+    ```
+2. Connectez-vous avec les identifiants fournis après l’installation (affichés lors du `gvm-setup`).
 
-#### Utilisation d'OpenVAS
+***
 
-**Démarrage et Accès à l'Interface Web**
+### 🚀 Étape 2 : Scanner un Réseau ou un Système
 
-1.  **Démarrer les services OpenVAS** :
+***
 
-    ```bash
-    sudo gvm-start
+#### Créer une nouvelle tâche de scan via l’interface web
+
+1. Connectez-vous à l’interface web.
+2.  Naviguez vers :
+
+    ```arduino
+    Scans > Tasks > New Task
     ```
 
-    * **Explication** : Démarre les services nécessaires pour OpenVAS.
+**Configurer la tâche de scan**
 
+| **Paramètre**    | **Description**                                                               |
+| ---------------- | ----------------------------------------------------------------------------- |
+| **Name**         | Donnez un nom à la tâche (exemple : `Scan Réseau Local`).                     |
+| **Scan Targets** | Spécifiez une ou plusieurs cibles (adresse IP, plage d’adresses ou noms DNS). |
+| **Scan Config**  | Sélectionnez un profil de scan (par ex. : `Full and Fast`).                   |
+| **Scanner**      | Choisissez `OpenVAS Default` comme scanner.                                   |
 
-2.  **Accéder à l'interface web** :
+3. Sauvegardez la tâche et cliquez sur **Start** pour lancer le scan.
 
-    * Ouvrir un navigateur web et naviguer vers : `https://localhost:9392`
-    * Se connecter avec les informations d'identification fournies lors de la configuration initiale.
+#### Visualiser les résultats
 
+1.  Une fois le scan terminé, accédez à :
 
-
-**Scanner un Réseau ou un Système**
-
-1. **Créer une nouvelle tâche de scan**
-   * Aller dans l'interface web d'OpenVAS.
-   * Cliquer sur "Scans" > "Tasks" > "New Task".
-2.  **Configurer la tâche de scan**
-
-    * **Name** : Donner un nom à la tâche.
-    * **Scan Targets** : Spécifier les cibles (adresse IP ou plage d'adresses).
-    * **Scan Config** : Choisir une configuration de scan (par exemple, "Full and fast").
-    * **Scanner** : Utiliser le scanner par défaut (OpenVAS Default).
-
-
-3.  **Lancer la tâche de scan**
-
-    * Sauvegarder la tâche et cliquer sur "Start".
-
-
-4.  **Visualiser les résultats**
-
-    * Aller dans "Scans" > "Reports" pour voir les résultats du scan une fois terminé.
-
-
-
-**Gestion des Vulnérabilités**
-
-1.  **Analyser les résultats**
-
-    * Dans la section "Reports", cliquer sur le rapport du scan pour voir les détails des vulnérabilités détectées.
-
-
-2.  **Créer des tickets ou des tâches de correction**
-
-    * Identifier les vulnérabilités critiques et créer des tickets pour les corriger.
-    * Prioriser les tâches en fonction de la gravité des vulnérabilités.
-
-
-3.  **Re-scanner après correction**
-
-    * Après avoir corrigé les vulnérabilités, re-scannez les cibles pour vérifier que les corrections ont été effectuées avec succès.
-
-
-
-#### Options Avancées
-
-**Utilisation de l'Interface en Ligne de Commande**
-
-OpenVAS fournit des outils en ligne de commande pour interagir avec le gestionnaire de vulnérabilités.
-
-1.  **Liste des commandes disponibles**
-
-    ```bash
-    gvm-cli --help
     ```
-
-    * **Explication** : Affiche l'aide pour les commandes disponibles de gvm-cli.
-
-
-2.  **Lister les tâches existantes**
-
-    ```bash
-    gvm-cli --gmp-username <username> --gmp-password <password> socket --xml "<get_tasks/>"
+    Scans > Reports
     ```
+2. Cliquez sur le rapport pour voir les vulnérabilités détectées, classées par gravité :
+   * Faible.
+   * Moyenne.
+   * Haute.
+   * Critique.
 
-    * **Explication** : Liste toutes les tâches existantes dans OpenVAS.
+***
 
+### 🚀 Étape 3 : Gestion des Vulnérabilités
 
-3.  **Créer une nouvelle tâche via CLI**
+***
 
-    ```bash
-    gvm-cli --gmp-username <username> --gmp-password <password> socket --xml "<create_task><name>New Task</name><config id='<config_id>'/><target id='<target_id>'/></create_task>"
-    ```
+#### Analyser les résultats
 
-    * **Explication** : Crée une nouvelle tâche de scan via la ligne de commande.
+* Les rapports de vulnérabilités contiennent :
+  * **Descriptions des vulnérabilités** (ex. : CVE, CWE).
+  * **Conseils de correction**.
+  * **Liens vers des ressources supplémentaires**.
 
+#### Créer des tâches de correction
 
-4.  **Lancer une tâche via CLI**
+1. Identifiez les vulnérabilités critiques.
+2. Dans l’interface, générez des tickets ou des tâches pour corriger les failles.
+3. Priorisez les corrections en fonction de :
+   * La gravité.
+   * L’importance des systèmes affectés.
 
-    ```bash
-    gvm-cli --gmp-username <username> --gmp-password <password> socket --xml "<start_task task_id='<task_id>'/>"
-    ```
+#### Re-scanner après correction
 
-    * **Explication** : Démarre une tâche de scan existante via la ligne de commande.
+* Une fois les corrections effectuées, effectuez un **nouveau scan** pour vérifier leur efficacité.
 
+***
 
-5.  **Vérifier l'état d'une tâche via CLI**
+### 🚀 Étape 4 : Utilisation de l’Interface en Ligne de Commande (CLI)
 
-    ```bash
-    gvm-cli --gmp-username <username> --gmp-password <password> socket --xml "<get_tasks task_id='<task_id>'/>"
-    ```
+***
 
-    * **Explication** : Vérifie l'état d'une tâche de scan existante via la ligne de commande.
+OpenVAS/GVM offre une interface en ligne de commande pour automatiser les scans et interagir avec le gestionnaire de vulnérabilités.
 
+#### Commandes de Base
 
+**1. Liste des commandes disponibles**
 
-#### Bonnes Pratiques
+```bash
+gvm-cli --help
+```
 
-1.  **Obtenir des Autorisations**
+**2. Lister les tâches existantes**
 
-    * **Assurez-vous toujours** d'avoir les autorisations nécessaires avant de scanner des réseaux ou des systèmes.
+```bash
+gvm-cli --gmp-username <username> --gmp-password <password> socket --xml "<get_tasks/>"
+```
 
+* **Explication** : Affiche toutes les tâches existantes avec leurs ID et paramètres.
 
-2.  **Limiter la portée des scans**
+**3. Créer une nouvelle tâche**
 
-    * Spécifier des plages d'adresses IP précises pour éviter d'affecter des systèmes non ciblés.
+```bash
+gvm-cli --gmp-username <username> --gmp-password <password> socket --xml "<create_task><name>New Task</name><config id='<config_id>'/><target id='<target_id>'/></create_task>"
+```
 
+* **Paramètres** :
+  * `<config_id>` : ID de la configuration de scan (obtenu via `<get_configs/>`).
+  * `<target_id>` : ID de la cible (obtenu via `<get_targets/>`).
 
-3.  **Planifier les scans pendant les heures creuses**
+**4. Démarrer une tâche existante**
 
-    * Effectuer les scans pendant les périodes de faible activité pour minimiser l'impact sur les performances du réseau.
+```bash
+gvm-cli --gmp-username <username> --gmp-password <password> socket --xml "<start_task task_id='<task_id>'/>"
+```
 
+* **Explication** : Lance une tâche de scan avec l’ID de tâche `<task_id>`.
 
-4.  **Analyser les résultats en détail**
+**5. Vérifier l’état d’une tâche**
 
-    * Examiner attentivement les rapports de vulnérabilités pour comprendre les implications et prioriser les corrections.
+```bash
+gvm-cli --gmp-username <username> --gmp-password <password> socket --xml "<get_tasks task_id='<task_id>'/>"
+```
 
+* **Explication** : Vérifie l’état d’avancement d’un scan (en cours, terminé, etc.).
+
+***
+
+### 🚀 Étape 5 : Bonnes Pratiques
+
+***
+
+#### 1. Obtenir des autorisations légales
+
+* Scannez uniquement des réseaux pour lesquels vous avez une autorisation explicite.
+* Documentez vos actions pour éviter tout malentendu.
+
+#### 2. Limiter la portée des scans
+
+* **Utilisez des plages IP spécifiques** pour éviter de scanner des systèmes hors périmètre autorisé.
+* Ajustez la configuration du scan pour inclure uniquement les tests nécessaires.
+
+#### 3. Effectuer les scans pendant les heures creuses
+
+* Les scans peuvent consommer beaucoup de ressources réseau.
+* Planifiez vos scans en dehors des heures de pointe pour minimiser l’impact.
+
+#### 4. Analyser les résultats en détail
+
+* Examinez les vulnérabilités critiques pour comprendre leur impact potentiel.
+* Collaborez avec les équipes techniques pour hiérarchiser les corrections.
+
+#### 5. Automatiser et Planifier les Scans
+
+* Utilisez la CLI pour planifier des scans réguliers.
+* Configurez des alertes pour être notifié en cas de découverte de vulnérabilités critiques.
