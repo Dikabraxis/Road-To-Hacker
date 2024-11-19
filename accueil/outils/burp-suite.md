@@ -35,13 +35,13 @@ Ce guide détaillé couvre :
    *   Vérifiez la version installée avec :
 
        ```bash
-       bashCopier le codejava -version
+       java -version
        ```
    * Si non installé :
      *   **Linux** :
 
          ```bash
-         bashCopier le codesudo apt update
+         sudo apt update
          sudo apt install default-jre
          ```
      * **Windows/macOS** : Téléchargez Java depuis [Oracle Java](https://www.oracle.com/java/technologies/javase-downloads.html).
@@ -71,17 +71,17 @@ Ce guide détaillé couvre :
 2.  Rendez le fichier exécutable :
 
     ```bash
-    bashCopier le codechmod +x burpsuite_community_linux_v*.sh
+    chmod +x burpsuite_community_linux_v*.sh
     ```
 3.  Exécutez le fichier pour lancer l’installation :
 
     ```bash
-    bashCopier le code./burpsuite_community_linux_v*.sh
+    ./burpsuite_community_linux_v*.sh
     ```
 4.  Lancez Burp Suite depuis votre terminal :
 
     ```bash
-    bashCopier le codeburpsuite
+    burpsuite
     ```
 
 ***
