@@ -73,158 +73,180 @@ nmap --version
 
 ***
 
-#### 1. Scans TCP Standards
+#### 1. Analyses TCP Basées sur des Indicateurs
 
-| **Type de Scan**                          | **Commande**               | **Description**                                                 |
-| ----------------------------------------- | -------------------------- | --------------------------------------------------------------- |
-| **SYN Scan** (rapide)                     | `sudo nmap -sS MACHINE_IP` | Identifie les ports ouverts sans établir de connexion complète. |
-| **Scan Connect**                          | `sudo nmap -sT MACHINE_IP` | Établit une connexion complète pour scanner les ports.          |
-| **Scan UDP**                              | `sudo nmap -sU MACHINE_IP` | Scanne les ports UDP au lieu de TCP.                            |
-| **Scan des 1000 ports les plus courants** | `nmap MACHINE_IP`          | Par défaut, scanne les 1000 ports les plus courants en TCP.     |
+Ces analyses manipulent les indicateurs TCP pour provoquer différentes réponses des ports.
 
-***
-
-#### 2. Scans Spécialisés
-
-| **Type de Scan**   | **Commande**               | **Description**                                      |
-| ------------------ | -------------------------- | ---------------------------------------------------- |
-| **Scan Nulle**     | `sudo nmap -sN MACHINE_IP` | N'envoie aucun indicateur TCP (stealth scan).        |
-| **Scan FIN**       | `sudo nmap -sF MACHINE_IP` | Envoie un paquet TCP avec le drapeau FIN activé.     |
-| **Scan Xmas**      | `sudo nmap -sX MACHINE_IP` | Envoie plusieurs indicateurs TCP (XMAS tree scan).   |
-| **Scan ACK**       | `sudo nmap -sA MACHINE_IP` | Vérifie les règles du pare-feu (filtrage des ports). |
-| **Scan Fragmenté** | `sudo nmap -f MACHINE_IP`  | Divise les paquets pour contourner certains IDS.     |
+| **Type d'Analyse**            | **Commande**                                          | **Description**                                                                                      |
+| ----------------------------- | ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| **Analyse TCP nulle**         | `sudo nmap -sN MACHINE_IP`                            | N'envoie aucun indicateur TCP (ni SYN, FIN, RST, etc.).                                              |
+| **Analyse TCP FIN**           | `sudo nmap -sF MACHINE_IP`                            | Envoie un paquet avec l'indicateur FIN activé.                                                       |
+| **Scan de Noël TCP**          | `sudo nmap -sX MACHINE_IP`                            | Active les indicateurs FIN, PSH, et URG, comme une guirlande.                                        |
+| **Analyse TCP Maimon**        | `sudo nmap -sM MACHINE_IP`                            | Exploite une particularité de certains systèmes avec des paquets TCP FIN/ACK.                        |
+| **Analyse TCP ACK**           | `sudo nmap -sA MACHINE_IP`                            | Utilisée pour vérifier les règles du pare-feu (ports filtrés ou non).                                |
+| **Analyse de fenêtre TCP**    | `sudo nmap -sW MACHINE_IP`                            | Une variante de l'analyse ACK qui mesure la taille de la fenêtre TCP pour déterminer l'état du port. |
+| **Analyse TCP personnalisée** | `sudo nmap --scanflags URGACKPSHRSTSYNFIN MACHINE_IP` | Envoie des paquets avec des indicateurs TCP définis manuellement.                                    |
 
 ***
 
-#### 3. Scans d’Usurpation et d’Obfuscation
+#### 2. Techniques d'Usurpation et de Masquage
 
-| **Option**         | **Commande**                          | **Description**                                         |
-| ------------------ | ------------------------------------- | ------------------------------------------------------- |
-| **IP usurpée**     | `sudo nmap -S SPOOFED_IP MACHINE_IP`  | Simule une IP source différente pour masquer l’origine. |
-| **Scan de leurre** | `sudo nmap -D DECOY_IP,ME MACHINE_IP` | Ajoute des leurres pour compliquer l’analyse des logs.  |
-| **Scan inactif**   | `sudo nmap -sI ZOMBIE_IP MACHINE_IP`  | Utilise une machine zombie pour effectuer le scan.      |
-
-***
-
-#### 4. Détection des Services et OS
-
-| **Option**               | **Commande**              | **Description**                                            |
-| ------------------------ | ------------------------- | ---------------------------------------------------------- |
-| **Version des services** | `nmap -sV MACHINE_IP`     | Identifie les versions des services en cours d'exécution.  |
-| **Détection OS**         | `sudo nmap -O MACHINE_IP` | Tente d'identifier le système d'exploitation.              |
-| **Analyse approfondie**  | `sudo nmap -A MACHINE_IP` | Combine détection OS, versions des services et traceroute. |
+| **Option**                | **Commande**                                   | **Description**                                                   |
+| ------------------------- | ---------------------------------------------- | ----------------------------------------------------------------- |
+| **IP source usurpée**     | `sudo nmap -S SPOOFED_IP MACHINE_IP`           | Envoie des paquets avec une adresse IP source usurpée.            |
+| **Adresse MAC usurpée**   | `sudo nmap --spoof-mac SPOOFED_MAC MACHINE_IP` | Change l'adresse MAC pour masquer l'origine des paquets.          |
+| **Scan de leurre**        | `nmap -D DECOY_IP,ME MACHINE_IP`               | Ajoute des hôtes leurres pour masquer l'origine réelle du scan.   |
+| **Scan inactif (zombie)** | `sudo nmap -sI ZOMBIE_IP MACHINE_IP`           | Utilise une machine "zombie" pour effectuer le scan en votre nom. |
+| **Fragmentation IP**      | `nmap -f` ou `nmap -ff`                        | Divise les paquets en fragments pour contourner certains IDS/IPS. |
 
 ***
 
-### 🚀 Étape 3 : Utilisation des Scripts NSE
+#### 3. Ajout de Données Personnalisées
+
+| **Option**                   | **Commande**             | **Description**                                                     |
+| ---------------------------- | ------------------------ | ------------------------------------------------------------------- |
+| **Port source personnalisé** | `--source-port PORT_NUM` | Définit un port source spécifique pour le scan.                     |
+| **Données aléatoires**       | `--data-length NUM`      | Ajoute des données aléatoires pour atteindre une taille spécifique. |
 
 ***
 
-Nmap Scripting Engine (NSE) étend les fonctionnalités de Nmap avec des scripts prédéfinis.
+### 🚀 Options et Explications
+
+***
+
+#### Options Verbosité et Débogage
+
+| **Option** | **Description**                                                                               |
+| ---------- | --------------------------------------------------------------------------------------------- |
+| `-v`       | Mode verbeux (affiche plus de détails).                                                       |
+| `-vv`      | Mode très verbeux.                                                                            |
+| `-d`       | Mode débogage.                                                                                |
+| `-dd`      | Mode débogage avancé.                                                                         |
+| `--reason` | Explique les conclusions du scan (par exemple : pourquoi un port est considéré comme ouvert). |
+
+***
+
+#### Options de Détection
+
+| **Option**            | **Description**                                                                            |
+| --------------------- | ------------------------------------------------------------------------------------------ |
+| `-sV`                 | Détecte les services en cours d'exécution et leurs versions.                               |
+| `-sV --version-light` | Utilise les sondes les plus probables pour détecter les versions de service (plus rapide). |
+| `-sV --version-all`   | Essaie toutes les sondes disponibles pour plus de précision (plus lent).                   |
+| `-O`                  | Détecte le système d'exploitation de la cible.                                             |
+| `--traceroute`        | Exécute un traceroute vers la cible pour identifier le chemin réseau.                      |
+| `-A`                  | Combine les options `-sV`, `-O`, et `--traceroute` pour une analyse approfondie.           |
+
+***
+
+#### Options de Sortie
+
+| **Option** | **Description**                                                                                      |
+| ---------- | ---------------------------------------------------------------------------------------------------- |
+| `-oN file` | Sauvegarde les résultats au format texte classique.                                                  |
+| `-oG file` | Sauvegarde les résultats dans un format compatible grep.                                             |
+| `-oX file` | Sauvegarde les résultats au format XML.                                                              |
+| `-oA base` | Sauvegarde les résultats dans les trois formats en utilisant "base" comme préfixe pour les fichiers. |
+
+***
+
+### 🚀 Scripts Nmap (NSE - Nmap Scripting Engine)
+
+***
+
+Les scripts Nmap ajoutent une couche de fonctionnalités avancées pour l'analyse des vulnérabilités, l'audit de sécurité, et plus encore.
 
 #### Catégories de Scripts
 
-| **Catégorie** | **Description**                                           |
-| ------------- | --------------------------------------------------------- |
-| `auth`        | Scripts pour tester des authentifications (ex. SSH, FTP). |
-| `brute`       | Attaques par force brute.                                 |
-| `vuln`        | Vérifie les vulnérabilités connues.                       |
-| `exploit`     | Exploite les failles détectées.                           |
-| `malware`     | Recherche de logiciels malveillants.                      |
-| `safe`        | Scripts sûrs à exécuter, sans risques pour la cible.      |
+| **Catégorie** | **Description**                                                                  |
+| ------------- | -------------------------------------------------------------------------------- |
+| `auth`        | Scripts liés à l'authentification (exemple : tests de connexion).                |
+| `discovery`   | Découverte des informations accessibles (DNS, base de données, etc.).            |
+| `brute`       | Effectue des attaques par force brute.                                           |
+| `vuln`        | Vérifie la présence de vulnérabilités connues.                                   |
+| `exploit`     | Exploite les vulnérabilités pour obtenir un accès ou des informations sensibles. |
+| `dos`         | Détecte les services vulnérables aux attaques par déni de service (DoS).         |
+| `malware`     | Recherche des traces de logiciels malveillants (backdoors, etc.).                |
+| `safe`        | Scripts sûrs à exécuter sans risque de planter la cible.                         |
 
 ***
 
-#### Exemples de Scripts
+#### Utilisation des Scripts
 
-**1. Découvrir des Vulnérabilités SMB**
-
-```bash
-nmap --script=smb-vuln-* -p 445 MACHINE_IP
-```
-
-> Vérifie les vulnérabilités SMB sur le port 445.
-
-**2. Tester des Logins FTP avec Force Brute**
-
-```bash
-nmap --script=ftp-brute -p 21 MACHINE_IP
-```
-
-> Tente une attaque brute-force sur un serveur FTP.
-
-**3. Récupérer des Informations HTTP**
-
-```bash
-nmap --script=http-* -p 80 MACHINE_IP
-```
-
-> Effectue diverses analyses HTTP (découverte de répertoires, tests SSL, etc.).
-
-**4. Exécuter plusieurs catégories**
-
-```bash
-nmap --script="default or vuln" MACHINE_IP
-```
-
-> Lance les scripts par défaut et les scripts de détection de vulnérabilités.
+| **Commande**               | **Description**                                       |
+| -------------------------- | ----------------------------------------------------- |
+| `--script=script_name`     | Lance un script spécifique.                           |
+| `--script="default"`       | Lance les scripts par défaut (équivalent à `-sC`).    |
+| `--script=vuln`            | Exécute tous les scripts liés aux vulnérabilités.     |
+| `--script="vuln or brute"` | Exécute les scripts des catégories "vuln" et "brute". |
 
 ***
 
-### 🚀 Étape 4 : Options de Sortie
+#### Exemples Pratiques
+
+1.  **Vérifier les Vulnérabilités SMB** :
+
+    ```bash
+    bashCopier le codenmap --script=smb-vuln-* -p 445 192.168.1.10
+    ```
+2.  **Tester les Logins FTP avec Force Brute** :
+
+    ```bash
+    bashCopier le codenmap --script=ftp-brute -p 21 192.168.1.10
+    ```
+3.  **Découvrir les Services Web** :
+
+    ```bash
+    bashCopier le codenmap --script=http-* -p 80,443 192.168.1.0/24
+    ```
 
 ***
 
-| **Option** | **Description**                                          |
-| ---------- | -------------------------------------------------------- |
-| `-oN file` | Sauvegarde les résultats au format texte classique.      |
-| `-oG file` | Sauvegarde les résultats au format grepable.             |
-| `-oX file` | Sauvegarde les résultats au format XML.                  |
-| `-oA base` | Sauvegarde dans tous les formats (texte, XML, grepable). |
+### 📋 Exemples Combinés
 
 ***
 
-### 📋 Étape 5 : Scénarios Combinés
+#### 1. Analyse Complète d'un Hôte
+
+*   **Commande** :
+
+    ```bash
+    bashCopier le codesudo nmap -A -p- 192.168.1.10
+    ```
+* **Explication** :
+  * Combine la détection de version, de système d'exploitation, et un traceroute sur tous les ports.
 
 ***
 
-#### 1. Analyse Complète avec Scripts et Détection OS
+#### 2. Analyse Silencieuse avec Fragmentation
 
-```bash
-sudo nmap -A --script=default,vuln -p- MACHINE_IP
-```
+*   **Commande** :
 
-* Combine les scripts par défaut et vulnérabilités, scanne tous les ports (`-p-`) et détecte l’OS (`-O`).
-
-***
-
-#### 2. Scan Masqué avec Fragmentation
-
-```bash
-sudo nmap -sS -f -p 22,80,443 MACHINE_IP
-```
-
-* Réalise un scan SYN avec fragmentation des paquets pour contourner les IDS.
+    ```bash
+    bashCopier le codesudo nmap -f -sS -T2 -p 22,80,443 192.168.1.10
+    ```
+* **Explication** :
+  * Utilise des paquets fragmentés (`-f`) pour contourner les IDS, une analyse SYN (`-sS`) avec une vitesse lente (`-T2`).
 
 ***
 
-#### 3. Analyse de Réseau avec Sauvegarde des Résultats
+#### 3. Sauvegarder les Résultats dans Plusieurs Formats
 
-```bash
-sudo nmap -sV -O -p 22,80,443 -oA scan_results 192.168.1.0/24
-```
+*   **Commande** :
 
-* Scanne un réseau entier, détecte les versions de services, OS et sauvegarde les résultats dans tous les formats.
+    ```bash
+    bashCopier le codenmap -oA scan_results -p 22,80,443 192.168.1.0/24
+    ```
+* **Explication** :
+  * Sauvegarde les résultats en formats texte, XML, et grepable sous le préfixe "scan\_results".
 
 ***
 
 ### 📖 Bonnes Pratiques
 
 1. **Obtenez des autorisations légales** :
-   * Scannez uniquement des réseaux où vous avez l’autorisation d’agir.
-2. **Analysez les résultats avec d'autres outils** :
-   * Exportez les résultats XML pour une utilisation dans **Metasploit** ou **OpenVAS**.
-3. **Soyez discret** :
+   * Effectuez vos scans uniquement sur des réseaux où vous avez les permissions.
+2. **Commencez par des analyses discrètes** :
    * Si nécessaire, utilisez des scans masqués (`-f`, `-T2`), surtout dans des environnements sensibles.
-4. **Commencez par des scans simples** :
-   * Évitez de surcharger le réseau cible avec des scans trop agressifs au départ.
+3. **Analyser les résultats avec des outils externes** :
+   * Exportez vos résultats au format XML pour les utiliser avec des outils comme **Metasploit** ou **OpenVAS**.
