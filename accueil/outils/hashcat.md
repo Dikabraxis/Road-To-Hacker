@@ -1,152 +1,266 @@
 # Hashcat
 
-#### Introduction
+## Hashcat - Guide Complet pour le Cracking de Mots de Passe
 
-Hashcat est un outil de craquage de mots de passe hautement performant qui peut déchiffrer des hachages en utilisant des méthodes diverses et puissantes. Il prend en charge une large gamme de types de hachage et utilise le matériel GPU pour accélérer les attaques.
+***
 
-#### Installation de Hashcat
+### Introduction
 
-**Installation sur Linux**
+**Hashcat** est un outil puissant pour le cracking de mots de passe basé sur des hachages. Il est capable de décrypter des mots de passe à partir de différents algorithmes de hachage, y compris **MD5**, **SHA-1**, **NTLM**, et bien d'autres, en utilisant des attaques par dictionnaire, force brute, ou combinées.
 
-1.  **Installer via apt (pour les distributions basées sur Debian)** :
+#### Pourquoi utiliser Hashcat ?
+
+* **Rapidité** : Utilise les GPU pour des performances optimales.
+* **Flexibilité** : Supporte divers modes d'attaque et types de hachages.
+* **Personnalisable** : Permet l'utilisation de règles, masques et combinaisons.
+
+***
+
+### 🚀 Étape 1 : Installation de Hashcat
+
+***
+
+#### Installation sur Linux
+
+1. **Télécharger Hashcat** :
+   * Depuis le site officiel : https://hashcat.net/hashcat/.
+2.  **Décompresser l’archive** :
 
     ```bash
-    sudo apt update
-    sudo apt install hashcat
+    tar -xvf hashcat-X.X.X.7z
     ```
-
-    * **Explication** : Met à jour la liste des paquets et installe Hashcat.
-2. **Installation depuis les sources** :
-   * **Télécharger** : Depuis le site officiel de Hashcat.
-   *   **Décompresser et installer** :
+3. **Configurer Hashcat** :
+   *   Déplacez l'exécutable vers un répertoire accessible globalement :
 
        ```bash
-       tar -xf hashcat-*.tar.gz
-       cd hashcat-*
-       sudo make install
+       sudo mv hashcat /usr/local/bin/
        ```
-   * **Explication** : Télécharge, décompresse et installe Hashcat depuis les sources.
+4.  **Tester l’installation** :
 
-**Installation sur Windows**
+    ```bash
+    hashcat --version
+    ```
 
-1. **Télécharger Hashcat** depuis le site officiel.
-2. **Décompresser l'archive** et placer l'exécutable dans un répertoire accessible.
-   * **Explication** : Télécharge et décompresse Hashcat pour une utilisation sur Windows.
+***
 
-#### Utilisation de Base
+#### Installation sur Windows
 
-**1. Décrypter un Hachage avec un Dictionnaire**
+1. **Télécharger l'archive** :
+   * Rendez-vous sur https://hashcat.net/hashcat/ et téléchargez la dernière version pour Windows.
+2. **Extraire l’archive ZIP** :
+   * Décompressez dans un répertoire comme `C:\Hashcat`.
+3. **Ajouter le chemin au PATH système** :
+   * Accédez à **Paramètres > Système > Paramètres système avancés > Variables d’environnement** et ajoutez le chemin de `hashcat.exe` à la variable `PATH`.
+4. **Tester l’installation** :
+   *   Ouvrez une invite de commande et exécutez :
 
-*   **Commande de base pour une attaque par dictionnaire** :
+       ```bash
+       hashcat --version
+       ```
+
+***
+
+#### Installation sur macOS
+
+1. **Télécharger Hashcat** :
+   * Depuis https://hashcat.net/hashcat/.
+2.  **Installer les dépendances nécessaires** :
+
+    ```bash
+    brew install gcc
+    ```
+3.  **Décompresser l’archive** et ajouter Hashcat au PATH :
+
+    ```bash
+    mv hashcat /usr/local/bin/
+    ```
+4.  **Vérifier l’installation** :
+
+    ```bash
+    hashcat --version
+    ```
+
+***
+
+### 🚀 Étape 2 : Utilisation de Base de Hashcat
+
+***
+
+#### 1. Cracker un Hachage avec un Dictionnaire
+
+*   **Commande** :
 
     ```bash
     hashcat -m 0 -a 0 hashes.txt wordlist.txt
     ```
+* **Explication** :
+  * `-m 0` : Spécifie le type de hachage (**0** pour MD5).
+  * `-a 0` : Définit le mode d’attaque (**0** pour dictionnaire).
+  * `hashes.txt` : Contient les hachages à décrypter.
+  * `wordlist.txt` : Liste de mots à tester.
 
-    * **Explication** :
-      * `-m 0` : Spécifie le type de hachage (0 pour MD5). Consulte la liste des modes pour d'autres types de hachages.
-      * `-a 0` : Spécifie le mode d'attaque (0 pour attaque par dictionnaire).
-      * `hashes.txt` : Fichier contenant les hachages à casser.
-      * `wordlist.txt` : Fichier de dictionnaire contenant les mots de passe à tester.
+> 💡 **Astuce** : Utilisez des wordlists populaires comme celles de [SecLists](https://github.com/danielmiessler/SecLists).
 
-**2. Attaque par Force Brute**
+***
 
-*   **Lancer une attaque par force brute** :
+#### 2. Attaque par Force Brute
+
+*   **Commande** :
 
     ```bash
     hashcat -m 0 -a 3 hashes.txt ?a?a?a?a
     ```
+* **Explication** :
+  * `-a 3` : Mode force brute.
+  * `?a?a?a?a` : Définit un masque avec 4 caractères, où :
+    * `?a` inclut toutes les lettres, chiffres et symboles.
 
-    * **Explication** :
-      * `-a 3` : Spécifie le mode d'attaque (3 pour force brute).
-      * `?a?a?a?a` : Décrit le masque de l'attaque (4 caractères, tous les types de caractères possibles).
+> 💡 **Astuce** : Ajustez le masque pour des longueurs plus grandes ou des types spécifiques (voir section masques ci-dessous).
 
+***
 
-*   **Exemple avec des longueurs variables** :
+#### 3. Attaque Combinée
 
-    ```bash
-    hashcat -m 0 -a 3 hashes.txt ?a?l?d?s
-    ```
-
-    * **Explication** :
-      * `?a` : Tout caractère (lettres, chiffres, symboles).
-      * `?l` : Lettres minuscules.
-      * `?d` : Chiffres.
-      * `?s` : Symboles.
-
-3. **Attaque Combinée**
-
-*   **Combiner deux listes de mots pour former des mots de passe** :
+*   **Commande** :
 
     ```bash
     hashcat -m 0 -a 1 hashes.txt wordlist1.txt wordlist2.txt
     ```
+* **Explication** :
+  * `-a 1` : Combine les mots de deux listes pour former des combinaisons.
 
-    * **Explication** :
-      * `-a 1` : Spécifie le mode d'attaque combinée.
-      * `wordlist1.txt` et `wordlist2.txt` : Deux fichiers de dictionnaires à combiner.
+***
 
+#### 4. Optimisation avec le GPU
 
+*   Par défaut, Hashcat utilise le GPU pour accélérer le processus. Si ce n'est pas le cas, vous pouvez forcer son utilisation avec :
 
-**4. Utilisation de GPU**
+    ```bash
+    hashcat --force -D 1,2
+    ```
 
-* **Optimiser l'utilisation du GPU** :
-  * Hashcat utilise automatiquement le GPU si disponible. Aucune option spéciale n’est requise pour l'utiliser.
+    * `1` : Force l’utilisation du CPU.
+    * `2` : Force l’utilisation du GPU.
 
-#### Options Avancées
+***
 
-**1. Attaque par Règles**
+### 🔍 Étape 3 : Options Avancées
 
-*   **Appliquer des règles pour modifier les mots de passe** :
+***
+
+#### 1. Attaques avec Masques
+
+Les masques permettent de spécifier des schémas pour les mots de passe :
+
+*   **Commande de base** :
+
+    ```bash
+    hashcat -m 0 -a 3 hashes.txt ?u?l?l?d
+    ```
+
+    * `?u` : Une lettre majuscule.
+    * `?l` : Une lettre minuscule.
+    * `?d` : Un chiffre.
+
+**Exemple : Forcer un mot de passe alphanumérique de 6 caractères**
+
+```bash
+hashcat -m 0 -a 3 hashes.txt ?l?l?l?l?d?d
+```
+
+***
+
+#### 2. Attaque par Règles
+
+Les règles modifient dynamiquement les mots du dictionnaire pour générer de nouvelles variations (exemple : ajout de chiffres ou de symboles).
+
+*   **Commande** :
 
     ```bash
     hashcat -m 0 -a 0 -r rules.txt hashes.txt wordlist.txt
     ```
+* **Explication** :
+  * `-r rules.txt` : Applique les règles définies dans le fichier `rules.txt`.
 
-    * **Explication** :
-      * `-r rules.txt` : Applique des règles définies dans le fichier `rules.txt` pour transformer les mots de passe du dictionnaire.
+> 💡 **Astuce** : Utilisez les règles intégrées comme `rockyou-30000.rule` pour des attaques efficaces.
 
+***
 
+#### 3. Cracker des Hachages Complexes
 
-**2. Utiliser un Mode de Hachage Spécifique**
+Consultez la liste complète des types de hachages pris en charge avec :
 
-*   **Consulter la liste des modes de hachage disponibles** :
+```bash
+hashcat --help
+```
 
-    ```bash
-    hashcat -h
-    ```
+Exemples :
 
-    * **Explication** : Affiche l'aide et la liste des modes de hachage disponibles dans Hashcat.
-
-
-
-#### Exemples d'Attaques
-
-**1. Cracking des Hachages MD5**
-
-*   **Commande pour MD5** :
+*   **MD5** :
 
     ```bash
     hashcat -m 0 -a 0 hashes.txt wordlist.txt
     ```
-
-
-
-**2. Cracking des Hachages SHA-1**
-
-*   **Commande pour SHA-1** :
+*   **SHA-1** :
 
     ```bash
     hashcat -m 100 -a 0 hashes.txt wordlist.txt
     ```
-
-
-
-**3. Cracking des Hachages NTLM**
-
-*   **Commande pour NTLM** :
+*   **NTLM** :
 
     ```bash
     hashcat -m 1000 -a 0 hashes.txt wordlist.txt
     ```
 
+***
+
+### 📋 Étape 4 : Scénarios Pratiques
+
+***
+
+#### 1. Casser des Hachages avec un Dictionnaire
+
+*   **Commande** :
+
+    ```bash
+    hashcat -m 0 -a 0 hashes.txt wordlist.txt
+    ```
+* **Explication** :
+  * Teste tous les mots de la liste `wordlist.txt` contre les hachages MD5.
+
+***
+
+#### 2. Attaque par Force Brute avec Symboles
+
+*   **Commande** :
+
+    ```bash
+    hashcat -m 0 -a 3 hashes.txt ?u?l?l?s?s
+    ```
+* **Explication** :
+  * Force brute un mot de passe composé d’une majuscule, deux minuscules, et deux symboles.
+
+***
+
+#### 3. Optimisation GPU pour des Hachages NTLM
+
+*   **Commande** :
+
+    ```bash
+    hashcat -m 1000 -a 0 hashes.txt wordlist.txt --gpu-temp-abort=85
+    ```
+* **Explication** :
+  * Limite la température maximale du GPU à 85°C pour éviter la surchauffe.
+
+***
+
+### 📖 Bonnes Pratiques
+
+1. **Obtenez des autorisations légales** :
+   * Cracker des hachages sans autorisation est illégal. Utilisez Hashcat uniquement dans des environnements autorisés.
+2. **Utilisez des wordlists pertinentes** :
+   * Les listes comme `rockyou.txt` ou celles disponibles sur [SecLists](https://github.com/danielmiessler/SecLists) sont idéales.
+3. **Surveillez les performances** :
+   * Utilisez les options `--status` pour surveiller le progrès en temps réel.
+4. **Sauvegardez les sessions** :
+   * Si le cracking est interrompu, vous pouvez reprendre avec `--session` et `--restore`.
