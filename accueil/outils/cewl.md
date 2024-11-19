@@ -27,28 +27,28 @@
 1.  **Mettre à jour la liste des paquets disponibles** :
 
     ```bash
-    bashCopier le codesudo apt update
+    sudo apt update
     ```
 
     * **Explication** : Actualise la liste des paquets disponibles pour s'assurer d'installer la dernière version.
 2.  **Installer Ruby** :
 
     ```bash
-    bashCopier le codesudo apt install ruby
+    sudo apt install ruby
     ```
 
     * **Explication** : Installe Ruby via le gestionnaire de paquets `apt`.
 3.  **Installer Cewl via RubyGems** :
 
     ```bash
-    bashCopier le codesudo gem install cewl
+    sudo gem install cewl
     ```
 
     * **Explication** : Installe Cewl en utilisant le gestionnaire de paquets Ruby (RubyGems).
 4.  **Vérifier l’installation** :
 
     ```bash
-    bashCopier le codecewl --help
+    cewl --help
     ```
 
     * **Explication** : Vérifie que Cewl est correctement installé en affichant le guide d’utilisation.
@@ -64,14 +64,14 @@
    *   Ouvrez une invite de commande et exécutez :
 
        ```bash
-       bashCopier le codegem install cewl
+       gem install cewl
        ```
    * **Explication** : Installe Cewl sur votre système Windows.
 3. **Vérifier l’installation** :
    *   Testez l’installation en exécutant :
 
        ```bash
-       bashCopier le codecewl --help
+       cewl --help
        ```
 
 ***
@@ -83,7 +83,7 @@
 *   **Commande** :
 
     ```bash
-    bashCopier le codecewl http://example.com
+    cewl http://example.com
     ```
 * **Explication** :
   * Analyse le contenu du site spécifié (`http://example.com`) et extrait les mots pour les afficher dans le terminal.
@@ -95,7 +95,7 @@
 *   **Commande** :
 
     ```bash
-    bashCopier le codecewl http://example.com -w dictionnaire.txt
+    cewl http://example.com -w dictionnaire.txt
     ```
 * **Explication** :
   * Utilise l'option `-w` pour spécifier un fichier (`dictionnaire.txt`) où les mots extraits seront sauvegardés.
@@ -107,7 +107,7 @@
 *   **Commande** :
 
     ```bash
-    bashCopier le codecewl http://example.com --depth 2
+    cewl http://example.com --depth 2
     ```
 * **Explication** :
   * L'option `--depth` contrôle le niveau d'exploration des liens.
@@ -120,7 +120,7 @@
 *   **Commande** :
 
     ```bash
-    bashCopier le codecewl http://example.com --min_length 6 --max_length 12
+    cewl http://example.com --min_length 6 --max_length 12
     ```
 * **Explication** :
   * `--min_length 6` : Inclut uniquement les mots contenant au moins 6 caractères.
@@ -135,7 +135,7 @@
 *   **Commande** :
 
     ```bash
-    bashCopier le codecewl http://example.com --cookies "cookie1=value1; cookie2=value2"
+    cewl http://example.com --cookies "cookie1=value1; cookie2=value2"
     ```
 * **Explication** :
   * Ajoute des cookies pour accéder à des pages nécessitant une authentification.
@@ -147,7 +147,7 @@
 *   **Commande** :
 
     ```bash
-    bashCopier le codecewl http://example.com --ignore_words "javascript:void(0);login;"
+    cewl http://example.com --ignore_words "javascript:void(0);login;"
     ```
 * **Explication** :
   * L'option `--ignore_words` permet d'exclure certains mots indésirables.
@@ -159,7 +159,7 @@
 *   **Commande** :
 
     ```bash
-    bashCopier le codecewl http://example.com --proxy http://localhost:8080
+    cewl http://example.com --proxy http://localhost:8080
     ```
 * **Explication** :
   * Acheminer le trafic via un proxy (ex. : Burp Suite) pour contrôler ou intercepter les requêtes.
@@ -173,7 +173,7 @@
 *   **Commande** :
 
     ```bash
-    bashCopier le codecewl http://example.com -w dictionnaire.txt
+    cewl http://example.com -w dictionnaire.txt
     ```
 * **Explication** :
   * Les mots extraits du site `http://example.com` sont sauvegardés dans `dictionnaire.txt`.
@@ -185,7 +185,7 @@
 *   **Commande** :
 
     ```bash
-    bashCopier le codecewl http://example.com --depth 3 --min_length 8 -w dictionnaire.txt
+    cewl http://example.com --depth 3 --min_length 8 -w dictionnaire.txt
     ```
 * **Explication** :
   * Explore les liens jusqu’à une profondeur de `3`.
@@ -201,13 +201,13 @@
    *   Exécutez :
 
        ```bash
-       bashCopier le codecewl http://target-site.com -w wordlist.txt
+       cewl http://target-site.com -w wordlist.txt
        ```
 2. **Lancer une attaque brute-force** :
    *   Utilisez un outil comme **Hydra** avec le dictionnaire :
 
        ```bash
-       bashCopier le codehydra -l admin -P wordlist.txt http-post-form "/login:username=^USER^&password=^PASS^:F=Incorrect"
+       hydra -l admin -P wordlist.txt http-post-form "/login:username=^USER^&password=^PASS^:F=Incorrect"
        ```
 
 ***
@@ -218,7 +218,7 @@
 2.  Utilisez Cewl pour extraire les mots-clés et former un dictionnaire spécifique :
 
     ```bash
-    bashCopier le codecewl http://blog.example.com --depth 2 -w custom-wordlist.txt
+    cewl http://blog.example.com --depth 2 -w custom-wordlist.txt
     ```
 
 ***
@@ -229,7 +229,7 @@
    *   Ajoutez un délai entre les requêtes pour éviter de surcharger le serveur :
 
        ```bash
-       bashCopier le codecewl http://example.com --delay 5
+       cewl http://example.com --delay 5
        ```
 2. **Obtenir des autorisations** :
    * Avant d'utiliser Cewl sur un site, obtenez la permission pour éviter des implications légales.
