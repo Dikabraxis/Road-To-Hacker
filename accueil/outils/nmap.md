@@ -187,17 +187,17 @@ Les scripts Nmap ajoutent une couche de fonctionnalités avancées pour l'analys
 1.  **Vérifier les Vulnérabilités SMB** :
 
     ```bash
-    bashCopier le codenmap --script=smb-vuln-* -p 445 192.168.1.10
+    nmap --script=smb-vuln-* -p 445 192.168.1.10
     ```
 2.  **Tester les Logins FTP avec Force Brute** :
 
     ```bash
-    bashCopier le codenmap --script=ftp-brute -p 21 192.168.1.10
+    nmap --script=ftp-brute -p 21 192.168.1.10
     ```
 3.  **Découvrir les Services Web** :
 
     ```bash
-    bashCopier le codenmap --script=http-* -p 80,443 192.168.1.0/24
+    nmap --script=http-* -p 80,443 192.168.1.0/24
     ```
 
 ***
@@ -211,7 +211,7 @@ Les scripts Nmap ajoutent une couche de fonctionnalités avancées pour l'analys
 *   **Commande** :
 
     ```bash
-    bashCopier le codesudo nmap -A -p- 192.168.1.10
+    sudo nmap -A -p- 192.168.1.10
     ```
 * **Explication** :
   * Combine la détection de version, de système d'exploitation, et un traceroute sur tous les ports.
@@ -223,7 +223,7 @@ Les scripts Nmap ajoutent une couche de fonctionnalités avancées pour l'analys
 *   **Commande** :
 
     ```bash
-    bashCopier le codesudo nmap -f -sS -T2 -p 22,80,443 192.168.1.10
+    sudo nmap -f -sS -T2 -p 22,80,443 192.168.1.10
     ```
 * **Explication** :
   * Utilise des paquets fragmentés (`-f`) pour contourner les IDS, une analyse SYN (`-sS`) avec une vitesse lente (`-T2`).
@@ -235,7 +235,7 @@ Les scripts Nmap ajoutent une couche de fonctionnalités avancées pour l'analys
 *   **Commande** :
 
     ```bash
-    bashCopier le codenmap -oA scan_results -p 22,80,443 192.168.1.0/24
+    nmap -oA scan_results -p 22,80,443 192.168.1.0/24
     ```
 * **Explication** :
   * Sauvegarde les résultats en formats texte, XML, et grepable sous le préfixe "scan\_results".
