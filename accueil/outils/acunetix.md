@@ -1,54 +1,139 @@
 # Acunetix
 
-**Introduction**
+## Acunetix - Scanner de Vulnérabilités Web
 
-\
-Acunetix est un scanner de vulnérabilités web automatisé qui identifie les failles de sécurité dans les applications web telles que les injections SQL, les vulnérabilités XSS et les erreurs de configuration. Il fournit des rapports détaillés pour aider à corriger les vulnérabilités découvertes.
+### Introduction
 
-**Installation d'Acunetix**
+**Acunetix** est un scanner de vulnérabilités web automatisé conçu pour identifier des failles critiques telles que :
 
-* **Sous Linux/macOS/Windows** : Téléchargez la version d’évaluation ou achetez une licence depuis le [site officiel d’Acunetix](https://www.acunetix.com/). Suivez les instructions pour l’installation spécifique à votre système d'exploitation.
+* **Injections SQL**
+* **Vulnérabilités XSS**
+* **Erreurs de configuration de serveur**
 
-**Utilisation de Base**
+#### Pourquoi utiliser Acunetix ?
 
-1.  **Lancer une Analyse de Site**
+* **Gain de temps** : Analyse automatique des applications web.
+* **Rapports détaillés** : Des recommandations pour corriger les vulnérabilités.
+* **Large couverture** : Scans personnalisables et tests avancés.
 
-    * **Commande** : Accédez à l’interface web d’Acunetix (`https://localhost:443`), allez dans `Scans` et créez un nouveau scan en entrant l’URL du site cible.
+***
 
-    **Explication** : Acunetix scanne le site web pour détecter des vulnérabilités potentielles en explorant les pages, les formulaires, et les paramètres de requêtes.\
+### 🚀 Installation d'Acunetix
 
-2.  **Configurer des Analyses Programmées**
+#### Systèmes supportés :
 
-    * **Commande** : Interface web d'Acunetix, dans `Scans > New Scan`, configurez les paramètres pour une analyse récurrente, en définissant la fréquence et les heures d'exécution.
+* **Windows**
+* **Linux**
+* **macOS**
 
-    **Explication** : Permet de planifier des analyses automatiques pour surveiller les applications web régulièrement pour de nouvelles vulnérabilités.\
+#### Étapes pour l'installation :
 
+1. **Télécharger le logiciel** :
+   * Rendez-vous sur le [site officiel d'Acunetix](https://www.acunetix.com/) et téléchargez la version d’évaluation ou achetez une licence.
+2. **Suivez les instructions spécifiques** :
+   * **Windows** :
+     * Double-cliquez sur l’exécutable téléchargé et suivez l’assistant.
+     * Une fois installé, démarrez le service via l'interface ou la ligne de commande.
+   * **Linux/macOS** :
+     *   Exécutez la commande :
 
-**Options Avancées**
+         ```bash
+         sudo dpkg -i acunetix_installer.deb
+         ```
 
-1.  **Configurer les Profils d'Analyse**
+         Ou pour les systèmes RPM :
 
-    * **Commande** : Lors de la création d'un scan dans l'interface web, accédez aux paramètres avancés pour ajuster les politiques de sécurité, les types de tests à effectuer, et les chemins à exclure.
+         ```bash
+         sudo rpm -i acunetix_installer.rpm
+         ```
+     * Accédez à l'interface web : `https://localhost:443`.
 
-    **Explication** : Personnalise les paramètres de l’analyse pour répondre à des besoins spécifiques, comme exclure certains répertoires ou inclure des tests de sécurité particuliers.\
+***
 
-2.  **Génération et Exportation des Rapports**
+### 🛠️ Utilisation de base
 
-    * **Commande** : Accédez à `Scans > Reports`, sélectionnez le rapport d'analyse, et exportez-le en PDF, HTML, ou CSV.
+#### 1. Lancer une Analyse de Site
 
-    **Explication** : Exporte les résultats de l’analyse pour une évaluation et une documentation plus approfondies. Les rapports contiennent des détails sur les vulnérabilités trouvées et les recommandations de correction.\
+* **Accès** : Ouvrez votre navigateur et accédez à : `https://localhost:443`.
+* **Étapes** :
+  1. Connectez-vous à l'interface web.
+  2. Allez dans **`Scans`** → **`New Scan`**.
+  3. Entrez l’URL du site cible (ex. : `http://example.com`).
+  4. Cliquez sur **`Start`**.
 
+> 💡 **Astuce** : Activez les options de crawling pour explorer toutes les pages et paramètres dynamiques du site.
 
-**Exemples d'Analyses**
+***
 
-1.  **Analyse d’un Site pour les Injections SQL**
+#### 2. Configurer des Analyses Programmées
 
-    * **Commande** : Configurez le scan pour inclure les tests de vulnérabilités SQL et lancez-le.
+* **Objectif** : Planifiez des analyses récurrentes pour surveiller régulièrement les nouvelles vulnérabilités.
+* **Étapes** :
+  1. Accédez à **`Scans`** → **`New Scan`**.
+  2. Configurez :
+     * **Fréquence** (quotidienne, hebdomadaire, mensuelle).
+     * **Heure d’exécution**.
+  3. Activez les notifications pour recevoir les résultats par email.
 
-    **Explication** : Identifie les points faibles dans les formulaires et les paramètres de requêtes susceptibles d’être vulnérables aux injections SQL.\
+> ⚠️ **Attention** : Assurez-vous que votre serveur cible accepte les scans à la fréquence choisie pour éviter tout blocage.
 
-2.  **Analyse pour les Vulnérabilités XSS**
+***
 
-    * **Commande** : Configurez le scan pour inclure des tests pour les vulnérabilités Cross-Site Scripting (XSS).
+### 🔍 Options avancées
 
-    **Explication** : Détecte les failles XSS dans les applications web en testant les entrées des utilisateurs et les réponses du serveur.\
+#### 1. Configurer les Profils d'Analyse
+
+* **Pourquoi ?** :
+  * Personnalisez les types de tests (ex. : uniquement SQL/XSS).
+  * Excluez certains chemins pour éviter les faux positifs.
+* **Étapes** :
+  1. Lors de la création d'un scan, allez dans **`Advanced Settings`**.
+  2. Modifiez :
+     * **Politiques de sécurité** (par exemple : OWASP Top 10).
+     * **Chemins exclus** : `/admin`, `/test`.
+  3. Enregistrez votre profil pour l'utiliser lors des futures analyses.
+
+***
+
+#### 2. Génération et Exportation des Rapports
+
+* **Étapes** :
+  1. Une fois le scan terminé, allez dans **`Scans`** → **`Reports`**.
+  2. Sélectionnez un format :
+     * **PDF** : Lisible pour les réunions ou les présentations.
+     * **HTML** : Facilement partageable.
+     * **CSV** : Pratique pour une analyse approfondie des résultats.
+  3. Exportez le rapport et partagez-le avec votre équipe.
+
+> 💡 **Astuce** : Choisissez un format interactif pour les rapports HTML afin de naviguer facilement entre les vulnérabilités.
+
+***
+
+### 📋 Exemples d'analyses
+
+#### 1. Analyse pour les Injections SQL
+
+* **Configuration** :
+  * Activez les tests SQL Injection dans **`Advanced Settings`**.
+  * Ciblez les formulaires et URL dynamiques.
+*   **Commandes associées** :
+
+    ```bash
+    nmap --script http-sql-injection http://example.com
+    ```
+* **Explication** : Identifie les champs susceptibles d'accepter des requêtes malveillantes.
+
+***
+
+#### 2. Analyse pour les Vulnérabilités XSS
+
+* **Configuration** :
+  * Activez les tests XSS dans **`Advanced Settings`**.
+  * Ciblez les champs de saisie utilisateur (recherche, commentaires).
+* **Exemple** :
+  *   Si le scan détecte une vulnérabilité, essayez :
+
+      ```html
+      <script>alert('XSS')</script>
+      ```
+* **Explication** : Vérifie si les entrées utilisateur sont mal filtrées et peuvent exécuter du code malveillant.
