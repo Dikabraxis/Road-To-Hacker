@@ -1,142 +1,237 @@
 # Cewl
 
-#### Introduction
+## Cewl - Générateur de Dictionnaires à partir de Sites Web
 
-Cewl est un outil Ruby conçu pour créer des dictionnaires personnalisés en analysant le contenu HTML d'un site web. Il peut extraire des mots et des phrases du contenu des pages web pour générer des listes de mots qui peuvent être utilisées pour les attaques par dictionnaire.
+***
 
-#### Installation de Cewl
+### Introduction
 
-**Installation sur Linux**
+**Cewl** (Custom Word List Generator) est un outil puissant qui permet d'extraire des mots d'un site web pour générer des dictionnaires personnalisés. Ces dictionnaires peuvent être utilisés dans des attaques par force brute ou pour des audits de sécurité.
 
-1.  **Installer Ruby (si ce n’est pas déjà fait)** :
+#### Pourquoi utiliser Cewl ?
 
-    ```bash
-    sudo apt update
-    sudo apt install ruby
-    ```
+* **Extraction ciblée** : Génère un dictionnaire basé sur le contenu d’un site précis.
+* **Options de personnalisation** : Permet de filtrer les mots par longueur, profondeur de navigation, et bien plus.
+* **Pratique pour les tests de mots de passe** : Idéal pour les audits de sécurité ou les exercices de pentesting.
 
-    * **Explication** :
-      * `sudo apt update` : Met à jour la liste des paquets disponibles.
-      * `sudo apt install ruby` : Installe Ruby via le gestionnaire de paquets `apt`.
-2.  **Installer Cewl via RubyGems** :
+***
 
-    ```bash
-    sudo gem install cewl
-    ```
+### 🚀 Étape 1 : Installation de Cewl
 
-    * **Explication** :
-      * `sudo gem install cewl` : Installe Cewl via RubyGems.
-3.  **Vérifier l'installation** :
+#### Prérequis
+
+* **Ruby** : Cewl est écrit en Ruby, il nécessite donc que Ruby soit installé.
+
+#### Installation sur Linux (exemple : Ubuntu)
+
+1.  **Mettre à jour la liste des paquets disponibles** :
 
     ```bash
-    cewl --help
+    bashCopier le codesudo apt update
     ```
 
-    * **Explication** : Vérifie que Cewl est installé correctement.
-
-**Installation sur Windows**
-
-1. **Télécharger Ruby depuis le site officiel de Ruby**.
-   * **Explication** : Téléchargez et installez Ruby en suivant les instructions à l'écran.
-2.  **Installer Cewl via la ligne de commande** :
+    * **Explication** : Actualise la liste des paquets disponibles pour s'assurer d'installer la dernière version.
+2.  **Installer Ruby** :
 
     ```bash
-    gem install cewl
+    bashCopier le codesudo apt install ruby
     ```
 
-#### Utilisation de Base
-
-**1. Génération d'un Dictionnaire à partir d'un Site Web**
-
-1.  **Commandement de base pour extraire des mots** :
+    * **Explication** : Installe Ruby via le gestionnaire de paquets `apt`.
+3.  **Installer Cewl via RubyGems** :
 
     ```bash
-    cewl http://example.com
+    bashCopier le codesudo gem install cewl
     ```
 
-    * **Explication** :
-      * `http://example.com` : URL du site web à partir duquel extraire les mots.
-2.  **Enregistrer les mots extraits dans un fichier** :
+    * **Explication** : Installe Cewl en utilisant le gestionnaire de paquets Ruby (RubyGems).
+4.  **Vérifier l’installation** :
 
     ```bash
-    cewl http://example.com -w dictionnaire.txt
+    bashCopier le codecewl --help
     ```
 
-    * **Explication** :
-      * `-w dictionnaire.txt` : Spécifie le fichier dans lequel enregistrer les mots extraits.
+    * **Explication** : Vérifie que Cewl est correctement installé en affichant le guide d’utilisation.
 
-**2. Extraction avec une Profondeur Spécifique**
+***
 
-1.  **Définir la profondeur de l'exploration des liens** :
+#### Installation sur Windows
+
+1. **Installer Ruby** :
+   * Téléchargez Ruby depuis le [site officiel](https://rubyinstaller.org/).
+   * Suivez les instructions de l’installateur.
+2. **Installer Cewl via RubyGems** :
+   *   Ouvrez une invite de commande et exécutez :
+
+       ```bash
+       bashCopier le codegem install cewl
+       ```
+   * **Explication** : Installe Cewl sur votre système Windows.
+3. **Vérifier l’installation** :
+   *   Testez l’installation en exécutant :
+
+       ```bash
+       bashCopier le codecewl --help
+       ```
+
+***
+
+### 🛠️ Utilisation de Base de Cewl
+
+#### 1. Générer un dictionnaire de base
+
+*   **Commande** :
 
     ```bash
-    cewl http://example.com --depth 2
+    bashCopier le codecewl http://example.com
     ```
+* **Explication** :
+  * Analyse le contenu du site spécifié (`http://example.com`) et extrait les mots pour les afficher dans le terminal.
 
-    * **Explication** :
-      * `--depth 2` : Indique la profondeur de l'exploration des liens. Une profondeur de 2 explore les liens de premier et deuxième niveau.
+***
 
-**3. Extraction de Mots avec des Options de Filtrage**
+#### 2. Enregistrer les mots extraits dans un fichier
 
-1.  **Filtrer les mots en fonction de leur longueur** :
+*   **Commande** :
 
     ```bash
-    cewl http://example.com --min_length 6 --max_length 12
+    bashCopier le codecewl http://example.com -w dictionnaire.txt
     ```
+* **Explication** :
+  * Utilise l'option `-w` pour spécifier un fichier (`dictionnaire.txt`) où les mots extraits seront sauvegardés.
 
-    * **Explication** :
-      * `--min_length 6` : Extrait seulement les mots d'une longueur minimale de 6 caractères.
-      * `--max_length 12` : Extrait seulement les mots d'une longueur maximale de 12 caractères.
+***
 
-#### Options Avancées
+#### 3. Explorer les liens avec une profondeur spécifique
 
-**1. Utilisation des Cookies pour l'Authentification**
-
-1.  **Ajouter des cookies pour accéder à un site nécessitant une connexion** :
+*   **Commande** :
 
     ```bash
-    cewl http://example.com --cookies "cookie1=value1; cookie2=value2"
+    bashCopier le codecewl http://example.com --depth 2
     ```
+* **Explication** :
+  * L'option `--depth` contrôle le niveau d'exploration des liens.
+  * Une profondeur de `2` explore les liens de premier et deuxième niveau.
 
-    * **Explication** :
-      * `--cookies` : Permet d'ajouter des cookies pour accéder à des zones protégées du site web.
+***
 
-**2. Extraction des Mots en Ignorant les Balises HTML**
+#### 4. Filtrer les mots par longueur
 
-1.  **Exclure les balises HTML et les éléments JavaScript** :
+*   **Commande** :
 
     ```bash
-    cewl http://example.com --ignore_words "javascript:;void(0);"
+    bashCopier le codecewl http://example.com --min_length 6 --max_length 12
     ```
+* **Explication** :
+  * `--min_length 6` : Inclut uniquement les mots contenant au moins 6 caractères.
+  * `--max_length 12` : Exclut les mots contenant plus de 12 caractères.
 
-    * **Explication** :
-      * `--ignore_words` : Exclut les mots spécifiques ou les patterns indésirables.
+***
 
-**3. Utilisation d'un Proxy**
+### 🔍 Options Avancées
 
-1.  **Configurer un proxy pour l'extraction des mots** :
+#### 1. Utiliser des cookies pour l’authentification
+
+*   **Commande** :
 
     ```bash
-    cewl http://example.com --proxy http://localhost:8080
+    bashCopier le codecewl http://example.com --cookies "cookie1=value1; cookie2=value2"
     ```
+* **Explication** :
+  * Ajoute des cookies pour accéder à des pages nécessitant une authentification.
 
-    * **Explication** :
-      * `--proxy` : Spécifie un serveur proxy pour acheminer le trafic HTTP.
+***
 
-#### Exemples de Commandes
+#### 2. Ignorer des mots ou balises spécifiques
 
-**1. Générer un Dictionnaire pour un Site Web Spécifique**
-
-1.  **Commande pour extraire les mots et les enregistrer dans un fichier** :
+*   **Commande** :
 
     ```bash
-    cewl http://example.com -w dictionnaire.txt
+    bashCopier le codecewl http://example.com --ignore_words "javascript:void(0);login;"
     ```
+* **Explication** :
+  * L'option `--ignore_words` permet d'exclure certains mots indésirables.
 
-**2. Extraire des Mots avec Profondeur et Filtrage**
+***
 
-1.  **Commande pour extraire des mots avec une profondeur de 3 et longueur minimale de 8 caractères** :
+#### 3. Utiliser un proxy pour l’extraction
+
+*   **Commande** :
 
     ```bash
-    cewl http://example.com --depth 3 --min_length 8 -w dictionnaire.txt
+    bashCopier le codecewl http://example.com --proxy http://localhost:8080
     ```
+* **Explication** :
+  * Acheminer le trafic via un proxy (ex. : Burp Suite) pour contrôler ou intercepter les requêtes.
+
+***
+
+### 📋 Exemples Pratiques
+
+#### 1. Générer un dictionnaire à partir d’un site web
+
+*   **Commande** :
+
+    ```bash
+    bashCopier le codecewl http://example.com -w dictionnaire.txt
+    ```
+* **Explication** :
+  * Les mots extraits du site `http://example.com` sont sauvegardés dans `dictionnaire.txt`.
+
+***
+
+#### 2. Générer un dictionnaire avec une profondeur et des filtres
+
+*   **Commande** :
+
+    ```bash
+    bashCopier le codecewl http://example.com --depth 3 --min_length 8 -w dictionnaire.txt
+    ```
+* **Explication** :
+  * Explore les liens jusqu’à une profondeur de `3`.
+  * Extrait uniquement les mots contenant au moins `8 caractères`.
+
+***
+
+### 🎯 Scénarios d’Utilisation
+
+#### Scénario 1 : Utiliser un dictionnaire pour le brute-force
+
+1. **Générer un dictionnaire** :
+   *   Exécutez :
+
+       ```bash
+       bashCopier le codecewl http://target-site.com -w wordlist.txt
+       ```
+2. **Lancer une attaque brute-force** :
+   *   Utilisez un outil comme **Hydra** avec le dictionnaire :
+
+       ```bash
+       bashCopier le codehydra -l admin -P wordlist.txt http-post-form "/login:username=^USER^&password=^PASS^:F=Incorrect"
+       ```
+
+***
+
+#### Scénario 2 : Générer des mots personnalisés pour des attaques ciblées
+
+1. Explorez un site web qui publie régulièrement des informations (ex. : forums, blogs).
+2.  Utilisez Cewl pour extraire les mots-clés et former un dictionnaire spécifique :
+
+    ```bash
+    bashCopier le codecewl http://blog.example.com --depth 2 -w custom-wordlist.txt
+    ```
+
+***
+
+### 📖 Bonnes Pratiques et Précautions
+
+1. **Limiter les requêtes** :
+   *   Ajoutez un délai entre les requêtes pour éviter de surcharger le serveur :
+
+       ```bash
+       bashCopier le codecewl http://example.com --delay 5
+       ```
+2. **Obtenir des autorisations** :
+   * Avant d'utiliser Cewl sur un site, obtenez la permission pour éviter des implications légales.
+3. **Travailler avec un proxy** :
+   * Utilisez un proxy comme Burp Suite pour surveiller les requêtes effectuées par Cewl.
