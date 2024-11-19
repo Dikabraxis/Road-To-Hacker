@@ -1,129 +1,168 @@
 # Aircrack-ng
 
-**Introduction**
+## Aircrack-ng - Suite d'Audit des Réseaux Sans Fil
 
-\
-Aircrack-ng est une suite d'outils dédiée à l'audit de la sécurité des réseaux sans fil. Elle permet d'analyser les réseaux Wi-Fi pour détecter les vulnérabilités et tester la robustesse des clés de sécurité telles que WPA/WPA2 et WEP. Aircrack-ng est particulièrement utile pour les tests de pénétration sur des réseaux sans fil.
+### Introduction
 
-**Installation d’Aircrack-ng**
+**Aircrack-ng** est une suite d'outils dédiée à l'audit de la sécurité des réseaux sans fil. Elle permet de :
 
-1.  **Installation sur Linux**
+* **Analyser les réseaux Wi-Fi** pour détecter les vulnérabilités.
+* **Tester la robustesse des clés de sécurité** (WEP, WPA, WPA2).
+* **Effectuer des tests de pénétration** sur des réseaux sans fil.
+
+C'est un outil incontournable pour les professionnels en cybersécurité cherchant à évaluer la sécurité des réseaux sans fil.
+
+***
+
+### 🚀 Installation d'Aircrack-ng
+
+#### Installation sur Linux
+
+La méthode la plus simple consiste à utiliser les gestionnaires de paquets :
+
+1.  **Installer depuis les dépôts** :
 
     ```bash
     sudo apt update
     sudo apt install aircrack-ng
     ```
+2.  **Compilation depuis les sources** (optionnel pour les dernières versions) :
 
-    *   **Compilation depuis les sources** (optionnel) :
+    ```bash
+    sudo apt update
+    sudo apt install build-essential libnl-3-dev libnl-genl-3-dev libpcap-dev
+    git clone https://github.com/aircrack-ng/aircrack-ng.git
+    cd aircrack-ng
+    ./autogen.sh
+    ./configure
+    make
+    sudo make install
+    ```
 
-        ```bash
-        sudo apt update
-        sudo apt install build-essential libnl-3-dev libnl-genl-3-dev libpcap-dev
-        git clone https://github.com/aircrack-ng/aircrack-ng.git
-        cd aircrack-ng
-        ./autogen.sh
-        ./configure
-        make
-        sudo make install
-        ```
-2. **Installation sur Windows**
-   * Téléchargez le programme d'installation depuis le site officiel [aircrack-ng.org](https://www.aircrack-ng.org/).
-   * Décompressez et installez le programme en suivant les instructions.
+#### Installation sur Windows
 
-**Commandes de Base**
+1. Téléchargez le programme d'installation depuis le [site officiel d'Aircrack-ng](https://www.aircrack-ng.org/).
+2. Décompressez l'archive et suivez les instructions d'installation.
+3. Accédez à Aircrack-ng via une invite de commande.
 
-1.  **Capture des Paquets**
+***
+
+### 🛠️ Commandes de Base
+
+#### 1. **Capture des Paquets**
+
+*   **Commande** :
 
     ```bash
     sudo airodump-ng wlan0mon
     ```
+* **Explication** : Démarre la capture des paquets sur l'interface sans fil configurée en mode moniteur (`wlan0mon`).
 
-    * **Explication** : Démarre la capture des paquets sur l'interface sans fil en mode moniteur (`wlan0mon`).
+#### 2. **Filtrage des Paquets**
 
-
-2.  **Filtrage des Paquets**
+*   **Commande** :
 
     ```bash
     sudo airodump-ng --bssid [BSSID] -c [Channel] -w capture wlan0mon
     ```
+* **Explication** : Capture les paquets spécifiques à un réseau (identifié par son BSSID) sur un canal précis et les sauvegarde dans un fichier nommé `capture.cap`.
 
-    * **Explication** : Capture les paquets d'un réseau spécifique, en filtrant par BSSID et canal, et sauvegarde les données dans `capture.cap`.
+#### 3. **Craquage de Clé WEP**
 
-
-3.  **Craquage de Clé WEP**
+*   **Commande** :
 
     ```bash
     aircrack-ng capture.cap
     ```
+* **Explication** : Analyse le fichier de capture pour tenter de découvrir une clé WEP.
 
-    * **Explication** : Analyse le fichier `capture.cap` pour tenter de craquer une clé WEP.
+#### 4. **Craquage de Clé WPA/WPA2**
 
-
-4.  **Craquage de Clé WPA/WPA2**
+*   **Commande** :
 
     ```bash
     aircrack-ng -w /path/to/wordlist.txt -b [BSSID] capture.cap
     ```
+* **Explication** : Utilise une attaque par dictionnaire (fichier `wordlist.txt`) pour tenter de craquer une clé WPA/WPA2 basée sur les handshakes capturés.
 
-    * **Explication** : Utilise le fichier de dictionnaire `wordlist.txt` pour craquer une clé WPA/WPA2 à partir des paquets capturés.
+***
 
+### 🔍 Options Avancées
 
+#### 1. **Déauthentifier les Clients**
 
-**Options Avancées**
-
-1.  **Déauthentifier les Clients**
+*   **Commande** :
 
     ```bash
     sudo aireplay-ng --deauth 10 -a [BSSID] wlan0mon
     ```
+* **Explication** : Envoie 10 paquets de déauthentification pour forcer la déconnexion des clients, ce qui permet de capturer un handshake WPA/WPA2 lorsque les clients se reconnectent.
 
-    * **Explication** : Envoie des paquets de déauthentification pour déconnecter les clients du réseau, facilitant la capture des handshakes WPA/WPA2.
+> ⚠️ **Attention** : Utilisez cette commande uniquement sur des réseaux dont vous avez l’autorisation, car elle peut perturber les utilisateurs légitimes.
 
+***
 
-2.  **Injection de Paquets**
+#### 2. **Injection de Paquets**
+
+*   **Commande** :
 
     ```bash
     sudo aireplay-ng --fakeauth 10 -a [BSSID] -h [Your MAC] wlan0mon
     ```
+* **Explication** : Simule une authentification sur le réseau cible pour capturer des paquets ou générer du trafic.
 
-    * **Explication** : Injecte des paquets pour simuler une authentification sur le réseau cible, aidant à obtenir des paquets de handshake.
+***
 
+#### 3. **Détection des Réseaux Cachés**
 
-3.  **Détection des Réseaux Cachés**
+*   **Commande** :
 
     ```bash
     sudo airodump-ng --essid "hidden" wlan0mon
     ```
+* **Explication** : Identifie les réseaux Wi-Fi qui ne diffusent pas leur SSID en surveillant les paquets de connexion des clients.
 
-    * **Explication** : Recherche des réseaux sans fil qui ne diffusent pas leur SSID.
+***
 
+### 📋 Exemples de Scénarios d'Utilisation
 
+#### 1. **Scan et Capture de Paquets**
 
-**Exemples de Scénarios d'Évasion**
-
-1.  **Scan et Capture de Paquets en Mode Moniteur**
+*   **Commande** :
 
     ```bash
     sudo airodump-ng wlan0mon
     ```
+* **Explication** : Scanne et capture tous les paquets sur les réseaux environnants, ce qui permet d’identifier les réseaux et les clients connectés.
 
-    * **Explication** : Lance une capture de tous les paquets sans filtrage. Peut être utilisé pour détecter des réseaux et des clients.
+***
 
+#### 2. **Craquage de Clé WPA avec Attaque de Dictionnaire**
 
-2.  **Craquage de Clé WPA avec Attaque de Dictionnaire**
+*   **Commande** :
 
     ```bash
     aircrack-ng -w /path/to/wordlist.txt -b 00:11:22:33:44:55 capture.cap
     ```
+* **Explication** : Utilise un fichier de dictionnaire pour tester les mots de passe faibles et tenter de craquer une clé WPA.
 
-    * **Explication** : Essaye de trouver la clé WPA en utilisant un fichier de dictionnaire. Idéal pour tester des mots de passe faibles.
+***
 
+#### 3. **Injection et Déauthentification pour Capturer un Handshake**
 
-3.  **Injection et Déauthentification pour Capture de Handshake**
+*   **Commande** :
 
     ```bash
     sudo aireplay-ng --deauth 10 -a 00:11:22:33:44:55 wlan0mon
     ```
+* **Explication** : Déconnecte les clients du réseau pour forcer un nouveau handshake, qui peut ensuite être capturé pour tenter de craquer une clé WPA/WPA2.
 
-    * **Explication** : Déauthentifie les clients pour provoquer un nouveau handshake et faciliter la capture.
+***
 
+### 📚 Ressources Complémentaires
+
+* **Site officiel d'Aircrack-ng** : [https://www.aircrack-ng.org](https://www.aircrack-ng.org)
+* **Documentation complète** : https://aircrack-ng.org/documentation.html
+* **Fichiers de dictionnaire** :
+  * [SecLists Wordlists](https://github.com/danielmiessler/SecLists)
+  * [RockYou Wordlist](https://github.com/brannondorsey/naive-hashcat/releases)
