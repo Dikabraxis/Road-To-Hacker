@@ -1,139 +1,230 @@
 # Smbmap
 
-#### Introduction
+## Smbmap - Guide Complet pour la Gestion des Partages SMB
 
-SMBmap est un outil open-source qui facilite l'exploration des partages SMB sur un réseau. Il peut aider à identifier les fichiers partagés et les permissions d'accès sur les serveurs SMB, souvent dans le cadre de tests de pénétration et d'audits de sécurité.
+***
 
-#### Installation de SMBmap
+### Introduction
 
-SMBmap peut être installé à partir de GitHub. Voici comment procéder :
+**Smbmap** est un outil puissant conçu pour explorer et interagir avec des partages SMB (Server Message Block) sur un réseau. Il permet de lister les partages accessibles, vérifier les permissions, rechercher des fichiers spécifiques, et même télécharger ou exfiltrer des données. Il est particulièrement utile dans les scénarios d'évaluation de la sécurité des partages SMB.
 
-**Installation sur Linux**
+***
 
-1.  **Cloner le dépôt GitHub** :
+### 🚀 Étape 1 : Installation de Smbmap
+
+#### Sous Linux (Debian/Ubuntu)
+
+1.  **Mettre à jour les paquets** :
 
     ```bash
-    git clone https://github.com/ShawnDEvans/SMBMap.git
+    sudo apt update && sudo apt upgrade
     ```
-2.  **Accéder au répertoire SMBmap** :
+2.  **Installer Smbmap via GitHub** :
 
     ```bash
-    cd SMBMap
-    ```
-3.  **Installer les dépendances** :
-
-    ```bash
+    git clone https://github.com/ShawnDEvans/smbmap.git
+    cd smbmap
     pip install -r requirements.txt
     ```
-4.  **Lancer SMBmap** :
+3.  **Tester l’installation** :
 
     ```bash
-    python smbmap.py
+    python smbmap.py -h
     ```
 
-**Installation via `apt` (si disponible)**
-
-Certaines distributions Linux peuvent proposer SMBmap dans leurs dépôts, mais il est souvent préférable de cloner directement le dépôt GitHub pour obtenir la dernière version.
-
-#### Commandes et Options de Base
-
-**Scanner un Réseau pour les Partages SMB**
-
-1.  **Scanner un Réseau pour Découvrir les Partages**
+    Si vous utilisez régulièrement l'outil, vous pouvez créer un alias :
 
     ```bash
-    smbmap -H <IP_ADDRESS>
+    alias smbmap="python /chemin/vers/smbmap.py"
     ```
 
-    * **Explication** : `-H` spécifie l'adresse IP de l'hôte que vous souhaitez scanner pour découvrir les partages SMB.
+***
 
+### 🚀 Étape 2 : Utilisation de Base
 
+***
 
-**Vérifier les Permissions sur un Partage**
+#### 1. Lister les Partages Disponibles
 
-2. **Lister les Partages et Vérifier les Permissions**
+Pour lister les partages accessibles sur une cible donnée :
+
+```bash
+smbmap -H <IP_ADDRESS>
+```
+
+*   **Exemple** :
+
+    ```bash
+    smbmap -H 192.168.1.10
+    ```
+* **Explication** :
+  * `-H` : Spécifie l'adresse IP ou le nom de domaine de la cible.
+  * Sans authentification, Smbmap tente une connexion anonyme.
+
+***
+
+#### 2. Vérifier les Permissions sur les Partages
+
+Pour afficher les permissions des partages avec des informations d'identification :
 
 ```bash
 smbmap -H <IP_ADDRESS> -u <USERNAME> -p <PASSWORD>
 ```
 
-* **Explication** : `-u` et `-p` permettent de spécifier les informations d'authentification pour accéder aux partages SMB. Sans ces options, SMBmap essaiera de se connecter avec des informations d'authentification anonymes.
+*   **Exemple** :
 
+    ```bash
+    smbmap -H 192.168.1.10 -u guest -p guest
+    ```
+* **Explication** :
+  * `-u` : Spécifie le nom d'utilisateur.
+  * `-p` : Spécifie le mot de passe. Si aucun mot de passe n'est requis, laissez vide (`-p ''`).
 
+***
 
-**Extraire des Fichiers à Partir des Partages**
+#### 3. Télécharger un Fichier Spécifique
 
-3. **Télécharger des Fichiers d’un Partage SMB**
-
-```bash
-smbmap -H <IP_ADDRESS> -u <USERNAME> -p <PASSWORD> -R <SHARE> -L
-```
-
-* **Explication** : `-R` spécifie le répertoire à l'intérieur du partage SMB, et `-L` liste les fichiers dans ce répertoire. Vous pouvez ensuite utiliser les options supplémentaires pour télécharger des fichiers.
-
-
-
-4. **Télécharger un Fichier Spécifique**
+Pour télécharger un fichier précis depuis un partage SMB :
 
 ```bash
 smbmap -H <IP_ADDRESS> -u <USERNAME> -p <PASSWORD> -R <SHARE> -T <FILE_PATH> -o <LOCAL_FILE_PATH>
 ```
 
-* **Explication** : `-T` spécifie le chemin du fichier sur le partage SMB, et `-o` spécifie le chemin local où le fichier sera sauvegardé.
+*   **Exemple** :
 
+    ```bash
+    smbmap -H 192.168.1.10 -u admin -p password -R documents -T important.docx -o /tmp/important.docx
+    ```
+* **Explication** :
+  * `-R` : Spécifie le partage ou le répertoire à explorer (par exemple : `documents`).
+  * `-T` : Indique le fichier spécifique à télécharger (par exemple : `important.docx`).
+  * `-o` : Définit le chemin local où sauvegarder le fichier téléchargé.
 
+***
 
-**Rechercher des Fichiers dans les Partages**
+#### 4. Rechercher des Fichiers Spécifiques
 
-5. **Rechercher des Fichiers Par Nom**
+Pour rechercher des fichiers contenant un mot-clé ou une chaîne spécifique :
 
 ```bash
 smbmap -H <IP_ADDRESS> -u <USERNAME> -p <PASSWORD> -R <SHARE> -s <SEARCH_TERM>
 ```
 
-* **Explication** : `-s` permet de rechercher des fichiers correspondant à un terme de recherche dans le répertoire spécifié.
-
-
-
-#### Exemples de Scénarios
-
-**Découverte de Partages SMB**
-
-1.  **Scanner un Réseau pour les Partages**
+*   **Exemple** :
 
     ```bash
-    smbmap -H 192.168.1.10
+    smbmap -H 192.168.1.10 -u admin -p password -R documents -s "password"
+    ```
+* **Explication** :
+  * `-s` : Définit le terme à rechercher (par exemple, "password").
+
+***
+
+### 🚀 Étape 3 : Cas d’Utilisation
+
+***
+
+#### Exemple 1 : Découverte de Partages SMB Anonymes
+
+Si vous souhaitez vérifier les partages accessibles sans authentification :
+
+```bash
+smbmap -H 192.168.1.10
+```
+
+* **Résultat attendu** : Liste les partages publics ou accessibles sans authentification, avec leurs permissions (lecture/écriture).
+
+***
+
+#### Exemple 2 : Lister les Permissions pour un Utilisateur Spécifique
+
+Pour vérifier les permissions d'un utilisateur (par exemple : admin) sur les partages d'une cible :
+
+```bash
+smbmap -H 192.168.1.10 -u admin -p password
+```
+
+* **Résultat attendu** : Affiche une liste des partages disponibles et indique si l'utilisateur peut lire, écrire ou modifier les fichiers.
+
+***
+
+#### Exemple 3 : Téléchargement d’un Fichier Sensible
+
+Pour télécharger un fichier important (par exemple : `config.txt`) depuis un partage spécifique :
+
+```bash
+smbmap -H 192.168.1.10 -u admin -p password -R backups -T config.txt -o /tmp/config.txt
+```
+
+* **Résultat attendu** : Le fichier `config.txt` sera téléchargé et sauvegardé localement dans `/tmp`.
+
+***
+
+#### Exemple 4 : Rechercher des Fichiers Sensibles
+
+Pour rechercher des fichiers contenant un mot-clé (par exemple, `password`) dans un partage spécifique :
+
+```bash
+smbmap -H 192.168.1.10 -u admin -p password -R backups -s "password"
+```
+
+* **Résultat attendu** : Affiche une liste des fichiers contenant le terme "password" dans le répertoire `backups`.
+
+***
+
+### 🚀 Étape 4 : Options Avancées
+
+***
+
+#### 1. Exploitation de Partages en Lecture/Écriture
+
+Si un partage est accessible en écriture, vous pouvez tester l'upload de fichiers :
+
+```bash
+echo "Test SMBmap" > test.txt
+smbmap -H 192.168.1.10 -u admin -p password -R uploads -o test.txt
+```
+
+* **Explication** : Upload un fichier nommé `test.txt` dans le partage `uploads`.
+
+***
+
+#### 2. Utilisation de Proxy
+
+Pour masquer votre origine ou rediriger le trafic via un proxy SOCKS :
+
+```bash
+smbmap -H <IP_ADDRESS> --proxy http://127.0.0.1:8080
+```
+
+* **Explication** : Envoie toutes les requêtes SMB via un proxy à `127.0.0.1` (port 8080).
+
+***
+
+### 📖 Bonnes Pratiques
+
+***
+
+#### 1. Obtenir des Autorisations
+
+* **Important** : N'effectuez jamais de tests sur des systèmes ou réseaux sans une autorisation explicite.
+* **Risque légal** : Interagir avec des partages SMB sans autorisation peut entraîner des sanctions légales.
+
+#### 2. Minimiser l’Impact
+
+* Limitez vos tests pour éviter de surcharger les serveurs SMB.
+* Configurez des délais entre les requêtes pour minimiser le trafic généré.
+
+#### 3. Nettoyer Après les Tests
+
+*   Si vous avez uploadé des fichiers pour tester l'écriture, supprimez-les pour éviter de laisser des traces :
+
+    ```bash
+    rm /tmp/test.txt
     ```
 
-    * **Explication** : Découvre les partages disponibles sur l'hôte spécifié.
+***
 
-**Vérification des Permissions**
+### Conclusion
 
-2. **Lister les Partages et Permissions**
-
-```bash
-smbmap -H 192.168.1.10 -u guest -p guest
-```
-
-* **Explication** : Vérifie les partages disponibles et les permissions avec les informations d'identification guest.
-
-**Téléchargement de Fichiers**
-
-3. **Télécharger un Fichier Spécifique**
-
-```bash
-smbmap -H 192.168.1.10 -u admin -p password -R documents -T important.docx -o /tmp/important.docx
-```
-
-* **Explication** : Télécharge le fichier `important.docx` du partage `documents` sur le serveur SMB.
-
-#### Bonnes Pratiques
-
-1. **Obtenir des Autorisations**
-   * **Assurez-vous toujours** d'avoir les autorisations nécessaires avant d'effectuer des tests de sécurité sur des réseaux SMB.
-   * **Évitez les tests non autorisés** pour éviter des implications légales et éthiques.
-2. **Utiliser les Fonctionnalités de Limitation**
-   * **Limiter la portée des tests** pour éviter des impacts sur le réseau et les systèmes cibles.
-   * **Configurer des délais entre les requêtes** pour éviter de surcharger le serveur SMB et d'attirer l'attention.
-3. **Surveiller les Réactions du Serveur**
-   * **Observer les logs et les alertes** générés par les serveurs SMB pour ajuster les tests et minimiser les risques.
+**Smbmap** est un outil essentiel pour les pentesters cherchant à auditer ou interagir avec des partages SMB. Grâce à ses fonctionnalités comme la découverte des permissions, la recherche de fichiers et le téléchargement ciblé, il simplifie grandement l'évaluation de la sécurité des réseaux SMB.
