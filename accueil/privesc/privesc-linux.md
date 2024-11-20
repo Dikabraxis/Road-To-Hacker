@@ -11,7 +11,7 @@ Ces commandes affichent les informations sur le système d'exploitation et sa ve
 ```bash
 uname -a               # Affiche des informations complètes sur le noyau et l'architecture
 cat /etc/*release      # Affiche la distribution Linux et sa version
-cat /etc/issue         # Affiche des informations d'identification (souvent utilisées pour l'affichage avant la connexion)
+cat /etc/issue         # Affiche des informations d'identification souvent utilisées pour l'affichage avant la connexion
 cat /proc/version      # Affiche la version du noyau et les informations de compilation
 ```
 
