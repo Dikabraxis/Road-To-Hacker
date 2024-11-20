@@ -33,7 +33,7 @@ L’objectif est de centraliser et structurer tout ce que j’apprends, tout en 
 
 #### **Communauté**
 
-Un discord est disponible pour ceux qui souhaitent faire des CTF, échanger, partager:
+Un discord est disponible pour ceux qui souhaitent faire des CTF, échanger, partager et progresser ensemble :
 
 [https://discord.gg/y8xfeAvCKg](https://discord.gg/y8xfeAvCKg)
 
