@@ -2,6 +2,8 @@
 
 Voici une liste des commandes utiles pour rechercher et exploiter des vulnérabilités d'escalade de privilèges (privilege escalation) sur un système Linux, avec des explications pour chaque commande.
 
+***
+
 **1. Informations sur le système**
 
 **Système et version**
@@ -11,7 +13,7 @@ Ces commandes affichent les informations sur le système d'exploitation et sa ve
 ```bash
 uname -a               # Affiche des informations complètes sur le noyau et l'architecture
 cat /etc/*release      # Affiche la distribution Linux et sa version
-cat /etc/issue         # Affiche des informations d'identification souvent utilisées pour l'affichage avant la connexion
+cat /etc/issue         # Affiche des informations d'identification (souvent utilisées pour l'affichage avant la connexion)
 cat /proc/version      # Affiche la version du noyau et les informations de compilation
 ```
 
@@ -32,6 +34,8 @@ Ces commandes fournissent des informations sur le nom d'hôte et le type de syst
 hostname      # Affiche le nom de l'hôte
 hostnamectl   # Affiche des informations détaillées sur le système et le nom d'hôte (si disponible)
 ```
+
+***
 
 **2. Informations sur l'utilisateur et les groupes**
 
@@ -78,6 +82,8 @@ Cette commande affiche les commandes que l'utilisateur peut exécuter avec `sudo
 sudo -l   # Liste les permissions sudo pour l'utilisateur actuel
 ```
 
+***
+
 **3. Permissions des fichiers et répertoires**
 
 **Rechercher les fichiers SUID/SGID**
@@ -115,6 +121,8 @@ find / -type f -writable 2>/dev/null    # Trouve tous les fichiers accessibles e
 find / -type f -perm -o+w 2>/dev/null   # Trouve tous les fichiers accessibles en écriture par tous les utilisateurs
 ```
 
+***
+
 **4. Services et processus**
 
 **Processus en cours d'exécution**
@@ -143,6 +151,8 @@ Ces commandes affichent les tâches planifiées qui pourraient contenir des scri
 cat /etc/crontab       # Affiche les tâches planifiées globales
 ls -la /etc/cron.*     # Liste les répertoires contenant des tâches planifiées
 ```
+
+***
 
 **5. Réseau**
 
@@ -175,6 +185,8 @@ iptables -L           # Affiche les règles de pare-feu (iptables)
 ufw status verbose    # Affiche le statut du pare-feu UFW et les règles configurées
 ```
 
+***
+
 **6. Informations système et kernel**
 
 **Informations sur la mémoire et la CPU**
@@ -196,6 +208,8 @@ lsmod               # Affiche tous les modules du noyau chargés
 cat /proc/modules   # Affiche également les modules du noyau chargés
 ```
 
+***
+
 **7. Informations sur les applications**
 
 **Paquets installés**
@@ -215,6 +229,8 @@ Ces commandes listent les applications dans les répertoires système standards.
 ls -la /usr/bin/   # Liste les applications installées dans /usr/bin
 ls -la /sbin/      # Liste les applications installées dans /sbin
 ```
+
+***
 
 **8. Exploration de fichiers et d'accès**
 
@@ -244,6 +260,8 @@ cat ~/.ssh/id_rsa          # Affiche la clé privée SSH
 cat ~/.ssh/authorized_keys # Affiche les clés publiques autorisées pour SSH
 ```
 
+***
+
 **9. Logs et journaux**
 
 **Fichiers de log système**
@@ -254,6 +272,8 @@ Ces fichiers peuvent contenir des erreurs, des tentatives d'accès, ou d'autres 
 cat /var/log/syslog    # Affiche les logs système
 cat /var/log/auth.log  # Affiche les logs d'authentification
 ```
+
+***
 
 **10. AppArmor et SELinux**
 
@@ -273,6 +293,8 @@ Vérifie si SELinux est activé et son niveau de mise en application.
 sestatus     # Affiche le statut SELinux
 getenforce   # Affiche le mode SELinux (Enforcing, Permissive, Disabled)
 ```
+
+***
 
 **11. Scripts d'attaque et d'exploitation**
 
@@ -295,6 +317,8 @@ chmod +x linpeas.sh
 ```
 
 Ces commandes et outils aident à identifier les vecteurs d'attaque potentiels pour l'escalade de privilèges sur un système Linux en exploitant les configurations faibles, les permissions incorrectes, et d'autres vulnérabilités.
+
+***
 
 BONUS:
 

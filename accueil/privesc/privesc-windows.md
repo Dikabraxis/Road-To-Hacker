@@ -2,6 +2,8 @@
 
 Voici une liste des commandes et outils utiles pour rechercher et exploiter des vulnérabilités d'escalade de privilèges (privilege escalation) sur un système Windows, avec des explications pour chaque commande.
 
+***
+
 #### 1. **Informations sur le Système**
 
 **Système et Version**
@@ -22,6 +24,8 @@ Ces commandes aident à identifier l'architecture du système (32 bits ou 64 bit
 echo %PROCESSOR_ARCHITECTURE%   # Affiche l'architecture du processeur
 wmic os get osarchitecture      # Affiche l'architecture du système d'exploitation
 ```
+
+***
 
 #### 2. **Informations sur l'Utilisateur et les Groupes**
 
@@ -53,6 +57,8 @@ net localgroup                   # Liste tous les groupes locaux
 net localgroup Administrators    # Liste les membres du groupe Administrators
 ```
 
+***
+
 #### 3. **Permissions de Fichiers et Répertoires**
 
 **Rechercher les fichiers sensibles**
@@ -71,6 +77,8 @@ Ces commandes montrent les répertoires où l'utilisateur actuel peut écrire, c
 ```powershell
 Get-ChildItem -Path C:\ -Recurse -ErrorAction SilentlyContinue | Where-Object { $_.PSIsContainer -and $_.GetAccessControl().AccessToString -match "Write" }
 ```
+
+***
 
 #### 4. **Services et Processus**
 
@@ -112,6 +120,8 @@ BUILTIN\Users:(I)(F)
 
 (F) signifie que tous les droits sont donnés
 
+***
+
 #### 5. **Réseau**
 
 **Interfaces réseau et configuration**
@@ -139,6 +149,8 @@ Ces commandes montrent la configuration actuelle du pare-feu.
 netsh advfirewall firewall show rule name=all    # Affiche toutes les règles de pare-feu
 ```
 
+***
+
 #### 6. **Informations Système et Registre**
 
 **Informations sur la mémoire et la CPU**
@@ -160,6 +172,8 @@ reg query HKCU\Software\Microsoft\Windows\CurrentVersion\Run   # Idem pour l'uti
 reg query HKLM /f password /t REG_SZ /s                        # Rechercher des mots de passe dans le registre
 ```
 
+***
+
 #### 7. **Informations sur les Applications**
 
 **Paquets installés**
@@ -178,6 +192,8 @@ Ces commandes listent les applications dans les répertoires système standards.
 dir "C:\Program Files" /b        # Liste les applications dans Program Files
 dir "C:\Program Files (x86)" /b  # Liste les applications 32 bits installées sur un OS 64 bits
 ```
+
+***
 
 #### 8. **Exploration de fichiers et d'accès**
 
@@ -205,6 +221,8 @@ Ces fichiers peuvent contenir des clés privées SSH permettant l'accès à dist
 dir /s /b *id_rsa*     # Recherche des clés SSH privées
 ```
 
+***
+
 #### 9. **Logs et journaux**
 
 **Fichiers de log système**
@@ -214,6 +232,8 @@ Ces fichiers peuvent contenir des erreurs, des tentatives d'accès, ou d'autres 
 ```cmd
 type C:\Windows\System32\winevt\Logs\Security.evtx   # Affiche les logs de sécurité
 ```
+
+***
 
 #### 10. **Sécurité et Audits**
 
@@ -225,6 +245,8 @@ Vérifie les droits et permissions de l'utilisateur actuel et des groupes.
 whoami /priv   # Affiche les privilèges de l'utilisateur actuel
 accesschk.exe /accepteula -uws "Everyone" "C:\Program Files"   # Utilise AccessChk pour vérifier les permissions
 ```
+
+***
 
 #### 11. **AppLocker et autres politiques de sécurité**
 
@@ -243,6 +265,8 @@ Vérifie si Windows Defender est activé et ses paramètres.
 ```cmd
 sc query windefend   # Vérifie le statut du service Windows Defender
 ```
+
+***
 
 #### 12. **Scripts d'attaque et d'exploitation**
 
@@ -265,11 +289,7 @@ Invoke-WebRequest -Uri "https://github.com/carlospolop/PEASS-ng/releases/downloa
 
 Ces commandes et outils aident à identifier les vecteurs d'attaque potentiels pour l'escalade de privilèges sur un système Windows en exploitant les configurations faibles, les permissions incorrectes, et d'autres vulnérabilités.
 
-
-
-\=========================================================================
-
-
+***
 
 **Emplacements intéressants:**
 
