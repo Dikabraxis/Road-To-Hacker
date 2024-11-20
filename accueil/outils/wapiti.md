@@ -1,138 +1,226 @@
 # Wapiti
 
-#### Introduction
+## Wapiti - Guide Complet
 
-Wapiti est un scanner de vulnérabilités qui analyse les applications web pour détecter les failles de sécurité telles que les injections SQL, les scripts inter-sites (XSS), les failles de redirection, et bien plus. Il fonctionne en explorant les pages web et en testant les points d'entrée pour identifier les vulnérabilités.
+***
 
-#### Installation de Wapiti
+### Introduction
 
-**1. Installation sur Linux**
+**Wapiti** est un scanner de sécurité web open-source qui analyse les applications web pour détecter des vulnérabilités telles que les injections SQL, les Cross-Site Scripting (XSS), et bien d'autres. Il explore le site en suivant les liens et en testant les paramètres des URL, des formulaires, et des cookies.
 
-1.  **Installer les dépendances** :
+***
 
-    ```bash
-    sudo apt update
-    sudo apt install python3 python3-pip
-    ```
+### 🚀 Étape 1 : Installation de Wapiti
 
-    * **Explication** :
-      * `sudo apt update` : Met à jour la liste des paquets disponibles.
-      * `sudo apt install python3 python3-pip` : Installe Python3 et pip3, le gestionnaire de paquets Python.
-2.  **Installer Wapiti via pip** :
+***
 
-    ```bash
-    pip3 install wapiti3
-    ```
+#### 1. Installation des Dépendances
 
-    * **Explication** :
-      * `pip3 install wapiti3` : Installe Wapiti via pip3.
-3.  **Vérifier l'installation** :
+Avant d'installer Wapiti, assurez-vous que Python3 et pip3 sont disponibles sur votre machine.
 
-    ```bash
-    wapiti --help
-    ```
+```bash
+sudo apt update
+sudo apt install python3 python3-pip
+```
 
-    * **Explication** : Vérifie que Wapiti est installé correctement.
+* **Explications** :
+  * `sudo apt update` : Met à jour la liste des paquets disponibles.
+  * `sudo apt install python3 python3-pip` : Installe Python3 et son gestionnaire de paquets pip3.
 
-#### Utilisation de Base
+***
 
-**1. Scan d'un Site Web**
+#### 2. Installation de Wapiti via pip
 
-**Commandement de base pour scanner un site web** :
+Installez Wapiti avec pip3 :
+
+```bash
+pip3 install wapiti3
+```
+
+* **Explication** :
+  * `pip3 install wapiti3` : Télécharge et installe Wapiti depuis le Python Package Index.
+
+***
+
+#### 3. Vérification de l'Installation
+
+Pour confirmer que Wapiti est installé correctement, exécutez :
+
+```bash
+wapiti --help
+```
+
+* **Résultat attendu** : Une liste des commandes et options disponibles.
+
+***
+
+### 🚀 Étape 2 : Commandes de Base
+
+***
+
+#### 1. Scanner un Site Web
+
+Pour effectuer un scan de base sur une application web :
 
 ```bash
 wapiti -u http://example.com
 ```
 
-* **Explication** :
-  * `-u` : Spécifie l'URL du site web à scanner.
-  * `http://example.com` : URL de l'application web cible.
+* **Explications** :
+  * `-u` : Spécifie l'URL cible.
+  * `http://example.com` : L'application web à scanner.
 
+***
 
+#### 2. Générer un Rapport
 
-**2. Génération d'un Rapport**
-
-**Générer un rapport au format HTML** :
+Pour générer un rapport au format HTML après le scan :
 
 ```bash
 wapiti -u http://example.com -f html -o rapport.html
 ```
 
-* **Explication** :
-  * `-f html` : Spécifie le format du rapport (HTML dans ce cas).
+* **Explications** :
+  * `-f html` : Définit le format du rapport (HTML dans cet exemple).
   * `-o rapport.html` : Spécifie le fichier de sortie pour le rapport.
 
+***
 
+#### 3. Limiter la Profondeur d’Exploration
 
-**3. Limiter la Profondeur du Scan**
-
-**Définir la profondeur maximale du scan** :
+Pour restreindre la profondeur d’exploration lors du scan :
 
 ```bash
 wapiti -u http://example.com --depth 2
 ```
 
-* **Explication** :
-  * `--depth 2` : Limite la profondeur de l'exploration à 2 niveaux de liens.
+* **Explications** :
+  * `--depth 2` : Limite l'exploration des liens à deux niveaux.
 
+***
 
+### 🚀 Étape 3 : Options Avancées
 
-#### Options Avancées
+***
 
-**1. Utilisation d'un Proxy**
+#### 1. Utiliser un Proxy
 
-**Configurer un proxy pour le scan** :
+Pour rediriger le trafic via un proxy (par exemple, Burp Suite) :
 
 ```bash
 wapiti -u http://example.com --proxy http://localhost:8080
 ```
 
-* **Explication** :
-  * `--proxy` : Permet d'utiliser un serveur proxy pour le scan.
+* **Explications** :
+  * `--proxy` : Spécifie un serveur proxy.
 
+***
 
+#### 2. Configurer un User-Agent et des Cookies
 
-**2. Configurer des Paramètres de Connexion**
-
-**Définir un User-Agent personnalisé et des cookies** :
+Pour personnaliser le User-Agent ou inclure des cookies dans les requêtes :
 
 ```bash
 wapiti -u http://example.com --user-agent "Mozilla/5.0" --cookies "cookie1=value1; cookie2=value2"
 ```
 
-* **Explication** :
-  * `--user-agent` : Définit le User-Agent utilisé pour les requêtes HTTP.
-  * `--cookies` : Spécifie les cookies à utiliser pour accéder à des zones protégées.
+* **Explications** :
+  * `--user-agent` : Définit l’en-tête User-Agent envoyé avec les requêtes.
+  * `--cookies` : Permet d’inclure des cookies pour accéder à des zones protégées.
 
+***
 
+#### 3. Exclure des Paramètres d’URL
 
-**3. Exclure des Paramètres de Scan**
-
-**Exclure certains paramètres d'URL du scan** :
+Pour exclure certains paramètres spécifiques des tests :
 
 ```bash
 wapiti -u http://example.com --ignore-parameters "param1,param2"
 ```
 
 * **Explication** :
-  * `--ignore-parameters` : Permet d'exclure des paramètres spécifiques des tests de vulnérabilités.
+  * `--ignore-parameters` : Ignore les paramètres spécifiés lors des tests de vulnérabilités.
 
+***
 
+#### 4. Spécifier les Types de Vulnérabilités à Tester
 
-#### Exemples de Commandes
+Pour limiter les tests à certains types de vulnérabilités :
 
-**1. Scanner un Site Web avec Rapport HTML**
+```bash
+wapiti -u http://example.com --attack sql,xss
+```
 
-**Commande pour scanner et générer un rapport** :
+* **Explications** :
+  * `--attack` : Spécifie les vulnérabilités à tester (par exemple, SQL Injection ou XSS).
+
+***
+
+### 🚀 Étape 4 : Exemples de Commandes
+
+***
+
+#### Exemple 1 : Scanner un Site avec un Rapport HTML
+
+Pour scanner un site et générer un rapport détaillé en HTML :
 
 ```bash
 wapiti -u http://example.com -f html -o rapport.html
 ```
 
-**2. Scanner avec Proxy et Profondeur Limité**
+***
 
-**Commande pour scanner avec un proxy et une profondeur maximale de 2** :
+#### Exemple 2 : Scanner avec un Proxy et une Profondeur Limitée
+
+Pour acheminer le trafic via un proxy et limiter l’exploration à 2 niveaux :
 
 ```bash
 wapiti -u http://example.com --proxy http://localhost:8080 --depth 2
 ```
+
+***
+
+#### Exemple 3 : Tester des Vulnérabilités XSS et SQL Uniquement
+
+Pour limiter les tests aux injections SQL et XSS :
+
+```bash
+wapiti -u http://example.com --attack sql,xss
+```
+
+***
+
+#### Exemple 4 : Exclure des Paramètres d’URL
+
+Pour ignorer certains paramètres d’URL lors du scan :
+
+```bash
+wapiti -u http://example.com --ignore-parameters "session_id,token"
+```
+
+***
+
+### 📖 Bonnes Pratiques
+
+***
+
+#### 1. Obtenir des Autorisations
+
+* **Important** : N’exécutez jamais de scans sans l’autorisation explicite du propriétaire du site.
+* **Respectez les lois** : Les tests non autorisés peuvent entraîner des conséquences juridiques.
+
+#### 2. Minimiser l’Impact
+
+* **Limiter les tests** : Configurez les scans pour éviter de surcharger le serveur ou d'attirer l'attention.
+* **Utiliser les options avancées** : Filtrez les paramètres inutiles et testez uniquement les vulnérabilités pertinentes.
+
+#### 3. Analyser les Résultats
+
+* **Examiner en détail** : Lisez attentivement les rapports pour identifier les vulnérabilités critiques.
+* **Corrélation avec d’autres outils** : Combinez les résultats de Wapiti avec des outils comme **Nmap**, **Nikto**, ou **Burp Suite**.
+
+***
+
+### Conclusion
+
+**Wapiti** est un outil essentiel pour les professionnels de la cybersécurité cherchant à analyser les applications web. Grâce à sa flexibilité et à ses nombreuses options, il permet une reconnaissance efficace et des tests ciblés pour détecter les vulnérabilités potentielles.
