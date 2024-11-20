@@ -33,3 +33,4 @@
   * [PRIVESC](accueil/privesc/README.md)
     * [Privesc Linux](accueil/privesc/privesc-linux.md)
     * [Privesc Windows](accueil/privesc/privesc-windows.md)
+  * [TIPS](accueil/tips.md)
