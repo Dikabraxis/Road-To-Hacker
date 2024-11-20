@@ -33,4 +33,5 @@
   * [PRIVESC](accueil/privesc/README.md)
     * [Privesc Linux](accueil/privesc/privesc-linux.md)
     * [Privesc Windows](accueil/privesc/privesc-windows.md)
-  * [TIPS](accueil/tips.md)
+  * [TIPS](accueil/tips/README.md)
+    * [Shell Stable et Reverse Shell](accueil/tips/shell-stable-et-reverse-shell.md)
