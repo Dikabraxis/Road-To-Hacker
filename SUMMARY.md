@@ -40,5 +40,7 @@
       * [SQLite3](accueil/services-et-protocoles/database/sqlite3.md)
       * [MySQL](accueil/services-et-protocoles/database/mysql.md)
   * [TIPS](accueil/tips/README.md)
+    * [Commandes de base Linux](accueil/tips/commandes-de-base-linux.md)
+    * [Commandes de base Windows](accueil/tips/commandes-de-base-windows.md)
     * [Shell Stable et Reverse Shell](accueil/tips/shell-stable-et-reverse-shell.md)
     * [Curl](accueil/tips/curl.md)
