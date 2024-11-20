@@ -1,183 +1,263 @@
 # Sqlmap
 
-#### Introduction
+## Sqlmap - Guide Complet
 
-SQLmap est un outil open-source pour l'exploration et l'exploitation des vulnérabilités d'injection SQL. Il peut automatiser le processus d'injection SQL, ce qui en fait un outil précieux pour les pentesters et les chercheurs en sécurité.
+***
 
-#### Installation de SQLmap
+### Introduction
 
-SQLmap est généralement disponible via les dépôts de nombreuses distributions Linux ou peut être installé directement depuis le dépôt officiel.
+**Sqlmap** est un outil open-source automatisé pour la détection et l'exploitation des vulnérabilités d'injection SQL. Il est conçu pour aider les pentesters et les auditeurs de sécurité à identifier les failles SQL dans les applications web et à extraire les données sensibles des bases de données.
 
-**Installation sur Debian/Ubuntu**
+***
 
-1.  **Installer via `apt`** (version souvent non à jour) :
+### 🚀 Étape 1 : Installation de Sqlmap
+
+***
+
+#### Sous Linux (Debian/Ubuntu)
+
+1.  **Mettre à jour les paquets** :
 
     ```bash
-    sudo apt update
+    sudo apt update && sudo apt upgrade
+    ```
+2.  **Installer Sqlmap** :
+
+    ```bash
     sudo apt install sqlmap
     ```
-2.  **Installer la dernière version depuis GitHub** :
+3.  **Vérifier l’installation** :
 
     ```bash
-    sudo apt update
-    sudo apt install git
-    git clone https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
+    sqlmap --version
     ```
 
-    Ensuite, vous pouvez exécuter SQLmap directement à partir du répertoire `sqlmap-dev` :
+***
+
+#### Sous Windows
+
+1. Téléchargez Sqlmap depuis le dépôt officiel : [Sqlmap GitHub](https://github.com/sqlmapproject/sqlmap).
+2. Extrayez l'archive ZIP dans un répertoire.
+3.  Ouvrez une invite de commande et exécutez Sqlmap :
 
     ```bash
-    cd sqlmap-dev
-    python sqlmap.py
+    python sqlmap.py --help
     ```
 
-#### Commandes et Options de Base
+***
 
-**Commande de Base pour Détecter les Vulnérabilités**
+### 🚀 Étape 2 : Commandes de Base
 
-1.  **Tester une URL pour les injections SQL**
+***
 
-    ```bash
-    sqlmap -u "http://example.com/page.php?id=1"
-    ```
+#### 1. Tester une URL pour les Injections SQL
 
-    * **Explication** : `-u` spécifie l'URL de la page contenant le paramètre à tester pour les injections SQL.
+**Commande :**
 
+```bash
+sqlmap -u "http://example.com/page.php?id=1"
+```
 
+* **Explication** :
+  * `-u` : Spécifie l'URL cible avec le paramètre à tester.
+  * Sqlmap détectera automatiquement les vulnérabilités d'injection SQL sur le paramètre spécifié.
 
-**Commandes Avancées**
+***
 
-1.  **Spécifier un Paramètre de Cookie**
+#### 2. Détecter les Bases de Données
 
-    ```bash
-    sqlmap -u "http://example.com/page.php?id=1" --cookie="SESSIONID=abcd1234"
-    ```
+**Commande :**
 
-    * **Explication** : `--cookie` permet de spécifier les cookies pour les sessions authentifiées ou pour tester les vulnérabilités dans un contexte de session.
+```bash
+sqlmap -u "http://example.com/page.php?id=1" --dbs
+```
 
+* **Explication** :
+  * `--dbs` : Liste toutes les bases de données disponibles après avoir détecté une vulnérabilité.
 
-2.  **Utiliser des Données POST pour Tester les Injections**
+***
 
-    ```bash
-    sqlmap -u "http://example.com/page.php" --data="username=admin&password=1234"
-    ```
+#### 3. Extraire des Tables et Données
 
-    * **Explication** : `--data` spécifie les données POST à envoyer pour tester les vulnérabilités dans les formulaires soumis.
+**Commande :**
 
+```bash
+sqlmap -u "http://example.com/page.php?id=1" --dbs --tables -D <database_name> -T <table_name> --dump
+```
 
-3.  **Détecter et Exploiter une Vulnérabilité**
+* **Explication** :
+  * `--tables` : Liste les tables dans la base de données spécifiée (`-D <database_name>`).
+  * `--dump` : Extrait toutes les données de la table spécifiée (`-T <table_name>`).
 
-    ```bash
-    sqlmap -u "http://example.com/page.php?id=1" --dbs
-    ```
+***
 
-    * **Explication** : `--dbs` demande à SQLmap de lister les bases de données disponibles une fois qu'une vulnérabilité est détectée.
+### 🚀 Étape 3 : Commandes Avancées
 
+***
 
-4.  **Extraire des Tables et des Données**
+#### 1. Tester avec des Données POST
 
-    ```bash
-    sqlmap -u "http://example.com/page.php?id=1" --dbs --tables -D <database_name> -T <table_name> --dump
-    ```
+Si la cible utilise des requêtes POST (formulaires ou API) :
 
-    * **Explication** : `--tables` liste les tables dans la base de données spécifiée, et `--dump` extrait les données de la table spécifiée.
+```bash
+sqlmap -u "http://example.com/page.php" --data="username=admin&password=1234"
+```
 
+* **Explication** :
+  * `--data` : Spécifie les données POST envoyées dans la requête.
 
-5.  **Utiliser une Liste de Proxy**
+***
 
-    ```bash
-    sqlmap -u "http://example.com/page.php?id=1" --proxy="http://127.0.0.1:8080"
-    ```
+#### 2. Ajouter des Cookies
 
-    * **Explication** : `--proxy` permet d'utiliser un proxy pour masquer l'origine des requêtes.
+Si la cible nécessite une authentification par cookie :
 
+```bash
+sqlmap -u "http://example.com/page.php?id=1" --cookie="SESSIONID=abcd1234"
+```
 
-6.  **Définir une Utilisation d'Agents Utilisateurs**
+* **Explication** :
+  * `--cookie` : Inclut des cookies pour maintenir une session authentifiée ou tester les paramètres de session.
 
-    ```bash
-    sqlmap -u "http://example.com/page.php?id=1" --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-    ```
+***
 
-    * **Explication** : `--user-agent` permet de spécifier un agent utilisateur pour tromper les mécanismes de filtrage basés sur l'agent utilisateur.
+#### 3. Utiliser un Proxy
 
+Pour acheminer les requêtes via un proxy et masquer l'origine :
 
-7.  **Sauvegarder les Résultats dans un Fichier**
+```bash
+sqlmap -u "http://example.com/page.php?id=1" --proxy="http://127.0.0.1:8080"
+```
 
-    ```bash
-    sqlmap -u "http://example.com/page.php?id=1" --output-dir="/path/to/results"
-    ```
+* **Explication** :
+  * `--proxy` : Redirige le trafic via un serveur proxy (utile pour anonymiser ou capturer les requêtes via des outils comme Burp Suite).
 
-    * **Explication** : `--output-dir` spécifie le répertoire où enregistrer les résultats de l'analyse.
+***
 
+#### 4. Spécifier des Techniques d'Injection
 
+Pour tester des types spécifiques d'injection SQL (par exemple : Blind, Error-based) :
 
-#### Options de Sécurité Avancées
+```bash
+sqlmap -u "http://example.com/page.php?id=1" --technique=BEUSTQ
+```
 
-1.  **Spécifier des Filtres pour les Requêtes**
+* **Explication** :
+  * `--technique` : Spécifie les techniques d'injection SQL à tester (par exemple : `B` pour Blind, `E` pour Error-based).
 
-    ```bash
-    sqlmap -u "http://example.com/page.php?id=1" --data="username=admin&password=1234" --exclude-sysdbs --technique=BEUSTQ
-    ```
+***
 
-    * **Explication** : `--exclude-sysdbs` exclut les bases de données système des résultats, et `--technique` spécifie les techniques d'injection à tester.
+#### 5. Ignorer les Bases de Données Système
 
+Pour exclure les bases de données système (par exemple : `information_schema`, `mysql`) :
 
-2.  **Utiliser une Liste de Mots de Passe pour les Attaques de Brute Force**
+```bash
+sqlmap -u "http://example.com/page.php?id=1" --exclude-sysdbs
+```
 
-    ```bash
-    sqlmap -u "http://example.com/page.php?id=1" --passwords --password-file="/path/to/passwords.txt"
-    ```
+* **Explication** :
+  * `--exclude-sysdbs` : Filtre les bases de données système dans les résultats.
 
-    * **Explication** : `--password-file` permet d'utiliser une liste de mots de passe pour les tentatives de connexion par brute force.
+***
 
+#### 6. Définir un Agent Utilisateur Personnalisé
 
+Pour contourner certains pare-feu ou filtres :
 
-#### Exemples de Scénarios
+```bash
+sqlmap -u "http://example.com/page.php?id=1" --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+```
 
-1.  **Détection Simple d’Injection SQL**
+* **Explication** :
+  * `--user-agent` : Modifie l'agent utilisateur pour simuler un navigateur spécifique.
 
-    ```bash
-    sqlmap -u "http://example.com/page.php?id=1"
-    ```
+***
 
-    * **Explication** : Teste la vulnérabilité d'injection SQL pour le paramètre `id` dans l'URL.
+#### 7. Limiter l'Impact sur le Serveur
 
+Pour éviter de surcharger le serveur cible :
 
-2.  **Exploitation Avancée avec Extraction de Données**
+```bash
+sqlmap -u "http://example.com/page.php?id=1" --delay=5 --randomize=USER-AGENT
+```
 
-    ```bash
-    sqlmap -u "http://example.com/page.php?id=1" --dbs --tables -D <database_name> -T <table_name> --dump
-    ```
+* **Explication** :
+  * `--delay` : Ajoute un délai (en secondes) entre chaque requête.
+  * `--randomize` : Change aléatoirement l'agent utilisateur à chaque requête.
 
-    * **Explication** : Liste les bases de données, les tables et extrait les données de la table spécifiée après avoir détecté une vulnérabilité.
+***
 
+### 📋 Scénarios d’Utilisation
 
-3.  **Utilisation de Proxy pour Masquer l’Origine**
+***
 
-    ```bash
-    sqlmap -u "http://example.com/page.php?id=1" --proxy="http://127.0.0.1:8080"
-    ```
+#### Exemple 1 : Détection Simple d'Injection SQL
 
-    * **Explication** : Utilise un proxy pour acheminer les requêtes et masquer l'adresse IP d'origine.
+**Commande :**
 
+```bash
+sqlmap -u "http://example.com/page.php?id=1"
+```
 
-4.  **Test de Vulnérabilités avec Authentification**
+* **Explication** : Teste la vulnérabilité d'injection SQL pour le paramètre `id` dans l'URL.
 
-    ```bash
-    sqlmap -u "http://example.com/page.php?id=1" --cookie="SESSIONID=abcd1234"
-    ```
+***
 
-    * **Explication** : Inclut des cookies pour tester les vulnérabilités dans un contexte de session authentifiée.
+#### Exemple 2 : Exploitation et Extraction de Données
 
+**Commande :**
 
+```bash
+sqlmap -u "http://example.com/page.php?id=1" --dbs --tables -D example_db -T users --dump
+```
 
-#### Bonnes Pratiques
+* **Explication** : Liste les bases de données (`--dbs`), les tables (`--tables`), et extrait les données de la table `users` dans la base `example_db`.
 
-1. **Obtenir des Autorisations**
-   * **Assurez-vous toujours** d'avoir l'autorisation explicite pour tester les applications web.
-   * **Évitez les tests non autorisés** pour éviter des implications légales et éthiques.
-2. **Utiliser les Fonctionnalités de Limitation**
-   * **Configurer des délais** entre les requêtes pour éviter de surcharger les serveurs et attirer l'attention.
-   * **Limiter les tests** en termes de portée et de profondeur pour minimiser les impacts sur les systèmes cibles.
-3. **Analyser les Réactions du Serveur**
-   * **Observer les réponses des serveurs** pour ajuster les tests et éviter les dénis de service ou les perturbations.
+***
+
+#### Exemple 3 : Masquer l’Origine avec un Proxy
+
+**Commande :**
+
+```bash
+sqlmap -u "http://example.com/page.php?id=1" --proxy="http://127.0.0.1:8080"
+```
+
+* **Explication** : Acheminer les requêtes via un proxy pour anonymiser l'origine.
+
+***
+
+#### Exemple 4 : Tester un Formulaire Authentifié
+
+**Commande :**
+
+```bash
+sqlmap -u "http://example.com/login.php" --data="username=admin&password=1234" --cookie="SESSIONID=abcd1234"
+```
+
+* **Explication** : Inclut les données POST et un cookie de session pour tester les vulnérabilités dans un formulaire authentifié.
+
+***
+
+### 📖 Bonnes Pratiques
+
+***
+
+#### 1. Obtenir des Autorisations
+
+* **Respectez les lois** : Ne testez jamais une application sans autorisation écrite.
+* **Éthique** : Agissez dans le respect des règles et des politiques de sécurité.
+
+#### 2. Minimiser l’Impact
+
+* **Limitez vos tests** : Évitez de surcharger les serveurs avec des requêtes inutiles.
+* **Configurez des délais** : Ajoutez des pauses entre les requêtes pour réduire l'impact.
+
+#### 3. Analyser les Résultats
+
+* Vérifiez soigneusement les réponses pour identifier les vulnérabilités avec précision.
+* Ne prenez pas les résultats de Sqlmap comme définitifs sans validation manuelle.
+
+### Conclusion
+
+**Sqlmap** est un outil incontournable pour les pentesters et auditeurs de sécurité. Avec sa capacité à automatiser la détection et l'exploitation des injections SQL, il simplifie les tests tout en fournissant des options avancées pour répondre aux besoins les plus complexes.
