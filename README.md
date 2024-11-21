@@ -1,14 +1,6 @@
 ---
 description: Bienvenue sur mon site de Hacking Éthique
-cover: >-
-  .gitbook/assets/DALL·E 2024-11-21 14.58.54 - A set of dark-themed banner
-  images inspired by cyberpunk and hacking aesthetics, designed in 1200x400
-  pixels, featuring neon green and blue accents. E.webp
-coverY: -266.21713038734316
 layout:
-  cover:
-    visible: true
-    size: full
   title:
     visible: true
   description:
