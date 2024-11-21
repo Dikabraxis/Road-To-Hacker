@@ -42,7 +42,7 @@ Grâce à ses fonctionnalités telles que l'auto-upgrade en shell PTY, la gestio
 
 ***
 
-### 🚀 Étape 2 : Utilisation de Base
+### 🛠️ Étape 2 : Utilisation de Base
 
 ***
 
@@ -110,7 +110,7 @@ upgrade
 
 ***
 
-### 🚀 Étape 3 : Fonctionnalités Avancées
+### 🔍 Étape 3 : Fonctionnalités Avancées
 
 ***
 

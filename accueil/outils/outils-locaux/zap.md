@@ -52,7 +52,7 @@ zaproxy --version
 
 ***
 
-### 🚀 Étape 2 : Utilisation de Base
+### 🛠️ Étape 2 : Utilisation de Base
 
 ***
 
@@ -109,7 +109,7 @@ Pour intercepter les requêtes entre le navigateur et l’application cible, con
 
 ***
 
-### 🚀 Étape 3 : Options Avancées
+### 🔍 Étape 3 : Options Avancées
 
 ***
 
@@ -164,7 +164,7 @@ zaproxy -cmd -quickurl http://example.com -quickout report.html
 
 ***
 
-### 🚀 Étape 4 : Exemples de Scénarios
+### 📋 Étape 4 : Exemples de Scénarios
 
 ***
 

@@ -54,7 +54,7 @@ wfuzz -h
 
 ***
 
-### 🚀 Étape 2 : Commandes de Base
+### 🛠️ Étape 2 : Commandes de Base
 
 ***
 
@@ -151,7 +151,7 @@ wfuzz -c -w <wordlist> -u <url>/FUZZ -fs <size>
 
 ***
 
-### 🚀 Étape 3 : Scénarios Avancés
+### 🔍 Étape 3 : Scénarios Avancés
 
 ***
 

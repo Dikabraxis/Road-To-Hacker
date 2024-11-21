@@ -40,7 +40,7 @@
 
 ***
 
-### 🚀 Étape 2 : Utilisation de Base
+### 🛠️ Étape 2 : Utilisation de Base
 
 ***
 
@@ -120,7 +120,7 @@ smbmap -H <IP_ADDRESS> -u <USERNAME> -p <PASSWORD> -R <SHARE> -s <SEARCH_TERM>
 
 ***
 
-### 🚀 Étape 3 : Cas d’Utilisation
+### 📋 Étape 3 : Cas d’Utilisation
 
 ***
 
@@ -172,7 +172,7 @@ smbmap -H 192.168.1.10 -u admin -p password -R backups -s "password"
 
 ***
 
-### 🚀 Étape 4 : Options Avancées
+### 🔍 Étape 4 : Options Avancées
 
 ***
 

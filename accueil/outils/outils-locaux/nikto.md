@@ -76,7 +76,7 @@
 
 ***
 
-### 🚀 Étape 2 : Commandes de Base
+### 🛠️ Étape 2 : Commandes de Base
 
 ***
 
@@ -165,7 +165,7 @@
 
 ***
 
-### 🚀 Étape 3 : Options Avancées
+### 🔍 Étape 3 : Options Avancées
 
 ***
 

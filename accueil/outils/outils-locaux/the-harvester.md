@@ -70,7 +70,7 @@ theHarvester -h
 
 ***
 
-### 🚀 Étape 2 : Commandes de Base
+### 🛠️ Étape 2 : Commandes de Base
 
 ***
 
@@ -147,7 +147,7 @@ theHarvester -d <domain> -b all -f <output_file>
 
 ***
 
-### 🚀 Étape 3 : Commandes Avancées
+### 🔍 Étape 3 : Commandes Avancées
 
 ***
 
@@ -193,7 +193,7 @@ Certaines sources, comme VirusTotal, nécessitent une clé API pour des résulta
 
 ***
 
-### 🚀 Étape 4 : Scénarios d’Utilisation
+### 📋 Étape 4 : Scénarios d’Utilisation
 
 ***
 

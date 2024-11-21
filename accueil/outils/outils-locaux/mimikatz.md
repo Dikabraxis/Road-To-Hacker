@@ -37,7 +37,7 @@
 
 ***
 
-### 🚀 Étape 2 : Commandes de Base
+### 🛠️ Étape 2 : Commandes de Base
 
 ***
 
@@ -91,7 +91,7 @@
 
 ***
 
-### 🚀 Étape 3 : Gestion des Tickets Kerberos
+### 🎯 Étape 3 : Gestion des Tickets Kerberos
 
 ***
 
@@ -191,7 +191,7 @@
 
 ***
 
-### 🔍 Étape 5 : Bonnes Pratiques et Techniques Avancées
+### 🔍 Étape 5 : Techniques Avancées
 
 ***
 

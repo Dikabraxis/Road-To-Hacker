@@ -100,7 +100,7 @@ Empire n'est pas conçu pour fonctionner nativement sur Windows. Utilisez une **
 
 ***
 
-### 🚀 Étape 2 : Utilisation de Base d'Empire
+### 🛠️ Étape 2 : Utilisation de Base d'Empire
 
 ***
 

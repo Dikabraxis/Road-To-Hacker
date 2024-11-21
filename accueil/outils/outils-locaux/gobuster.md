@@ -109,7 +109,7 @@ Si votre dépôt contient une version obsolète, vous pouvez compiler Gobuster �
 
 ***
 
-### 🚀 Étape 2 : Utilisation de Base de Gobuster
+### 🛠️ Étape 2 : Utilisation de Base de Gobuster
 
 ***
 

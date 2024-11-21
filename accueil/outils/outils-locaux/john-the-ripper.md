@@ -98,9 +98,7 @@ Pour la dernière version de John, suivez ces étapes :
     john --version
     ```
 
-***
-
-### 🚀 Étape 2 : Fonctionnalités de Base
+### 🛠️ Étape 2 : Fonctionnalités de Base
 
 ***
 

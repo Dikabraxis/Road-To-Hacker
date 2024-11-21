@@ -68,7 +68,7 @@
 
 ***
 
-### 🚀 Étape 2 : Utilisation de Base de Hydra
+### 🛠️ Étape 2 : Utilisation de Base de Hydra
 
 ***
 

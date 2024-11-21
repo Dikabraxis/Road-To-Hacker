@@ -82,7 +82,7 @@
 
 ***
 
-### 🚀 Étape 2 : Utilisation de Base de Hashcat
+### 🛠️ Étape 2 : Utilisation de Base de Hashcat
 
 ***
 

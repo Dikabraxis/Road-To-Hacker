@@ -36,7 +36,7 @@
 
 ***
 
-### 🚀 Étape 2 : Concepts Clés
+### 🔍 Étape 2 : Concepts Clés
 
 ***
 
@@ -107,7 +107,7 @@ Recon-ng dispose d'une large bibliothèque de modules pour différents objectifs
 
 ***
 
-### 🚀 Étape 3 : Utilisation des Modules
+### 🛠️ Étape 3 : Utilisation des Modules
 
 ***
 
@@ -175,7 +175,7 @@ run
 
 ***
 
-### 🚀 Étape 4 : Exportation des Résultats
+### 🎯 Étape 4 : Exportation des Résultats
 
 ***
 

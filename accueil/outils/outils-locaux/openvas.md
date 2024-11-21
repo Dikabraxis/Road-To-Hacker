@@ -4,7 +4,7 @@
 
 ***
 
-### 🚀 Introduction
+### &#x20;Introduction
 
 **OpenVAS** (Open Vulnerability Assessment System) est un scanner de vulnérabilités open-source utilisé pour évaluer la sécurité des réseaux. Il permet de :
 
@@ -54,7 +54,7 @@
 
 ***
 
-### 🚀 Étape 2 : Scanner un Réseau ou un Système
+### 🛠️ Étape 2 : Scanner un Réseau ou un Système
 
 ***
 
@@ -93,7 +93,7 @@
 
 ***
 
-### 🚀 Étape 3 : Gestion des Vulnérabilités
+### 🔍 Étape 3 : Gestion des Vulnérabilités
 
 ***
 
@@ -118,7 +118,7 @@
 
 ***
 
-### 🚀 Étape 4 : Utilisation de l’Interface en Ligne de Commande (CLI)
+### 📋 Étape 4 : Utilisation de l’Interface en Ligne de Commande (CLI)
 
 ***
 
@@ -168,7 +168,7 @@ gvm-cli --gmp-username <username> --gmp-password <password> socket --xml "<get_t
 
 ***
 
-### 🚀 Étape 5 : Bonnes Pratiques
+### 📖 Étape 5 : Bonnes Pratiques
 
 ***
 

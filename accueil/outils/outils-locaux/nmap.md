@@ -69,7 +69,7 @@ nmap --version
 
 ***
 
-### 🚀 Étape 2 : Types de Scans et Commandes
+### 🛠️ Étape 2 : Types de Scans et Commandes
 
 ***
 
@@ -110,7 +110,7 @@ Ces analyses manipulent les indicateurs TCP pour provoquer différentes réponse
 
 ***
 
-### 🚀 Options et Explications
+### 🔍 Options et Explications
 
 ***
 
@@ -150,7 +150,7 @@ Ces analyses manipulent les indicateurs TCP pour provoquer différentes réponse
 
 ***
 
-### 🚀 Scripts Nmap (NSE - Nmap Scripting Engine)
+### 🎯 Scripts Nmap (NSE - Nmap Scripting Engine)
 
 ***
 

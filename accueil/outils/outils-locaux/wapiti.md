@@ -54,7 +54,7 @@ wapiti --help
 
 ***
 
-### 🚀 Étape 2 : Commandes de Base
+### 🛠️ Étape 2 : Commandes de Base
 
 ***
 
@@ -99,7 +99,7 @@ wapiti -u http://example.com --depth 2
 
 ***
 
-### 🚀 Étape 3 : Options Avancées
+### 🔍 Étape 3 : Options Avancées
 
 ***
 
@@ -156,7 +156,7 @@ wapiti -u http://example.com --attack sql,xss
 
 ***
 
-### 🚀 Étape 4 : Exemples de Commandes
+### 📋 Étape 4 : Exemples de Commandes
 
 ***
 

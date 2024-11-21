@@ -46,7 +46,7 @@
 
 ***
 
-### 🚀 Étape 2 : Commandes de Base
+### 🛠️ Étape 2 : Commandes de Base
 
 ***
 
@@ -91,7 +91,7 @@ sqlmap -u "http://example.com/page.php?id=1" --dbs --tables -D <database_name> -
 
 ***
 
-### 🚀 Étape 3 : Commandes Avancées
+### 🔍 Étape 3 : Commandes Avancées
 
 ***
 

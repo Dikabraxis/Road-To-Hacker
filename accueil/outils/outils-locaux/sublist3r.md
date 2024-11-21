@@ -54,7 +54,7 @@ python sublist3r.py -h
 
 ***
 
-### 🚀 Étape 2 : Commandes de Base
+### 🛠️ Étape 2 : Commandes de Base
 
 ***
 
@@ -103,7 +103,7 @@ python sublist3r.py -d example.com -b
 
 ***
 
-### 🚀 Étape 3 : Commandes Avancées
+### 🔍 Étape 3 : Commandes Avancées
 
 ***
 
@@ -160,7 +160,7 @@ python sublist3r.py -d example.com --proxy http://127.0.0.1:8080
 
 ***
 
-### 🚀 Étape 4 : Exemples de Scénarios
+### 📋 Étape 4 : Exemples de Scénarios
 
 ***
 

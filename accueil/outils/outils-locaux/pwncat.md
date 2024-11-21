@@ -41,7 +41,7 @@ Pwncat est particulièrement apprécié pour son approche modulaire et sa capaci
 
 ***
 
-### 🚀 Étape 2 : Lancer Pwncat
+### 🛠️ Étape 2 : Lancer Pwncat
 
 ***
 
@@ -123,7 +123,7 @@ pwncat --persist
 * **Explication** :
   * `--persist` : Configure un shell persistant qui se reconnecte automatiquement si la session est interrompue.
 
-### 🚀 Étape 3 : Fonctionnalités Principales
+### 🔍 Étape 3 : Fonctionnalités Principales
 
 ***
 
