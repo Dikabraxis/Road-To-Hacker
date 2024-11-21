@@ -191,7 +191,7 @@ DIRB n'est pas nativement compatible avec Windows, mais il peut être utilisé v
 
 ***
 
-### 📖 Bonnes Pratiques et Discrétion
+### 📖 Bonnes Pratiques
 
 1. **Obtenez des autorisations** :
    * Avant d'utiliser DIRB, assurez-vous que vous avez une autorisation légale pour scanner le serveur cible.
