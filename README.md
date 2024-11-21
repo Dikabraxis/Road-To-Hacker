@@ -1,8 +1,10 @@
 ---
 description: Bienvenue sur mon site de Hacking Éthique
 cover: >-
-  .gitbook/assets/Leonardo_Lightning_XL_Je_veux_une_image_sur_le_thme_du_hacking_2.jpg
-coverY: 0
+  .gitbook/assets/DALL·E 2024-11-21 16.02.20 - A hyper-realistic image of a
+  hacker sitting in front of multiple monitors displaying realistic and detailed
+  content. The screens show terminal windows.webp
+coverY: -243
 layout:
   cover:
     visible: true
