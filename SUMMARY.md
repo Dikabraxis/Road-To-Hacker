@@ -34,6 +34,7 @@
     * [OUTILS EN LIGNE](accueil/outils/outils-en-ligne/README.md)
       * [Hash Cracking](accueil/outils/outils-en-ligne/hash-cracking.md)
       * [Encodage et Conversion](accueil/outils/outils-en-ligne/encodage-et-conversion.md)
+      * [Stéganographie](accueil/outils/outils-en-ligne/steganographie.md)
   * [PRIVESC](accueil/privesc/README.md)
     * [Privesc Linux](accueil/privesc/privesc-linux.md)
     * [Privesc Windows](accueil/privesc/privesc-windows.md)
