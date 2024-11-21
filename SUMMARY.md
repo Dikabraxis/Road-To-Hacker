@@ -32,6 +32,7 @@
       * [Wapiti](accueil/outils/outils-locaux/wapiti.md)
       * [Zap](accueil/outils/outils-locaux/zap.md)
     * [OUTILS EN LIGNE](accueil/outils/outils-en-ligne/README.md)
+      * [Hacktools](accueil/outils/outils-en-ligne/hacktools.md)
       * [Hash Cracking](accueil/outils/outils-en-ligne/hash-cracking.md)
       * [Encodage et Conversion](accueil/outils/outils-en-ligne/encodage-et-conversion.md)
       * [Stéganographie](accueil/outils/outils-en-ligne/steganographie.md)
