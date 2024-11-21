@@ -4,7 +4,7 @@ Voici une liste des commandes et outils utiles pour rechercher et exploiter des 
 
 ***
 
-#### 1. **Informations sur le Système**
+### 1. **Informations sur le Système**
 
 **Système et Version**
 
@@ -27,7 +27,7 @@ wmic os get osarchitecture      # Affiche l'architecture du système d'exploitat
 
 ***
 
-#### 2. **Informations sur l'Utilisateur et les Groupes**
+### 2. **Informations sur l'Utilisateur et les Groupes**
 
 **Utilisateur actuel**
 
@@ -59,7 +59,7 @@ net localgroup Administrators    # Liste les membres du groupe Administrators
 
 ***
 
-#### 3. **Permissions de Fichiers et Répertoires**
+### 3. **Permissions de Fichiers et Répertoires**
 
 **Rechercher les fichiers sensibles**
 
@@ -80,7 +80,7 @@ Get-ChildItem -Path C:\ -Recurse -ErrorAction SilentlyContinue | Where-Object { 
 
 ***
 
-#### 4. **Services et Processus**
+### 4. **Services et Processus**
 
 **Processus en cours d'exécution**
 
@@ -122,7 +122,7 @@ BUILTIN\Users:(I)(F)
 
 ***
 
-#### 5. **Réseau**
+### 5. **Réseau**
 
 **Interfaces réseau et configuration**
 
@@ -151,7 +151,7 @@ netsh advfirewall firewall show rule name=all    # Affiche toutes les règles de
 
 ***
 
-#### 6. **Informations Système et Registre**
+### 6. **Informations Système et Registre**
 
 **Informations sur la mémoire et la CPU**
 
@@ -174,7 +174,7 @@ reg query HKLM /f password /t REG_SZ /s                        # Rechercher des 
 
 ***
 
-#### 7. **Informations sur les Applications**
+### 7. **Informations sur les Applications**
 
 **Paquets installés**
 
@@ -195,7 +195,7 @@ dir "C:\Program Files (x86)" /b  # Liste les applications 32 bits installées su
 
 ***
 
-#### 8. **Exploration de fichiers et d'accès**
+### 8. **Exploration de fichiers et d'accès**
 
 **Fichiers de configuration RDP**
 
@@ -223,7 +223,7 @@ dir /s /b *id_rsa*     # Recherche des clés SSH privées
 
 ***
 
-#### 9. **Logs et journaux**
+### 9. **Logs et journaux**
 
 **Fichiers de log système**
 
@@ -235,7 +235,7 @@ type C:\Windows\System32\winevt\Logs\Security.evtx   # Affiche les logs de sécu
 
 ***
 
-#### 10. **Sécurité et Audits**
+### 10. **Sécurité et Audits**
 
 **Droits d'accès utilisateur**
 
@@ -248,7 +248,7 @@ accesschk.exe /accepteula -uws "Everyone" "C:\Program Files"   # Utilise AccessC
 
 ***
 
-#### 11. **AppLocker et autres politiques de sécurité**
+### 11. **AppLocker et autres politiques de sécurité**
 
 **Statut d'AppLocker**
 
@@ -268,7 +268,7 @@ sc query windefend   # Vérifie le statut du service Windows Defender
 
 ***
 
-#### 12. **Scripts d'attaque et d'exploitation**
+### 12. **Scripts d'attaque et d'exploitation**
 
 **Recherche d'exploits locaux connus**
 
@@ -291,7 +291,7 @@ Ces commandes et outils aident à identifier les vecteurs d'attaque potentiels p
 
 ***
 
-**Emplacements intéressants:**
+### **13. Emplacements intéressants:**
 
 C:\Unattend.xml&#x20;
 

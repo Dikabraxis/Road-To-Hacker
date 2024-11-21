@@ -6,7 +6,7 @@
 
 ***
 
-#### **1. Accéder à un partage SMB**
+### **1. Accéder à un partage SMB**
 
 **Syntaxe de base**
 
@@ -40,7 +40,7 @@ smbclient --no-pass //10.10.10.2/repertoire_public
 
 ***
 
-#### **2. Lister les partages disponibles**
+### **2. Lister les partages disponibles**
 
 Pour afficher tous les partages SMB disponibles sur une machine cible :
 
@@ -64,7 +64,7 @@ smbclient -L //10.10.10.2 --no-pass
 
 ***
 
-#### **3. Naviguer et interagir avec un partage**
+### **3. Naviguer et interagir avec un partage**
 
 **Connexion à un partage spécifique**
 
@@ -84,7 +84,7 @@ smbclient //10.10.10.2/secret -U suit -p 445
 
 ***
 
-#### **4. Commandes utiles dans SMBCLIENT**
+### **4. Commandes utiles dans SMBCLIENT**
 
 Une fois connecté à un partage SMB, voici les commandes courantes :
 
@@ -138,7 +138,7 @@ exit
 
 ***
 
-#### **5. Automatisation avec SMBCLIENT**
+### **5. Automatisation avec SMBCLIENT**
 
 Pour automatiser certaines tâches avec `smbclient`, utilisez l'option `-c` pour exécuter une commande ou une série de commandes.
 
@@ -155,7 +155,7 @@ smbclient //10.10.10.10/share -c "prompt off; recurse on; mget *" -U jean%123456
 
 ***
 
-#### **6. Cas pratiques**
+### **6. Cas pratiques**
 
 **Télécharger un fichier spécifique**
 
@@ -191,7 +191,7 @@ smbclient //10.10.10.10/share -U jean%123456 -c "prompt off; recurse on; mget *.
 
 ***
 
-#### **7. Bonnes pratiques**
+### **7. Bonnes pratiques**
 
 * **Obtenir des autorisations** : Avant de scanner ou d'accéder à un partage SMB, assurez-vous d'avoir les autorisations nécessaires.
 * **Respecter les droits** : Ne modifiez pas ou ne supprimez pas de fichiers sans autorisation.

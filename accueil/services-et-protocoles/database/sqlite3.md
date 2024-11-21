@@ -6,7 +6,7 @@ SQLite3 est un système de gestion de bases de données relationnelles léger ut
 
 ***
 
-#### **1. Vérifier le Type de Base de Données**
+### **1. Vérifier le Type de Base de Données**
 
 Avant de manipuler un fichier de base de données, il est utile de confirmer son type.
 
@@ -24,7 +24,7 @@ Cela confirme que le fichier est une base de données SQLite.
 
 ***
 
-#### **2. Accéder à la Base de Données**
+### **2. Accéder à la Base de Données**
 
 Pour ouvrir la base de données avec l'interpréteur SQLite3, utilise la commande suivante :
 
@@ -44,7 +44,7 @@ Tu es maintenant dans l'interface interactive de SQLite3.
 
 ***
 
-#### **3. Découvrir la Structure de la Base de Données**
+### **3. Découvrir la Structure de la Base de Données**
 
 **Lister les Tables Disponibles**
 
@@ -86,7 +86,7 @@ Cela indique que la table `customers` a les colonnes suivantes :
 
 ***
 
-#### **4. Manipuler les Données**
+### **4. Manipuler les Données**
 
 **Afficher le Contenu d'une Table**
 
@@ -125,7 +125,7 @@ sqlite> SELECT * FROM customers WHERE custID = 1;
 
 ***
 
-#### **5. Exporter ou Sauvegarder les Données**
+### **5. Exporter ou Sauvegarder les Données**
 
 **Exporter en CSV**
 
@@ -152,7 +152,7 @@ sqlite> .output stdout
 
 ***
 
-#### **6. Ajouter ou Modifier des Données**
+### **6. Ajouter ou Modifier des Données**
 
 **Insérer une Nouvelle Ligne**
 
@@ -179,7 +179,7 @@ Cela change le mot de passe du client avec l'ID 1.
 
 ***
 
-#### **7. Supprimer des Données**
+### **7. Supprimer des Données**
 
 **Supprimer une Ligne**
 
@@ -199,7 +199,7 @@ sqlite> DELETE FROM customers;
 
 ***
 
-#### **8. Quitter SQLite**
+### **8. Quitter SQLite**
 
 Pour quitter l'interface SQLite3 :
 
@@ -209,7 +209,7 @@ sqlite> .exit
 
 ***
 
-#### **9. Bonnes Pratiques**
+### **9. Bonnes Pratiques**
 
 * **Fais une Sauvegarde** : Avant de modifier ou manipuler des données critiques, assure-toi de sauvegarder la base de données originale.
 * **Utilise des Clés de Sécurité** : Si la base de données contient des informations sensibles, sécurise-la avec un mot de passe ou un chiffrement.

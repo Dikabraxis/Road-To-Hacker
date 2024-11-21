@@ -4,7 +4,7 @@
 
 ***
 
-#### **Navigation dans le Système de Fichiers**
+### **Navigation dans le Système de Fichiers**
 
 *   **Se déplacer dans le répertoire home :**
 
@@ -29,7 +29,7 @@
 
 ***
 
-#### **Manipulation de Fichiers et Répertoires**
+### **Manipulation de Fichiers et Répertoires**
 
 *   **Créer un fichier :**
 
@@ -79,7 +79,7 @@
 
 ***
 
-#### **Combinaisons de Commandes**
+### **Combinaisons de Commandes**
 
 *   **Exécuter plusieurs commandes successivement sans dépendre du succès des précédentes :**
 
@@ -94,7 +94,7 @@
 
 ***
 
-#### **Redirection et Piping**
+### **Redirection et Piping**
 
 *   **Rediriger la sortie d'une commande vers un fichier :**
 
@@ -114,7 +114,7 @@
 
 ***
 
-#### **Recherche et Informations Système**
+### **Recherche et Informations Système**
 
 *   **Rechercher un fichier par son nom :**
 
@@ -149,7 +149,7 @@
 
 ***
 
-#### **Permissions et Propriétés des Fichiers**
+### **Permissions et Propriétés des Fichiers**
 
 *   **Afficher les fichiers avec leurs permissions :**
 
@@ -180,7 +180,7 @@
 
 ***
 
-#### **Réseau**
+### **Réseau**
 
 *   **Afficher les tables de routage :**
 
@@ -200,7 +200,7 @@
 
 ***
 
-#### **Affichage des Logs**
+### **Affichage des Logs**
 
 *   **Lister les logs système :**
 
@@ -210,7 +210,7 @@
 
 ***
 
-#### **Statistiques et Diagnostic**
+### **Statistiques et Diagnostic**
 
 *   **Afficher l'utilisation de l'espace disque :**
 
@@ -232,7 +232,3 @@
     ```bash
     cat /etc/group
     ```
-
-***
-
-#### **Ajout Optionnel**

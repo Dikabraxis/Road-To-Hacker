@@ -6,7 +6,7 @@ Ce guide décrit l'utilisation des commandes SQL fondamentales pour manipuler et
 
 ***
 
-#### **1. SELECT : Lecture des Données**
+### **1. SELECT : Lecture des Données**
 
 **Afficher toutes les données d'une table**
 
@@ -49,7 +49,7 @@ FROM suppliers;
 
 ***
 
-#### **2. INSERT : Ajout de Nouvelles Données**
+### **2. INSERT : Ajout de Nouvelles Données**
 
 L'instruction `INSERT` ajoute de nouvelles lignes à une table.
 
@@ -71,7 +71,7 @@ VALUES ('bob', 'password123');
 
 ***
 
-#### **3. UPDATE : Modifier des Données Existantes**
+### **3. UPDATE : Modifier des Données Existantes**
 
 L'instruction `UPDATE` permet de modifier des valeurs dans une table.
 
@@ -94,7 +94,7 @@ WHERE username = 'admin';
 
 ***
 
-#### **4. DELETE : Supprimer des Données**
+### **4. DELETE : Supprimer des Données**
 
 L'instruction `DELETE` supprime des lignes spécifiques ou toutes les lignes d'une table.
 
@@ -123,7 +123,7 @@ DELETE FROM users;
 
 ***
 
-#### **5. Requêtes Complémentaires et Bonnes Pratiques**
+### **5. Requêtes Complémentaires et Bonnes Pratiques**
 
 **Lister les Bases de Données**
 
@@ -183,6 +183,6 @@ mysql -u username -p database_name < backup.sql
 
 ***
 
-#### **6. Conclusion**
+### **6. Conclusion**
 
 Ce guide couvre les principales commandes pour manipuler des bases de données MySQL. Ces techniques permettent d'ajouter, de modifier, de supprimer, et de lire des données de manière efficace. Apprends à bien structurer tes requêtes pour éviter les erreurs ou les pertes de données, et travaille toujours sur une copie pour expérimenter de nouvelles commandes.

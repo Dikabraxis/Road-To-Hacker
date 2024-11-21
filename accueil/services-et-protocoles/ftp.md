@@ -6,7 +6,7 @@ Le protocole FTP (File Transfer Protocol) est un protocole standard utilisé pou
 
 ***
 
-#### **Connexion à un Serveur FTP**
+### **Connexion à un Serveur FTP**
 
 Pour se connecter à un serveur FTP, utilise la commande suivante :
 
@@ -42,7 +42,7 @@ Puis entrer `anonymous` comme nom d’utilisateur et un mot de passe vide ou une
 
 ***
 
-#### **Commandes FTP de Base**
+### **Commandes FTP de Base**
 
 Une fois connecté au serveur FTP, voici quelques commandes de base :
 
@@ -60,9 +60,9 @@ Une fois connecté au serveur FTP, voici quelques commandes de base :
 
 ***
 
-#### **Exemples de Scénarios**
+### **Exemples de Scénarios**
 
-**1. Télécharger un Fichier depuis un Serveur**
+#### **1. Télécharger un Fichier depuis un Serveur**
 
 Pour télécharger un fichier unique depuis un serveur FTP vers ta machine locale :
 
@@ -80,7 +80,7 @@ Explication :
 
 * `mget *.txt` télécharge tous les fichiers `.txt` disponibles dans le répertoire courant.
 
-**2. Envoyer un Fichier vers un Serveur**
+#### **2. Envoyer un Fichier vers un Serveur**
 
 Pour envoyer un fichier depuis ta machine locale vers le serveur :
 
@@ -98,7 +98,7 @@ Explication :
 
 * `mput *.txt` télécharge tous les fichiers `.txt` de ton répertoire local vers le répertoire distant.
 
-**3. Naviguer entre Répertoires**
+#### **3. Naviguer entre Répertoires**
 
 *   Changer le répertoire distant :
 
@@ -111,7 +111,7 @@ Explication :
     lcd /path/to/local/directory
     ```
 
-**4. Télécharger tous les Fichiers d’un Répertoire**
+#### **4. Télécharger tous les Fichiers d’un Répertoire**
 
 Pour télécharger tous les fichiers d’un répertoire sans être interrompu par des confirmations :
 
@@ -144,7 +144,7 @@ Explication :
 
 ***
 
-#### **FTP via un Port Non Standard**
+### **FTP via un Port Non Standard**
 
 Si le service FTP utilise un port différent du port standard (21), spécifie le port dans la commande :
 
@@ -160,7 +160,7 @@ ftp 192.168.1.10 2221
 
 ***
 
-#### **FTP Passif vs Actif**
+### **FTP Passif vs Actif**
 
 FTP peut fonctionner en mode actif ou passif. Si tu rencontres des problèmes de connexion ou de transfert, essaye de passer en mode passif :
 
@@ -174,7 +174,7 @@ Explication :
 
 ***
 
-#### **Exécution Automatisée avec un Script**
+### **Exécution Automatisée avec un Script**
 
 Pour automatiser les transferts FTP, tu peux créer un script :
 
@@ -192,7 +192,7 @@ EOF
 
 ***
 
-#### **Bonnes Pratiques**
+### **Bonnes Pratiques**
 
 * **Toujours chiffrer les connexions FTP** : Utilise `SFTP` ou `FTPS` si possible, car FTP envoie les informations d’identification en clair.
 * **Limiter les permissions** : Vérifie que les partages FTP ne permettent pas un accès anonyme si cela n’est pas intentionnel.

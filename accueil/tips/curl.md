@@ -4,7 +4,7 @@
 
 ***
 
-#### 1. **Utilisation de Base**
+### 1. **Utilisation de Base**
 
 *   Effectuer une requête GET simple :
 
@@ -19,7 +19,7 @@
 
 ***
 
-#### 2. **Envoi de Headers**
+### 2. **Envoi de Headers**
 
 *   Ajouter un header personnalisé :
 
@@ -34,7 +34,7 @@
 
 ***
 
-#### 3. **Gestion des Cookies**
+### 3. **Gestion des Cookies**
 
 *   **Envoyer un cookie :**
 
@@ -50,7 +50,7 @@
 
 ***
 
-#### 4. **Suivi des Redirections**
+### 4. **Suivi des Redirections**
 
 *   Suivre les redirections HTTP :
 
@@ -65,7 +65,7 @@
 
 ***
 
-#### 5. **Options de Sortie et d'Affichage**
+### 5. **Options de Sortie et d'Affichage**
 
 *   Afficher uniquement le corps de la réponse :
 
@@ -85,7 +85,7 @@
 
 ***
 
-#### 6. **Options de Réseau et de Proxy**
+### 6. **Options de Réseau et de Proxy**
 
 *   Utiliser un proxy :
 
@@ -110,7 +110,7 @@
 
 ***
 
-#### 7. **Téléchargements Multiples et Parallèles**
+### 7. **Téléchargements Multiples et Parallèles**
 
 *   Télécharger plusieurs fichiers :
 
@@ -125,7 +125,7 @@
 
 ***
 
-#### 8. **Commandes FTP et SFTP**
+### 8. **Commandes FTP et SFTP**
 
 *   Télécharger un fichier via FTP :
 
@@ -150,7 +150,7 @@
 
 ***
 
-#### 9. **Debugging et Diagnostics**
+### 9. **Debugging et Diagnostics**
 
 *   Mode verbeux pour obtenir plus d'infos :
 
@@ -170,7 +170,7 @@
 
 ***
 
-#### 10. **Options Avancées**
+### 10. **Options Avancées**
 
 *   Téléchargement en mode "résumable" (reprendre un téléchargement) :
 
@@ -185,7 +185,7 @@
 
 ***
 
-#### 11. **Génération de Commandes Curl**
+### 11. **Génération de Commandes Curl**
 
 * Exporter une commande curl depuis Postman :
   * Effectuez une requête dans Postman.

@@ -4,7 +4,7 @@ Voici un tutoriel complet pour utiliser les sites qui offrent des outils divers 
 
 ***
 
-#### 1. [**Online Tools par EMN178**](https://emn178.github.io/online-tools/)
+### 1. [**Online Tools par EMN178**](https://emn178.github.io/online-tools/)
 
 Un ensemble d'outils minimalistes pour effectuer des opérations liées aux hachages, encodages et conversions.
 
@@ -24,7 +24,7 @@ Un ensemble d'outils minimalistes pour effectuer des opérations liées aux hach
 
 ***
 
-#### 2. [**Boxentriq**](https://www.boxentriq.com/)
+### 2. [**Boxentriq**](https://www.boxentriq.com/)
 
 Boxentriq propose une suite d'outils avancés pour la cryptanalyse, la conversion de données, et la résolution de puzzles.
 
@@ -45,7 +45,7 @@ Boxentriq propose une suite d'outils avancés pour la cryptanalyse, la conversio
 
 ***
 
-#### 3. [**CyberChef par GCHQ**](https://gchq.github.io/CyberChef/)
+### 3. [**CyberChef par GCHQ**](https://gchq.github.io/CyberChef/)
 
 CyberChef est un outil puissant et polyvalent pour manipuler des données avec une interface glisser-déposer.
 
@@ -72,7 +72,7 @@ CyberChef est un outil puissant et polyvalent pour manipuler des données avec u
 
 ***
 
-#### 4. [**AppDevTools**](https://appdevtools.com/)
+### 4. [**AppDevTools**](https://appdevtools.com/)
 
 Un ensemble d’outils adaptés aux développeurs pour tester, convertir et manipuler des données.
 
@@ -93,7 +93,7 @@ Un ensemble d’outils adaptés aux développeurs pour tester, convertir et mani
 
 ***
 
-#### 5. [**W3Schools URL Encoding Reference**](https://www.w3schools.com/tags/ref\_urlencode.ASP)
+### 5. [**W3Schools URL Encoding Reference**](https://www.w3schools.com/tags/ref\_urlencode.ASP)
 
 Un guide simple pour encoder et décoder des URLs.
 

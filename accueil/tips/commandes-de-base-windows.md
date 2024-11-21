@@ -6,7 +6,7 @@ Ce tutoriel détaille les commandes essentielles pour naviguer, manipuler des fi
 
 ***
 
-#### **Navigation dans les Répertoires**
+### **Navigation dans les Répertoires**
 
 *   **Répertoire home (répertoire utilisateur)**
 
@@ -31,7 +31,7 @@ Ce tutoriel détaille les commandes essentielles pour naviguer, manipuler des fi
 
 ***
 
-#### **Manipulation des Fichiers**
+### **Manipulation des Fichiers**
 
 *   **Créer un fichier (vide)**
 
@@ -81,7 +81,7 @@ Ce tutoriel détaille les commandes essentielles pour naviguer, manipuler des fi
 
 ***
 
-#### **Commandes en Chaîne et Redirection**
+### **Commandes en Chaîne et Redirection**
 
 *   **Entrer plusieurs commandes à la suite (sans se soucier du bon fonctionnement des précédentes)**
 
@@ -111,7 +111,7 @@ Ce tutoriel détaille les commandes essentielles pour naviguer, manipuler des fi
 
 ***
 
-#### **Recherche et Gestion des Fichiers**
+### **Recherche et Gestion des Fichiers**
 
 *   **Trouver un fichier**
 
@@ -126,7 +126,7 @@ Ce tutoriel détaille les commandes essentielles pour naviguer, manipuler des fi
 
 ***
 
-#### **Gestion des Processus**
+### **Gestion des Processus**
 
 *   **Afficher les processus**
 
@@ -142,7 +142,7 @@ Ce tutoriel détaille les commandes essentielles pour naviguer, manipuler des fi
 
 ***
 
-#### **Gestion du Réseau**
+### **Gestion du Réseau**
 
 *   **Afficher les connexions réseau actives**
 
@@ -177,7 +177,7 @@ Ce tutoriel détaille les commandes essentielles pour naviguer, manipuler des fi
 
 ***
 
-#### **Gestion des Utilisateurs et Groupes**
+### **Gestion des Utilisateurs et Groupes**
 
 *   **Afficher les utilisateurs du système**
 
@@ -207,14 +207,14 @@ Ce tutoriel détaille les commandes essentielles pour naviguer, manipuler des fi
 
 ***
 
-#### **Gestion des Permissions**
+### **Gestion des Permissions**
 
 * **Modifier les droits d’un fichier**\
   _Dans Windows, utilisez l’interface graphique : clic droit → Propriétés → Sécurité. Pas d’équivalent direct à `chmod` via CMD._
 
 ***
 
-#### **Commandes Diverses**
+### **Commandes Diverses**
 
 *   **Lancer une application**
 

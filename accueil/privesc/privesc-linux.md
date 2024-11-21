@@ -4,7 +4,7 @@ Voici une liste des commandes utiles pour rechercher et exploiter des vulnérabi
 
 ***
 
-**1. Informations sur le système**
+### **1. Informations sur le système**
 
 **Système et version**
 
@@ -37,7 +37,7 @@ hostnamectl   # Affiche des informations détaillées sur le système et le nom 
 
 ***
 
-**2. Informations sur l'utilisateur et les groupes**
+### **2. Informations sur l'utilisateur et les groupes**
 
 **Utilisateur actuel**
 
@@ -84,7 +84,7 @@ sudo -l   # Liste les permissions sudo pour l'utilisateur actuel
 
 ***
 
-**3. Permissions des fichiers et répertoires**
+### **3. Permissions des fichiers et répertoires**
 
 **Rechercher les fichiers SUID/SGID**
 
@@ -123,7 +123,7 @@ find / -type f -perm -o+w 2>/dev/null   # Trouve tous les fichiers accessibles e
 
 ***
 
-**4. Services et processus**
+### **4. Services et processus**
 
 **Processus en cours d'exécution**
 
@@ -154,7 +154,7 @@ ls -la /etc/cron.*     # Liste les répertoires contenant des tâches planifiée
 
 ***
 
-**5. Réseau**
+### **5. Réseau**
 
 **Interfaces réseau et configuration**
 
@@ -187,7 +187,7 @@ ufw status verbose    # Affiche le statut du pare-feu UFW et les règles configu
 
 ***
 
-**6. Informations système et kernel**
+### **6. Informations système et kernel**
 
 **Informations sur la mémoire et la CPU**
 
@@ -210,7 +210,7 @@ cat /proc/modules   # Affiche également les modules du noyau chargés
 
 ***
 
-**7. Informations sur les applications**
+### **7. Informations sur les applications**
 
 **Paquets installés**
 
@@ -232,7 +232,7 @@ ls -la /sbin/      # Liste les applications installées dans /sbin
 
 ***
 
-**8. Exploration de fichiers et d'accès**
+### **8. Exploration de fichiers et d'accès**
 
 **Fichiers de configuration SSH**
 
@@ -262,7 +262,7 @@ cat ~/.ssh/authorized_keys # Affiche les clés publiques autorisées pour SSH
 
 ***
 
-**9. Logs et journaux**
+### **9. Logs et journaux**
 
 **Fichiers de log système**
 
@@ -275,7 +275,7 @@ cat /var/log/auth.log  # Affiche les logs d'authentification
 
 ***
 
-**10. AppArmor et SELinux**
+### **10. AppArmor et SELinux**
 
 **Statut de AppArmor**
 
@@ -296,7 +296,7 @@ getenforce   # Affiche le mode SELinux (Enforcing, Permissive, Disabled)
 
 ***
 
-**11. Scripts d'attaque et d'exploitation**
+### **11. Scripts d'attaque et d'exploitation**
 
 **Recherche d'exploits locaux connus**
 

