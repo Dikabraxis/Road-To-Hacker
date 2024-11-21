@@ -1,6 +1,7 @@
 ---
 description: Bienvenue sur mon site de Hacking Éthique
-cover: .gitbook/assets/Banière-1.png
+cover: >-
+  .gitbook/assets/Leonardo_Lightning_XL_Je_veux_une_image_sur_le_thme_du_hacking_2.jpg
 coverY: 0
 layout:
   cover:
