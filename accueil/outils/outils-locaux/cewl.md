@@ -16,7 +16,7 @@
 
 ***
 
-### 🚀 Étape 1 : Installation de Cewl
+### 🚀 Installation de Cewl
 
 #### Prérequis
 
