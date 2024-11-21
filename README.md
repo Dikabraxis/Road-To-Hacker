@@ -19,7 +19,7 @@ Mon prochain objectif est de décrocher la certification **CPTS** (Certified Pen
 
 ***
 
-#### **Pourquoi ce site ?**
+### **Pourquoi ce site ?**
 
 Ce site est une plateforme où je partage :
 
@@ -31,7 +31,7 @@ L’objectif est de centraliser et structurer tout ce que j’apprends, tout en 
 
 ***
 
-#### **Communauté**
+### **Communauté**
 
 Un discord est disponible pour ceux qui souhaitent faire des CTF, échanger, partager et progresser ensemble :
 
@@ -39,7 +39,7 @@ Un discord est disponible pour ceux qui souhaitent faire des CTF, échanger, par
 
 ***
 
-#### **Un engagement éthique**
+### **Un engagement éthique**
 
 Ce site a une vocation **strictement éducative** et **éthique**. Mon intention est de promouvoir un apprentissage responsable et légal dans le domaine de la cybersécurité.
 
