@@ -1,14 +1,6 @@
 ---
 description: Bienvenue sur mon site de Hacking Éthique
-cover: >-
-  .gitbook/assets/DALL·E 2024-11-21 16.02.20 - A hyper-realistic image of a
-  hacker sitting in front of multiple monitors displaying realistic and detailed
-  content. The screens show terminal windows.webp
-coverY: -243
 layout:
-  cover:
-    visible: true
-    size: hero
   title:
     visible: true
   description:
