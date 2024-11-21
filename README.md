@@ -1,6 +1,11 @@
 ---
 description: Bienvenue sur mon site de Hacking Éthique
+cover: .gitbook/assets/Banière-1.png
+coverY: 0
 layout:
+  cover:
+    visible: true
+    size: hero
   title:
     visible: true
   description:
