@@ -1,5 +1,7 @@
 ---
-description: Bienvenue sur mon site de Hacking Éthique
+description: >-
+  Bienvenue sur Road to Hacker, un espace d’apprentissage et de partage dans
+  l’univers passionnant de la cybersécurité !
 layout:
   title:
     visible: true
@@ -55,5 +57,3 @@ Un discord est disponible pour ceux qui souhaitent faire des CTF, échanger, par
 Ce site a une vocation **strictement éducative** et **éthique**. Mon intention est de promouvoir un apprentissage responsable et légal dans le domaine de la cybersécurité.
 
 Je me **désengage de toute responsabilité** quant à une utilisation malveillante ou illégale des informations fournies ici. L’objectif est exclusivement d’apprendre et d’appliquer ces connaissances dans un cadre éthique.
-
-Bienvenue sur **Road to Hacker**, un espace d’apprentissage et de partage dans l’univers passionnant de la cybersécurité !
