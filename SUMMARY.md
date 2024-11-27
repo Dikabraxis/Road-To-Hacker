@@ -50,6 +50,7 @@
       * [MySQL](accueil/services-et-protocoles/database/mysql.md)
       * [MongoDB](accueil/services-et-protocoles/database/mongodb.md)
     * [NFS](accueil/services-et-protocoles/nfs.md)
+    * [RSYNC](accueil/services-et-protocoles/rsync.md)
   * [TIPS](accueil/tips/README.md)
     * [Commandes de base Linux](accueil/tips/commandes-de-base-linux.md)
     * [Commandes de base Windows](accueil/tips/commandes-de-base-windows.md)
