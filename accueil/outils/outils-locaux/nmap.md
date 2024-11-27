@@ -14,7 +14,7 @@
 
 ***
 
-### 🚀 Étape 1 : Installation de Nmap
+### 🚀 Installation de Nmap
 
 ***
 
@@ -69,7 +69,7 @@ nmap --version
 
 ***
 
-### 🛠️ Étape 2 : Types de Scans et Commandes
+### 🛠️ Types de Scans et Commandes
 
 ***
 
@@ -239,6 +239,153 @@ Les scripts Nmap ajoutent une couche de fonctionnalités avancées pour l'analys
     ```
 * **Explication** :
   * Sauvegarde les résultats en formats texte, XML, et grepable sous le préfixe "scan\_results".
+
+***
+
+### 🛠️ **Techniques d'Évasion IDS/IPS avec Nmap**
+
+Les IDS/IPS analysent le trafic réseau pour détecter des anomalies ou des signatures spécifiques. Voici comment réduire vos chances de détection :
+
+***
+
+#### **1. Modifier la Vitesse des Scans**
+
+Réduisez la vitesse pour éviter de générer un trafic suspect :
+
+```bash
+bashCopier le codenmap -T0 MACHINE_IP  # Mode paranoïaque (très lent)
+nmap -T1 MACHINE_IP  # Mode sournois (lent)
+```
+
+***
+
+#### **2. Fragmentation des Paquets**
+
+Divisez les paquets pour contourner les IDS :
+
+```bash
+bashCopier le codenmap -f MACHINE_IP
+nmap --mtu 16 MACHINE_IP  # Taille personnalisée des fragments
+```
+
+***
+
+#### **3. Usurpation et Masquage**
+
+1.  **Usurper une adresse IP source :**
+
+    ```bash
+    bashCopier le codesudo nmap -S FAKE_IP MACHINE_IP
+    ```
+2.  **Ajouter des leurres pour masquer votre IP réelle :**
+
+    ```bash
+    bashCopier le codesudo nmap -D 192.168.1.2,192.168.1.3,ME MACHINE_IP
+    ```
+
+***
+
+#### **4. Connexions Randomisées**
+
+1.  **Randomisez l'ordre des hôtes scannés :**
+
+    ```bash
+    bashCopier le codenmap --randomize-hosts MACHINE_IP
+    ```
+2.  **Utilisez un port source spécifique pour contourner des pare-feux :**
+
+    ```bash
+    bashCopier le codenmap --source-port 53 MACHINE_IP
+    ```
+
+***
+
+#### **5. Limiter la Fréquence**
+
+Réduisez le nombre de paquets envoyés par seconde :
+
+```bash
+bashCopier le codenmap --max-rate 10 MACHINE_IP
+```
+
+***
+
+#### **6. Utiliser des Proxies**
+
+Acheminer vos scans via Tor ou un proxy :
+
+```bash
+bashCopier le codeproxychains nmap MACHINE_IP
+```
+
+***
+
+### 🛠️ **Techniques d'Évasion IDS/IPS avec Ncat**
+
+#### **1. Usurpation de Ports Sources**
+
+Envoyez des connexions à partir de ports privilégiés pour contourner les pare-feux :
+
+```bash
+bashCopier le codesudo ncat -nv --source-port 53 MACHINE_IP 80
+```
+
+***
+
+#### **2. Fragmentation et Pause**
+
+Ajoutez une pause entre les paquets :
+
+```bash
+bashCopier le codencat -i 1 MACHINE_IP 80
+```
+
+***
+
+#### **3. Tunnelisation TLS**
+
+Chiffrez vos connexions pour masquer le contenu du trafic :
+
+```bash
+bashCopier le codencat --ssl MACHINE_IP 443
+```
+
+***
+
+### 🔍 **Sauvegarder et Analyser les Résultats**
+
+#### **1. Sauvegarder les Résultats**
+
+*   Sauvegarde texte :
+
+    ```bash
+    bashCopier le codenmap -oN results.txt MACHINE_IP
+    ```
+*   Tous les formats (texte, XML, grepable) :
+
+    ```bash
+    bashCopier le codenmap -oA results MACHINE_IP
+    ```
+
+***
+
+#### **2. Analyse du Trafic**
+
+Observez vos propres paquets avec `tcpdump` ou `Wireshark` :
+
+```bash
+bashCopier le codesudo tcpdump -i eth0 host MACHINE_IP
+```
+
+***
+
+### 📋 **Combinaison de Techniques**
+
+Voici une commande combinée pour échapper aux IDS :
+
+```bash
+bashCopier le codesudo nmap -sS -p 22,80,443 -T1 --randomize-hosts --max-rate 20 -f --source-port 53 -D 192.168.1.2,192.168.1.3,ME MACHINE_IP
+```
 
 ***
 
