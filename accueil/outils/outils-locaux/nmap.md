@@ -253,7 +253,7 @@ Les IDS/IPS analysent le trafic réseau pour détecter des anomalies ou des sign
 Réduisez la vitesse pour éviter de générer un trafic suspect :
 
 ```bash
-bashCopier le codenmap -T0 MACHINE_IP  # Mode paranoïaque (très lent)
+nmap -T0 MACHINE_IP  # Mode paranoïaque (très lent)
 nmap -T1 MACHINE_IP  # Mode sournois (lent)
 ```
 
@@ -264,7 +264,7 @@ nmap -T1 MACHINE_IP  # Mode sournois (lent)
 Divisez les paquets pour contourner les IDS :
 
 ```bash
-bashCopier le codenmap -f MACHINE_IP
+nmap -f MACHINE_IP
 nmap --mtu 16 MACHINE_IP  # Taille personnalisée des fragments
 ```
 
@@ -275,12 +275,12 @@ nmap --mtu 16 MACHINE_IP  # Taille personnalisée des fragments
 1.  **Usurper une adresse IP source :**
 
     ```bash
-    bashCopier le codesudo nmap -S FAKE_IP MACHINE_IP
+    sudo nmap -S FAKE_IP MACHINE_IP
     ```
 2.  **Ajouter des leurres pour masquer votre IP réelle :**
 
     ```bash
-    bashCopier le codesudo nmap -D 192.168.1.2,192.168.1.3,ME MACHINE_IP
+    sudo nmap -D 192.168.1.2,192.168.1.3,ME MACHINE_IP
     ```
 
 ***
@@ -290,12 +290,12 @@ nmap --mtu 16 MACHINE_IP  # Taille personnalisée des fragments
 1.  **Randomisez l'ordre des hôtes scannés :**
 
     ```bash
-    bashCopier le codenmap --randomize-hosts MACHINE_IP
+    nmap --randomize-hosts MACHINE_IP
     ```
 2.  **Utilisez un port source spécifique pour contourner des pare-feux :**
 
     ```bash
-    bashCopier le codenmap --source-port 53 MACHINE_IP
+    nmap --source-port 53 MACHINE_IP
     ```
 
 ***
@@ -305,7 +305,7 @@ nmap --mtu 16 MACHINE_IP  # Taille personnalisée des fragments
 Réduisez le nombre de paquets envoyés par seconde :
 
 ```bash
-bashCopier le codenmap --max-rate 10 MACHINE_IP
+nmap --max-rate 10 MACHINE_IP
 ```
 
 ***
@@ -315,7 +315,7 @@ bashCopier le codenmap --max-rate 10 MACHINE_IP
 Acheminer vos scans via Tor ou un proxy :
 
 ```bash
-bashCopier le codeproxychains nmap MACHINE_IP
+proxychains nmap MACHINE_IP
 ```
 
 ***
@@ -327,7 +327,7 @@ bashCopier le codeproxychains nmap MACHINE_IP
 Envoyez des connexions à partir de ports privilégiés pour contourner les pare-feux :
 
 ```bash
-bashCopier le codesudo ncat -nv --source-port 53 MACHINE_IP 80
+sudo ncat -nv --source-port 53 MACHINE_IP 80
 ```
 
 ***
@@ -337,7 +337,7 @@ bashCopier le codesudo ncat -nv --source-port 53 MACHINE_IP 80
 Ajoutez une pause entre les paquets :
 
 ```bash
-bashCopier le codencat -i 1 MACHINE_IP 80
+ncat -i 1 MACHINE_IP 80
 ```
 
 ***
@@ -347,7 +347,7 @@ bashCopier le codencat -i 1 MACHINE_IP 80
 Chiffrez vos connexions pour masquer le contenu du trafic :
 
 ```bash
-bashCopier le codencat --ssl MACHINE_IP 443
+ncat --ssl MACHINE_IP 443
 ```
 
 ***
@@ -359,12 +359,12 @@ bashCopier le codencat --ssl MACHINE_IP 443
 *   Sauvegarde texte :
 
     ```bash
-    bashCopier le codenmap -oN results.txt MACHINE_IP
+    nmap -oN results.txt MACHINE_IP
     ```
 *   Tous les formats (texte, XML, grepable) :
 
     ```bash
-    bashCopier le codenmap -oA results MACHINE_IP
+    nmap -oA results MACHINE_IP
     ```
 
 ***
@@ -374,7 +374,7 @@ bashCopier le codencat --ssl MACHINE_IP 443
 Observez vos propres paquets avec `tcpdump` ou `Wireshark` :
 
 ```bash
-bashCopier le codesudo tcpdump -i eth0 host MACHINE_IP
+sudo tcpdump -i eth0 host MACHINE_IP
 ```
 
 ***
@@ -384,7 +384,7 @@ bashCopier le codesudo tcpdump -i eth0 host MACHINE_IP
 Voici une commande combinée pour échapper aux IDS :
 
 ```bash
-bashCopier le codesudo nmap -sS -p 22,80,443 -T1 --randomize-hosts --max-rate 20 -f --source-port 53 -D 192.168.1.2,192.168.1.3,ME MACHINE_IP
+sudo nmap -sS -p 22,80,443 -T1 --randomize-hosts --max-rate 20 -f --source-port 53 -D 192.168.1.2,192.168.1.3,ME MACHINE_IP
 ```
 
 ***
