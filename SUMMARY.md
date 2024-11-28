@@ -20,6 +20,7 @@
       * [Nmap](accueil/outils/outils-locaux/nmap.md)
       * [Netcat](accueil/outils/outils-locaux/netcat.md)
       * [Nikto](accueil/outils/outils-locaux/nikto.md)
+      * [Nuclei](accueil/outils/outils-locaux/nuclei.md)
       * [OpenVAS](accueil/outils/outils-locaux/openvas.md)
       * [Penelope](accueil/outils/outils-locaux/penelope.md)
       * [Pwncat](accueil/outils/outils-locaux/pwncat.md)
