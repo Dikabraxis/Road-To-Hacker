@@ -26,6 +26,7 @@
       * [Penelope](accueil/outils/outils-locaux/penelope.md)
       * [Pwncat](accueil/outils/outils-locaux/pwncat.md)
       * [Recon-ng](accueil/outils/outils-locaux/recon-ng.md)
+      * [Semgrep](readme/outils/outils-locaux/semgrep.md)
       * [Smbmap](accueil/outils/outils-locaux/smbmap.md)
       * [Sqlmap](accueil/outils/outils-locaux/sqlmap.md)
       * [Sublist3r](accueil/outils/outils-locaux/sublist3r.md)
