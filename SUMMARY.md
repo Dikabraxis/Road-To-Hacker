@@ -8,6 +8,7 @@
       * [Apktool](readme/outils/outils-locaux/apktool.md)
       * [Burp Suite](accueil/outils/outils-locaux/burp-suite.md)
       * [Cewl](accueil/outils/outils-locaux/cewl.md)
+      * [Dig](readme/outils/outils-locaux/dig.md)
       * [Dirb](accueil/outils/outils-locaux/dirb.md)
       * [Empire](accueil/outils/outils-locaux/empire.md)
       * [Enum4linux](accueil/outils/outils-locaux/enum4linux.md)
