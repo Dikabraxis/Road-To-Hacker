@@ -1,4 +1,4 @@
-# SMB
+# Smbclient
 
 ### **SMBCLIENT : Accéder et interagir avec les partages SMB**
 
@@ -188,12 +188,3 @@ Télécharger tous les fichiers `.docx` depuis un répertoire partagé :
 ```bash
 smbclient //10.10.10.10/share -U jean%123456 -c "prompt off; recurse on; mget *.docx"
 ```
-
-***
-
-### **7. Bonnes pratiques**
-
-* **Obtenir des autorisations** : Avant de scanner ou d'accéder à un partage SMB, assurez-vous d'avoir les autorisations nécessaires.
-* **Respecter les droits** : Ne modifiez pas ou ne supprimez pas de fichiers sans autorisation.
-* **Sécuriser les identifiants** : Évitez d'inclure les mots de passe directement dans les commandes. Utilisez des fichiers de configuration sécurisés si nécessaire.
-* **Analyser les résultats** : Prenez le temps d'examiner les fichiers téléchargés pour identifier les informations sensibles ou exploitables.

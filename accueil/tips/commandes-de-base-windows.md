@@ -210,7 +210,7 @@ Ce tutoriel détaille les commandes essentielles pour naviguer, manipuler des fi
 ### **Gestion des Permissions**
 
 * **Modifier les droits d’un fichier**\
-  _Dans Windows, utilisez l’interface graphique : clic droit → Propriétés → Sécurité. Pas d’équivalent direct à `chmod` via CMD._
+  &#xNAN;_&#x44;ans Windows, utilisez l’interface graphique : clic droit → Propriétés → Sécurité. Pas d’équivalent direct à `chmod` via CMD._
 
 ***
 
