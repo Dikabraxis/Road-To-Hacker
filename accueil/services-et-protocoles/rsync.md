@@ -1,6 +1,6 @@
 # RSYNC
 
-#### **rsync : Utilisation Complète avec un Serveur rsync (Port 873)**
+### **rsync : Utilisation Complète avec un Serveur rsync (Port 873)**
 
 `rsync` permet également de travailler avec un serveur configuré en mode **daemon** (protocole rsync natif), qui fonctionne indépendamment de SSH et écoute généralement sur le port **873**. Voici un guide complet pour interagir avec un serveur distant configuré de cette manière.
 

@@ -1,6 +1,6 @@
 # NFS
 
-#### Tuto NFS (Network File System)
+### NFS (Network File System)
 
 NFS (Network File System) est un protocole utilisé pour partager des fichiers et des répertoires entre différents systèmes sur un réseau. Voici un guide complet pour interagir avec des partages NFS.
 

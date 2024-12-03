@@ -1,8 +1,8 @@
 # GTFOBins
 
-#### **Tuto GTFObins**
+### **Tuto GTFObins**
 
-**Introduction**
+### **Introduction**
 
 GTFObins est une ressource en ligne essentielle pour les pentesters et les chercheurs en sécurité. Il regroupe des exemples concrets d'abus d'exécutables Unix/Linux afin d'exécuter des commandes arbitraires, d'obtenir un shell, ou d'extraire des informations.
 
@@ -10,13 +10,13 @@ GTFObins est une ressource en ligne essentielle pour les pentesters et les cherc
 
 * URL : [GTFObins](https://gtfobins.github.io/)
 
-**Fonctionnalités principales :**
+### **Fonctionnalités principales :**
 
 * **Recherche d'exécutables abusables :** Parcourir ou rechercher des commandes Unix/Linux spécifiques pouvant être exploitées.
 * **Exemples pratiques :** Chaque exécutable est accompagné de scénarios d'abus, comme l'escalade de privilèges, l'exfiltration, ou les manipulations de fichiers.
 * **Filtrage par capacité :** Rechercher les exécutables en fonction de capacités spécifiques comme `SUID`, `sudo`, ou `shell`.
 
-**Comment utiliser GTFObins**
+### **Comment utiliser GTFObins**
 
 1. **Rechercher un exécutable :**
    * Accédez à [GTFObins](https://gtfobins.github.io/) et utilisez la barre de recherche pour trouver un exécutable (ex. : `vim`).
@@ -35,7 +35,7 @@ GTFObins est une ressource en ligne essentielle pour les pentesters et les cherc
 
 ***
 
-#### **Bonnes Pratiques pour les Deux Ressources :**
+### **Bonnes Pratiques pour les Deux Ressources :**
 
 * **Utilisation Éthique :** Ces outils sont conçus pour l'apprentissage et les tests de sécurité éthiques uniquement.
 * **Test en Environnement Sécurisé :** Utilisez des machines virtuelles ou des environnements isolés pour tester les scénarios.

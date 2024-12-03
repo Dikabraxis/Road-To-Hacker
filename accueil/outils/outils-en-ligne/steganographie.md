@@ -1,12 +1,12 @@
 # Stéganographie
 
-#### **Tuto Aperi'Solve : Analyse de fichiers image en ligne**
+### **Tuto Aperi'Solve : Analyse de fichiers image en ligne**
 
 Aperi'Solve est un outil en ligne qui permet d'analyser des fichiers image pour extraire des métadonnées, des informations cachées, ou des données intégrées. Cet outil est particulièrement utile pour les tests de sécurité ou les investigations liées aux fichiers image.
 
 ***
 
-#### **Fonctionnalités principales :**
+### **Fonctionnalités principales :**
 
 * Extraction des métadonnées des fichiers image (EXIF).
 * Analyse des couches (ou niveaux) d'une image.
@@ -15,7 +15,7 @@ Aperi'Solve est un outil en ligne qui permet d'analyser des fichiers image pour 
 
 ***
 
-#### **Comment utiliser Aperi'Solve :**
+### **Comment utiliser Aperi'Solve :**
 
 1. **Accéder au site :**
    * Rendez-vous sur le site officiel : [Aperi'Solve](https://www.aperisolve.com/).
@@ -36,7 +36,7 @@ Aperi'Solve est un outil en ligne qui permet d'analyser des fichiers image pour 
 
 ***
 
-#### **Exemples d'utilisation :**
+### **Exemples d'utilisation :**
 
 **1. Analyse des métadonnées :**
 
@@ -58,7 +58,7 @@ Aperi'Solve est un outil en ligne qui permet d'analyser des fichiers image pour 
 
 ***
 
-#### **Bonnes pratiques :**
+### **Bonnes pratiques :**
 
 * **Respect de la confidentialité :** Si vous analysez des fichiers sensibles, assurez-vous de comprendre que l'analyse est effectuée via un site tiers.
 * **Téléchargez uniquement des fichiers autorisés :** N’utilisez pas cet outil pour analyser des fichiers protégés par des droits d’auteur ou appartenant à des tiers sans autorisation.

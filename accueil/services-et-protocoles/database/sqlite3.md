@@ -1,6 +1,6 @@
 # SQLite3
 
-#### **SQLite3 : Exploitation d'une Base de Données**
+### **SQLite3 : Exploitation d'une Base de Données**
 
 SQLite3 est un système de gestion de bases de données relationnelles léger utilisé dans de nombreuses applications, y compris des sites web et des logiciels embarqués. Voici un guide détaillé pour explorer et manipuler une base de données SQLite3, en utilisant l'exemple d'une base de données récupérée nommée `example.db`.
 

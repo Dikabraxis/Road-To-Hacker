@@ -1,6 +1,6 @@
 # FTP
 
-#### **FTP (File Transfer Protocol)**
+### **FTP (File Transfer Protocol)**
 
 Le protocole FTP (File Transfer Protocol) est un protocole standard utilisé pour transférer des fichiers entre un client et un serveur sur un réseau. Voici un tutoriel sur l’utilisation d’outils FTP via la ligne de commande pour interagir avec des serveurs FTP.
 

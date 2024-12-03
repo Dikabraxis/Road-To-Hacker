@@ -1,22 +1,22 @@
 # LOLBAS
 
-#### **Tuto LOLBAS**
+### **Tuto LOLBAS**
 
 **Introduction**
 
 LOLBAS (Living Off The Land Binaries and Scripts) est un référentiel en ligne qui recense les binaires, scripts, et bibliothèques Windows pouvant être détournés à des fins malveillantes ou pour des tests de sécurité.
 
-**Accéder à LOLBAS**
+### **Accéder à LOLBAS**
 
 * URL : [LOLBAS](https://lolbas-project.github.io)
 
-**Fonctionnalités principales :**
+### **Fonctionnalités principales :**
 
 * **Catalogue des binaires Windows abusables :** Une collection exhaustive de binaires et scripts légitimes intégrés à Windows qui peuvent être détournés.
 * **Filtres par type :** Explorer les binaires, scripts, ou bibliothèques par catégories spécifiques.
 * **Exemples détaillés :** Chaque binaire est accompagné de techniques exploitables pour des activités comme l'escalade de privilèges, l'exfiltration, ou la persistance.
 
-**Comment utiliser LOLBAS**
+### **Comment utiliser LOLBAS**
 
 1. **Rechercher un binaire/script :**
    * Accédez à [LOLBAS](https://lolbas-project.github.io).
@@ -37,7 +37,7 @@ LOLBAS (Living Off The Land Binaries and Scripts) est un référentiel en ligne 
 
 ***
 
-#### **Bonnes Pratiques pour les Deux Ressources :**
+### **Bonnes Pratiques pour les Deux Ressources :**
 
 * **Utilisation Éthique :** Ces outils sont conçus pour l'apprentissage et les tests de sécurité éthiques uniquement.
 * **Test en Environnement Sécurisé :** Utilisez des machines virtuelles ou des environnements isolés pour tester les scénarios.
