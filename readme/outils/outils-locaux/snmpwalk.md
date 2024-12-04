@@ -295,11 +295,11 @@ snmpwalk -v 2c -c private <target>
 
 ### **Résumé des Commandes Clés**
 
-| Commande                                  | Description                     |
-| ----------------------------------------- | ------------------------------- |
-| `snmpwalk -v 2c -c public <target>`       | Liste tous les OID accessibles. |
-| `snmpwalk -v 2c -c public <target> <OID>` | Récupère un OID spécifique.     |
-| `snmpwalk -v 3 -u <username> ...`         | Utilisation de SNMPv3 sécurisé. |
-| \`snmpwalk -v 2c -c public \<target>      | grep \<mot\_clé>\`              |
+| Commande                                           | Description                      |
+| -------------------------------------------------- | -------------------------------- |
+| `snmpwalk -v 2c -c public <target>`                | Liste tous les OID accessibles.  |
+| `snmpwalk -v 2c -c public <target> <OID>`          | Récupère un OID spécifique.      |
+| `snmpwalk -v 3 -u <username> ...`                  | Utilisation de SNMPv3 sécurisé.  |
+| `snmpwalk -v 2c -c public <target> grep <mot_clé>` | Recherche d'informations ciblées |
 
 Avec ce guide, **snmpwalk** devient un outil puissant pour la gestion et la sécurité des appareils réseau. Sa simplicité et sa flexibilité en font un incontournable pour les administrateurs réseau et les pentesters.
