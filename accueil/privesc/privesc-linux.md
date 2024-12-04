@@ -173,6 +173,7 @@ Ces commandes montrent les connexions réseau actives et les processus qui les u
 ```bash
 netstat -antup   # Affiche toutes les connexions TCP/UDP et les processus associés
 ss -antup        # Affiche les sockets réseau et les processus associés
+ss -tnlp         # Affiche tous les ports TCP en LISTEN
 lsof -i          # Liste les fichiers ouverts associés aux connexions réseau
 ```
 
