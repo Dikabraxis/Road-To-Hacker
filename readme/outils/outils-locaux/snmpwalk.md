@@ -48,7 +48,7 @@
 2.  Installez SNMP via Homebrew :
 
     ```bash
-    bashCopier le codebrew install net-snmp
+    brew install net-snmp
     ```
 3.  Vérifiez l’installation :
 
