@@ -17,7 +17,7 @@ J'ai déjà obtenu plusieurs certifications :
 * **TOSA Digcomp** et **TOSA Cybercitizen**, qui valident mes compétences numériques et ma compréhension des enjeux de sécurité.
 * **M2I Pentester**, une reconnaissance de ma capacité à mener des tests d'intrusion.
 
-Mon prochain objectif est de décrocher la certification **CPTS** (Certified Penetration Testing Specialist) de **Hack The Box**, un défi que je compte relever prochainement.
+Mon prochain objectif est de décrocher la certification **CPTS** (Certified Penetration Testing Specialist) de [**Hack The Box**](https://www.hackthebox.com/), un défi que je compte relever prochainement.
 
 ***
 
@@ -27,7 +27,7 @@ Ce site est une plateforme où je partage :
 
 * **Mes connaissances en cybersécurité**, pour accompagner ceux qui, comme moi, explorent ce domaine fascinant.
 * **Des tutoriels détaillés**, pour comprendre et maîtriser les outils et techniques de hacking éthique.
-* **Des write-ups et des exemples pratiques**, issus de mes expériences sur des plateformes comme HTB et THM.
+* **Des write-ups et des exemples pratiques**, issus de mes expériences sur des plateformes comme [HTB](https://www.hackthebox.com/) et [THM](https://tryhackme.com/).
 
 L’objectif est de centraliser et structurer tout ce que j’apprends, tout en aidant d’autres passionnés à progresser.
 
