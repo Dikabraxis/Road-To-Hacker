@@ -48,7 +48,7 @@ L’objectif est de centraliser et structurer tout ce que j’apprends, tout en 
 
 Un discord est disponible pour ceux qui souhaitent faire des CTF, échanger, partager et progresser ensemble :
 
-\[Discord]\([https://discord.gg/y8xfeAvCKg](https://discord.gg/y8xfeAvCKg))
+[Discord](https://discord.gg/y8xfeAvCKg)
 
 ***
 
