@@ -71,9 +71,3 @@ Pour toute question relative à cette politique de confidentialité ou à vos do
 * Email : dika-road-to-hacker@protonmail.com
 
 ***
-
-#### **Informations spécifiques à inclure :**
-
-1. Mentionnez clairement si vous collectez des données.
-2. Si vous utilisez des outils externes (par exemple Google Analytics), précisez leur fonctionnement et leur gestion des données.
-3. Ajoutez des informations sur les cookies si vous en utilisez.
