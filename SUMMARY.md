@@ -70,5 +70,6 @@
   * [Commandes de base Windows](tips/commandes-de-base-windows.md)
   * [Shell Stable et Reverse Shell](tips/shell-stable-et-reverse-shell.md)
   * [Curl](tips/curl.md)
-* [Mentions légales](mentions-legales.md)
-* [Politique de confidentialité](politique-de-confidentialite.md)
+* [Information légales](information-legales/README.md)
+  * [Mentions légales](information-legales/mentions-legales.md)
+  * [Politique de confidentialité](information-legales/politique-de-confidentialite.md)
