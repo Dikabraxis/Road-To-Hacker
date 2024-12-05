@@ -19,7 +19,7 @@ layout:
 
 ### **À propos de moi**
 
-Je suis un passionné de cybersécurité et autodidacte, en constante quête de connaissances et de perfectionnement. Je me forme activement sur des plateformes comme **Cyberini**, **TryHackMe (THM)**, et **Hack The Box (HTB)**, qui sont des références dans le domaine.
+Je suis un passionné de cybersécurité et autodidacte, en constante quête de connaissances et de perfectionnement. Je me forme activement sur des plateformes comme [**Cyberini**](https://cyberini.com/)**,** [**TryHackMe**](https://tryhackme.com/) **(THM), et** [**Hack The Box**](https://www.hackthebox.com/) **(HTB)**, qui sont des références dans le domaine.
 
 #### **Certifications et Objectifs**
 
@@ -48,7 +48,7 @@ L’objectif est de centraliser et structurer tout ce que j’apprends, tout en 
 
 Un discord est disponible pour ceux qui souhaitent faire des CTF, échanger, partager et progresser ensemble :
 
-[Discord Road To Hacker](https://discord.gg/y8xfeAvCKg)
+[**Discord Road To Hacker**](https://discord.gg/y8xfeAvCKg)
 
 ***
 
