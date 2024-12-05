@@ -230,3 +230,11 @@ Ce tutoriel détaille les commandes essentielles pour naviguer, manipuler des fi
 ***
 
 Ce tutoriel couvre les commandes de base pour naviguer, manipuler les fichiers, gérer les utilisateurs et configurer les systèmes sous Windows CMD. Ces commandes sont idéales pour une gestion rapide et efficace via l’invite de commandes.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

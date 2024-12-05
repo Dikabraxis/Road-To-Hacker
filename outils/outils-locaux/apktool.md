@@ -173,3 +173,11 @@ APKTool est souvent utilisé pour insérer des messages de journalisation ou ana
 * **Travaillez sur une copie :** Toujours sauvegarder l’APK original.
 * **Respectez la légalité :** Assurez-vous d’avoir l’autorisation pour analyser ou modifier une application.
 * **Utilisez un décompilateur complémentaire :** Combinez APKTool avec d’autres outils comme **Jadx** pour analyser le code Java.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

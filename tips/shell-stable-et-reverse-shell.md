@@ -160,3 +160,11 @@ Un web shell est une interface web permettant d’exécuter des commandes sur un
    * Configurez des délais entre les connexions et utilisez des outils comme des VPN ou des proxys pour éviter d’attirer l’attention.
 3. **Analyser les environnements** :
    * Avant d’exécuter un shell interactif, vérifiez les configurations locales pour éviter de briser les sessions existantes.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

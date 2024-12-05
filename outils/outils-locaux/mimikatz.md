@@ -230,3 +230,11 @@
    * De nombreuses techniques de Mimikatz exploitent des vulnérabilités corrigées dans les mises à jour Windows récentes.
 4. **Analysez les journaux d'événements** :
    * Activez et surveillez les journaux pour détecter toute activité suspecte liée à l'outil.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

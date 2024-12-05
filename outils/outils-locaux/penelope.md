@@ -238,3 +238,11 @@ run /tmp/linpeas.sh
 ### Conclusion
 
 **Penelope** est un outil indispensable pour les pentesters cherchant à simplifier la gestion des shells et des connexions post-exploitation. Grâce à ses fonctionnalités telles que le maintien de sessions multiples, l’auto-upgrade des shells en PTY, et un serveur HTTP intégré, il facilite grandement les étapes complexes de post-exploitation. Que ce soit pour uploader des scripts, maintenir un accès persistant ou gérer des fichiers à distance, **Penelope** s'impose comme un choix fiable et puissant.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

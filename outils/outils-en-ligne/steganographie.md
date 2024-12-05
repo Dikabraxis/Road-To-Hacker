@@ -63,3 +63,11 @@ Aperi'Solve est un outil en ligne qui permet d'analyser des fichiers image pour 
 * **Respect de la confidentialité :** Si vous analysez des fichiers sensibles, assurez-vous de comprendre que l'analyse est effectuée via un site tiers.
 * **Téléchargez uniquement des fichiers autorisés :** N’utilisez pas cet outil pour analyser des fichiers protégés par des droits d’auteur ou appartenant à des tiers sans autorisation.
 * **Sauvegarde des résultats :** Téléchargez les couches ou informations utiles pour une analyse approfondie avec d'autres outils.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

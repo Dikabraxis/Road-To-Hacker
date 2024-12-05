@@ -320,3 +320,11 @@ nc localhost 1234 > file.txt
    * Netcat peut consommer beaucoup de bande passante en cas de transfert de gros fichiers.
 4. **Analysez les logs** :
    * Après avoir utilisé Netcat, vérifiez les logs pour détecter tout comportement inattendu.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

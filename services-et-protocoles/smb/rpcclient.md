@@ -356,3 +356,11 @@ Affinez vos commandes pour obtenir des résultats pertinents en combinant des co
 2. **Notez les Résultats :** Exportez vos découvertes pour les analyser ou les documenter ultérieurement.
 3. **Associez avec d’autres outils :** Combinez RPCClient avec Nmap ou SMBClient pour une analyse approfondie.
 4. **Testez la Sécurité :** Vérifiez si des sessions nulles ou des configurations faibles sont activées sur vos serveurs pour les corriger.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

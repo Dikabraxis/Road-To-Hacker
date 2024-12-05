@@ -279,3 +279,11 @@ Si votre dépôt contient une version obsolète, vous pouvez compiler Gobuster �
    * Examinez soigneusement les réponses pour identifier des ressources critiques ou mal configurées.
 4. **Associez Gobuster avec d'autres outils** :
    * Combinez Gobuster avec des outils comme **Nmap** ou **Burp Suite** pour enrichir vos découvertes.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

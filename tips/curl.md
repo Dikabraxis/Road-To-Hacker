@@ -205,3 +205,11 @@ layout:
   * Effectuez une requête dans Postman.
   * Cliquez sur **Code** dans le menu.
   * Sélectionnez le format **curl** pour obtenir la commande.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

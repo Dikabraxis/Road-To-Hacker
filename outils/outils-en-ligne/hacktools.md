@@ -238,3 +238,11 @@ HackTools est organisé en plusieurs catégories principales :
 HackTools est une ressource puissante et polyvalente pour les pentesters et passionnés de cybersécurité. Que ce soit pour générer des commandes complexes, travailler avec des payloads ou explorer des outils de cryptographie, HackTools centralise vos besoins dans une interface intuitive et facile à utiliser.
 
 Utilisez cet outil de manière responsable et dans un cadre légal pour maximiser ses avantages tout en respectant la sécurité numérique.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

@@ -242,3 +242,11 @@
    * Pour comprendre les réponses et ajuster vos tests si nécessaire.
 4. **Associez Hydra avec d'autres outils** :
    * Intégrez Hydra avec des outils comme **Burp Suite** pour tester les applications web.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

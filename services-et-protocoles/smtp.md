@@ -293,3 +293,11 @@ run
 * **Testez légalement :** Assurez-vous d’avoir une autorisation explicite pour auditer un serveur.
 * **Documentez vos découvertes :** Notez les configurations vulnérables et proposez des recommandations.
 * **Combinez avec d’autres outils :** Utilisez SMTP en conjonction avec d’autres services (DNS, LDAP) pour une analyse approfondie.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

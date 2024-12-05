@@ -334,3 +334,11 @@ sudo tail -f /var/log/auth.log
 ***
 
 Avec ce guide, vous avez une vue d’ensemble complète des fonctionnalités SSH. Que ce soit pour une connexion simple, des transferts sécurisés ou des tunnels avancés, SSH est un outil puissant et flexible. Assurez-vous de toujours le sécuriser pour protéger vos systèmes contre les accès non autorisés.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

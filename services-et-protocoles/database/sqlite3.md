@@ -214,3 +214,11 @@ sqlite> .exit
 * **Fais une Sauvegarde** : Avant de modifier ou manipuler des données critiques, assure-toi de sauvegarder la base de données originale.
 * **Utilise des Clés de Sécurité** : Si la base de données contient des informations sensibles, sécurise-la avec un mot de passe ou un chiffrement.
 * **Analyse avec Prudence** : Les données comme les mots de passe hachés peuvent nécessiter des outils externes pour être analysées.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

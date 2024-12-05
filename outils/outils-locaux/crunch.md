@@ -305,3 +305,11 @@ crunch 6 6 abc123 | john --wordlist=-
 ***
 
 Crunch est un outil puissant pour générer des listes de mots de passe personnalisées. Son flexibilité, combinée à des outils de pentest comme Hydra ou John the Ripper, en fait un atout essentiel pour les tests de sécurité.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

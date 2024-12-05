@@ -224,3 +224,11 @@ wapiti -u http://example.com --ignore-parameters "session_id,token"
 ### Conclusion
 
 **Wapiti** est un outil essentiel pour les professionnels de la cybersécurité cherchant à analyser les applications web. Grâce à sa flexibilité et à ses nombreuses options, il permet une reconnaissance efficace et des tests ciblés pour détecter les vulnérabilités potentielles.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

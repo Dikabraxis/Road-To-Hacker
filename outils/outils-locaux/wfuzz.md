@@ -231,3 +231,11 @@ wfuzz -c -w /usr/share/wordlists/dirb/common.txt -u http://example.com/FUZZ --pr
 ### Conclusion
 
 **Wfuzz** est un outil incroyablement flexible pour le fuzzing, permettant de découvrir des répertoires, des fichiers cachés, et des failles dans les paramètres d'entrée. Grâce à ses nombreuses options et à son intégration facile dans un workflow de pentesting, il est incontournable pour les phases de reconnaissance et de tests de vulnérabilité.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

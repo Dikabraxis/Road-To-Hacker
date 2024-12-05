@@ -137,3 +137,11 @@
       <script>alert('XSS')</script>
       ```
 * **Explication** : Vérifie si les entrées utilisateur sont mal filtrées et peuvent exécuter du code malveillant.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

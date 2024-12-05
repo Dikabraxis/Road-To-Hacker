@@ -412,3 +412,11 @@ Pwncat inclut des modules pour automatiser l'identification des vulnérabilités
 ### Conclusion
 
 **Pwncat** est un outil puissant et modulaire qui simplifie la post-exploitation et la gestion des shells interactifs. Que ce soit pour l'escalade des privilèges, le transfert de fichiers ou la gestion de sessions multiples, Pwncat s'intègre parfaitement dans les workflows des pentesters.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

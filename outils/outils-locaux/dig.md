@@ -249,3 +249,11 @@ dig example.com +stats
 * **Utilisez les bons types d’enregistrement :** Pour obtenir des réponses précises.
 * **Associez avec d’autres outils :** Combinez DIG avec `nslookup` ou `host` pour un dépannage complet.
 * **Testez plusieurs serveurs DNS :** Pour identifier les incohérences.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

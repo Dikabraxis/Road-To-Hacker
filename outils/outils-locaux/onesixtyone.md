@@ -277,3 +277,11 @@ done
 ***
 
 Avec **onesixtyone**, vous disposez d’un outil rapide et efficace pour identifier les failles liées aux community strings SNMP. Utilisé avec d'autres outils comme **snmpwalk**, il permet une énumération approfondie des dispositifs réseau. Assurez-vous toujours d’avoir une autorisation légale avant de l’utiliser.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

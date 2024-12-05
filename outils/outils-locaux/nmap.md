@@ -397,3 +397,11 @@ sudo nmap -sS -p 22,80,443 -T1 --randomize-hosts --max-rate 20 -f --source-port 
    * Si nécessaire, utilisez des scans masqués (`-f`, `-T2`), surtout dans des environnements sensibles.
 3. **Analyser les résultats avec des outils externes** :
    * Exportez vos résultats au format XML pour les utiliser avec des outils comme **Metasploit** ou **OpenVAS**.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

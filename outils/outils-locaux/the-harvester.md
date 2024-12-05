@@ -261,3 +261,11 @@ theHarvester -d example.com -b all -f results.txt
 ### Conclusion
 
 **The Harvester** est un outil essentiel pour la reconnaissance dans le domaine de la cybersécurité. Grâce à ses fonctionnalités polyvalentes, il offre une solution efficace pour collecter des renseignements exploitables.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

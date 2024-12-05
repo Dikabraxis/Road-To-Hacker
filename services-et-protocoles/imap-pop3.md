@@ -241,3 +241,11 @@ Ces protocoles sont souvent des cibles lors de tests d’intrusion pour vérifie
 * **Obtenez une Autorisation Légale** : Les tests sur des serveurs tiers sans consentement explicite sont illégaux.
 * **Utilisez des Listes Appropriées** : Les outils comme Hydra nécessitent des fichiers de noms d’utilisateur et de mots de passe pertinents.
 * **Respectez les Politiques de Sécurité** : Si une alerte est déclenchée, coopérez avec l’équipe de sécurité.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

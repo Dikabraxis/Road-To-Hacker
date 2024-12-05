@@ -318,3 +318,11 @@ Pour une requête `1.3.6.1.2.1.4.20.1.1` :
 ***
 
 Avec ce guide, **Braa** devient un outil puissant pour scanner et interroger efficacement des réseaux SNMP. Sa capacité à gérer des requêtes massives en parallèle le rend indispensable pour les pentests et l’administration réseau. Assurez-vous toujours d’avoir une autorisation légale avant de l’utiliser.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

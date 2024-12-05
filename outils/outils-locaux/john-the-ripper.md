@@ -249,3 +249,11 @@ john --list=formats
    * Utilisez `--session` pour sauvegarder votre progression et éviter de recommencer à zéro.
 4. **Surveillez les performances** :
    * John peut consommer beaucoup de ressources. Surveillez l’utilisation de la mémoire et du processeur.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

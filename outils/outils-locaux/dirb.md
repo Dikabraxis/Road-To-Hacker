@@ -200,3 +200,11 @@ DIRB n'est pas nativement compatible avec Windows, mais il peut être utilisé v
    * Évitez d’utiliser de grandes listes de mots sur des serveurs en production.
 3. **Analysez les résultats avec soin** :
    * Identifiez les fichiers ou répertoires qui nécessitent une correction immédiate pour sécuriser le système.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

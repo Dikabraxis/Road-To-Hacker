@@ -212,3 +212,11 @@ Burp Suite agit comme un proxy entre votre navigateur et l'application cible, pe
    * Masquez votre adresse IP lors des tests.
 3. **Obtenir des autorisations** :
    * Testez uniquement avec des permissions légales pour éviter des conséquences juridiques.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

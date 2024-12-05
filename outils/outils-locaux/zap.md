@@ -217,3 +217,11 @@ Pour intégrer ZAP dans des pipelines CI/CD (par exemple, avec Jenkins) :
 ### Conclusion
 
 OWASP ZAP est un outil essentiel pour les professionnels de la cybersécurité, offrant des fonctionnalités puissantes pour tester la sécurité des applications web. Que vous soyez débutant ou expérimenté, ZAP peut s’intégrer dans votre workflow pour améliorer la sécurité des applications.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

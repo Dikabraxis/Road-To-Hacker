@@ -264,3 +264,11 @@ Exemples :
    * Utilisez les options `--status` pour surveiller le progrès en temps réel.
 4. **Sauvegardez les sessions** :
    * Si le cracking est interrompu, vous pouvez reprendre avec `--session` et `--restore`.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

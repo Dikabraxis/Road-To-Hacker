@@ -336,3 +336,11 @@
    * Pour éviter leur détection par les antivirus.
 3. **Testez dans un environnement isolé** :
    * Toujours utiliser des machines virtuelles pour les tests.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

@@ -93,7 +93,7 @@ Un ensemble d’outils adaptés aux développeurs pour tester, convertir et mani
 
 ***
 
-### 5. [**W3Schools URL Encoding Reference**](https://www.w3schools.com/tags/ref\_urlencode.ASP)
+### 5. [**W3Schools URL Encoding Reference**](https://www.w3schools.com/tags/ref_urlencode.ASP)
 
 Un guide simple pour encoder et décoder des URLs.
 
@@ -105,7 +105,7 @@ Un guide simple pour encoder et décoder des URLs.
 
 **Comment l’utiliser :**
 
-1. Rendez-vous sur [W3Schools URL Encoding Reference](https://www.w3schools.com/tags/ref\_urlencode.ASP).
+1. Rendez-vous sur [W3Schools URL Encoding Reference](https://www.w3schools.com/tags/ref_urlencode.ASP).
 2. Consultez la table des caractères encodés pour connaître leur équivalent dans les URL.
 3. Utilisez les outils de conversion pour encoder ou décoder des URL.
 
@@ -119,3 +119,11 @@ Un guide simple pour encoder et décoder des URLs.
 * Ces outils sont destinés à des fins éducatives, de débogage ou de développement.
 * Assurez-vous que les données sensibles que vous manipulez ne sont pas exposées à des tiers non autorisés.
 * Certains outils (comme Boxentriq ou CyberChef) permettent de traiter des données localement dans le navigateur, ce qui améliore la confidentialité.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

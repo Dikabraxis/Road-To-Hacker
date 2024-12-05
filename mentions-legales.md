@@ -71,3 +71,11 @@ Si un utilisateur estime qu’un contenu présent sur le site est illicite ou no
 #### **9. Loi applicable et juridiction compétente**
 
 Ces mentions légales sont régies par le droit français. En cas de litige, et à défaut d’un règlement à l’amiable, les tribunaux français seront seuls compétents.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

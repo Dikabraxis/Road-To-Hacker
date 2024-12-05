@@ -196,3 +196,11 @@ gvm-cli --gmp-username <username> --gmp-password <password> socket --xml "<get_t
 
 * Utilisez la CLI pour planifier des scans réguliers.
 * Configurez des alertes pour être notifié en cas de découverte de vulnérabilités critiques.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

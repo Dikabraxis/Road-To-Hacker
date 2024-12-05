@@ -277,3 +277,11 @@ mongoimport --host <IP_SERVEUR> --port 27017 --db remoteDB --collection users --
        ```
 5. **Surveillez l’Activité** :
    * Analysez les logs MongoDB pour détecter toute activité suspecte.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

@@ -42,3 +42,11 @@ LOLBAS (Living Off The Land Binaries and Scripts) est un référentiel en ligne 
 * **Utilisation Éthique :** Ces outils sont conçus pour l'apprentissage et les tests de sécurité éthiques uniquement.
 * **Test en Environnement Sécurisé :** Utilisez des machines virtuelles ou des environnements isolés pour tester les scénarios.
 * **Mises à Jour Régulières :** Consultez fréquemment ces référentiels, car de nouveaux outils et méthodes y sont régulièrement ajoutés.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

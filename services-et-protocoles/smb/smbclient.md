@@ -188,3 +188,11 @@ Télécharger tous les fichiers `.docx` depuis un répertoire partagé :
 ```bash
 smbclient //10.10.10.10/share -U jean%123456 -c "prompt off; recurse on; mget *.docx"
 ```
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

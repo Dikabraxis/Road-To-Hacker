@@ -103,3 +103,11 @@ Ce site se spécialise dans la récupération de mots de passe et le décodage d
 * Ces outils s'appuient sur des bases de données ou des tables arc-en-ciel (rainbow tables) pour trouver les correspondances.
 * Si un hachage n'est pas trouvé, cela signifie qu'il est absent de leur base de données.
 * N'utilisez jamais ces outils pour des activités illégales ou non éthiques.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

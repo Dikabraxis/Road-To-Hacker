@@ -273,3 +273,11 @@ snmpset -v 2c -c private <target> 1.3.6.1.2.1.1.5.0 s "NewDeviceName"
 * **Testez avec Autorisation** : Effectuez vos tests uniquement dans un cadre légal et éthique.
 * **Corrélez les Données** : Combinez les informations SNMP avec d’autres sources (DNS, LDAP) pour une analyse complète.
 * **Documentez Vos Résultats** : Notez les community strings, OID intéressants, et autres failles pour proposer des correctifs.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

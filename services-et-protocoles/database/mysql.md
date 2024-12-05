@@ -186,3 +186,11 @@ mysql -u username -p database_name < backup.sql
 ### **6. Conclusion**
 
 Ce guide couvre les principales commandes pour manipuler des bases de données MySQL. Ces techniques permettent d'ajouter, de modifier, de supprimer, et de lire des données de manière efficace. Apprends à bien structurer tes requêtes pour éviter les erreurs ou les pertes de données, et travaille toujours sur une copie pour expérimenter de nouvelles commandes.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

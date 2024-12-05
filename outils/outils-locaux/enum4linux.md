@@ -244,3 +244,11 @@ perl enum4linux.pl -u -g <IP_du_Serveur>
    * Associez Enum4linux à des scripts ou outils comme **Metasploit** pour enrichir vos analyses.
 4. **Limiter l’impact** :
    * Utilisez des options comme l’enregistrement dans un fichier pour minimiser les interactions en direct avec la cible.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

@@ -223,3 +223,11 @@ Pour une reconnaissance plus approfondie, combinez Sublist3r avec des outils com
 ### Conclusion
 
 **Sublist3r** est un outil indispensable pour la collecte de sous-domaines dans les phases de reconnaissance. Grâce à sa simplicité et à ses fonctionnalités avancées, il s’intègre parfaitement dans le workflow des pentesters et des analystes en cybersécurité.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

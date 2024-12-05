@@ -252,3 +252,11 @@
    * Les résultats peuvent inclure des faux positifs ; vérifiez les réponses manuellement si nécessaire.
 4. **Combinez FeroxBuster avec d’autres outils** :
    * Associez FeroxBuster à des outils comme **Burp Suite** pour enrichir vos découvertes.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)
