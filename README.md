@@ -57,3 +57,13 @@ Un discord est disponible pour ceux qui souhaitent faire des CTF, échanger, par
 Ce site a une vocation **strictement éducative** et **éthique**. Mon intention est de promouvoir un apprentissage responsable et légal dans le domaine de la cybersécurité.
 
 Je me **désengage de toute responsabilité** quant à une utilisation malveillante ou illégale des informations fournies ici. L’objectif est exclusivement d’apprendre et d’appliquer ces connaissances dans un cadre éthique.
+
+***
+
+**Liens utiles :**
+
+* Mentions légales
+* Politique de confidentialité
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)
+
+***
