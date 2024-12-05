@@ -70,3 +70,4 @@
     * [Commandes de base Windows](accueil/tips/commandes-de-base-windows.md)
     * [Shell Stable et Reverse Shell](accueil/tips/shell-stable-et-reverse-shell.md)
     * [Curl](accueil/tips/curl.md)
+* [Mentions légales](mentions-legales.md)
