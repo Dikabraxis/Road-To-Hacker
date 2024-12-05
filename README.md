@@ -2,17 +2,6 @@
 description: >-
   Bienvenue sur Road to Hacker, un espace d’apprentissage et de partage dans
   l’univers passionnant de la cybersécurité !
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # ACCUEIL
