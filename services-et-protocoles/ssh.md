@@ -2,6 +2,8 @@
 
 ### **SSH - Guide Complet pour Utiliser et Sécuriser SSH**
 
+⚠️ **Avertissement** : Ce contenu est strictement destiné à un usage éducatif et éthique dans le domaine de la cybersécurité. Toute utilisation illégale ou malveillante est interdite et engage la seule responsabilité de l’utilisateur.
+
 ***
 
 ### **Introduction**

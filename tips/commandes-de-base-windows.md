@@ -2,6 +2,10 @@
 
 ### **Tutoriel : Commandes de Base sous Windows CMD**
 
+⚠️ **Avertissement** : Ce contenu est strictement destiné à un usage éducatif et éthique dans le domaine de la cybersécurité. Toute utilisation illégale ou malveillante est interdite et engage la seule responsabilité de l’utilisateur.
+
+### Introduction
+
 Ce tutoriel détaille les commandes essentielles pour naviguer, manipuler des fichiers, gérer des utilisateurs, et configurer le système à partir de l'invite de commandes Windows (CMD).
 
 ***

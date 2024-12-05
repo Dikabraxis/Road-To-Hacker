@@ -1,5 +1,9 @@
 # Privesc Windows
 
+⚠️ **Avertissement** : Ce contenu est strictement destiné à un usage éducatif et éthique dans le domaine de la cybersécurité. Toute utilisation illégale ou malveillante est interdite et engage la seule responsabilité de l’utilisateur.
+
+### **Introduction**
+
 Voici une liste des commandes et outils utiles pour rechercher et exploiter des vulnérabilités d'escalade de privilèges (privilege escalation) sur un système Windows, avec des explications pour chaque commande.
 
 ***

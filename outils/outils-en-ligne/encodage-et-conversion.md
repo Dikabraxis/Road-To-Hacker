@@ -1,5 +1,7 @@
 # Encodage et Conversion
 
+⚠️ **Avertissement** : Ce contenu est strictement destiné à un usage éducatif et éthique dans le domaine de la cybersécurité. Toute utilisation illégale ou malveillante est interdite et engage la seule responsabilité de l’utilisateur.
+
 Voici un tutoriel complet pour utiliser les sites qui offrent des outils divers de conversion, d'encodage, de décryptage et de manipulation de données.
 
 ***

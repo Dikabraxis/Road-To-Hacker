@@ -2,6 +2,8 @@
 
 ## Acunetix - Scanner de Vulnérabilités Web
 
+⚠️ **Avertissement** : Ce contenu est strictement destiné à un usage éducatif et éthique dans le domaine de la cybersécurité. Toute utilisation illégale ou malveillante est interdite et engage la seule responsabilité de l’utilisateur.
+
 ### Introduction
 
 **Acunetix** est un scanner de vulnérabilités web automatisé conçu pour identifier des failles critiques telles que :

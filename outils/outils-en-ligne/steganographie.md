@@ -2,6 +2,10 @@
 
 ### **Tuto Aperi'Solve : Analyse de fichiers image en ligne**
 
+⚠️ **Avertissement** : Ce contenu est strictement destiné à un usage éducatif et éthique dans le domaine de la cybersécurité. Toute utilisation illégale ou malveillante est interdite et engage la seule responsabilité de l’utilisateur.
+
+### **Introduction**
+
 Aperi'Solve est un outil en ligne qui permet d'analyser des fichiers image pour extraire des métadonnées, des informations cachées, ou des données intégrées. Cet outil est particulièrement utile pour les tests de sécurité ou les investigations liées aux fichiers image.
 
 ***

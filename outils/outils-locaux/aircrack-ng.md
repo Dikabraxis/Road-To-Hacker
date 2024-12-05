@@ -2,6 +2,8 @@
 
 ## Aircrack-ng - Suite d'Audit des Réseaux Sans Fil
 
+⚠️ **Avertissement** : Ce contenu est strictement destiné à un usage éducatif et éthique dans le domaine de la cybersécurité. Toute utilisation illégale ou malveillante est interdite et engage la seule responsabilité de l’utilisateur.
+
 ### Introduction
 
 **Aircrack-ng** est une suite d'outils dédiée à l'audit de la sécurité des réseaux sans fil. Elle permet de :

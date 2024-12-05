@@ -2,6 +2,10 @@
 
 ## **HackTools: Guide**
 
+⚠️ **Avertissement** : Ce contenu est strictement destiné à un usage éducatif et éthique dans le domaine de la cybersécurité. Toute utilisation illégale ou malveillante est interdite et engage la seule responsabilité de l’utilisateur.
+
+### **Introduction**
+
 [HackTools](https://hacktools.sh/) est une boîte à outils en ligne exhaustive pour les professionnels de la cybersécurité, les pentesters, les développeurs, et les passionnés souhaitant accéder rapidement à des générateurs de commandes, payloads, encodeurs, et bien plus encore. Ce guide ultra-détaillé explore chaque section de HackTools avec des explications précises, exemples pratiques, et conseils.
 
 ***

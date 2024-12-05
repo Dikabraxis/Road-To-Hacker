@@ -2,6 +2,8 @@
 
 ## **Shell Stable**
 
+⚠️ **Avertissement** : Ce contenu est strictement destiné à un usage éducatif et éthique dans le domaine de la cybersécurité. Toute utilisation illégale ou malveillante est interdite et engage la seule responsabilité de l’utilisateur.
+
 ### **1. Utilisation de `rlwrap`**
 
 Si l'outil `rlwrap` est disponible sur la machine attaquante, tu peux améliorer l’interactivité du shell avec l'historique et les touches directionnelles :

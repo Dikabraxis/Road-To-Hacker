@@ -2,6 +2,10 @@
 
 ### **SMBCLIENT : Accéder et interagir avec les partages SMB**
 
+⚠️ **Avertissement** : Ce contenu est strictement destiné à un usage éducatif et éthique dans le domaine de la cybersécurité. Toute utilisation illégale ou malveillante est interdite et engage la seule responsabilité de l’utilisateur.
+
+### **Introduction**
+
 `smbclient` est un outil de ligne de commande pour interagir avec les partages SMB sur un réseau. Il est utile pour accéder aux fichiers, télécharger, et envoyer des données via le protocole SMB.
 
 ***

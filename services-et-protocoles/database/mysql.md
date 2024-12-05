@@ -2,6 +2,10 @@
 
 ### **Database SQL (MySQL) : Guide Complet pour les Requêtes de Base**
 
+⚠️ **Avertissement** : Ce contenu est strictement destiné à un usage éducatif et éthique dans le domaine de la cybersécurité. Toute utilisation illégale ou malveillante est interdite et engage la seule responsabilité de l’utilisateur.
+
+### **Introduction**
+
 Ce guide décrit l'utilisation des commandes SQL fondamentales pour manipuler et interagir avec les bases de données MySQL. Il inclut des exemples pratiques et détaillés pour exploiter efficacement les données.
 
 ***

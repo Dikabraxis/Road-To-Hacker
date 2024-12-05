@@ -2,6 +2,8 @@
 
 ### **Tuto GTFObins**
 
+⚠️ **Avertissement** : Ce contenu est strictement destiné à un usage éducatif et éthique dans le domaine de la cybersécurité. Toute utilisation illégale ou malveillante est interdite et engage la seule responsabilité de l’utilisateur.
+
 ### **Introduction**
 
 GTFObins est une ressource en ligne essentielle pour les pentesters et les chercheurs en sécurité. Il regroupe des exemples concrets d'abus d'exécutables Unix/Linux afin d'exécuter des commandes arbitraires, d'obtenir un shell, ou d'extraire des informations.

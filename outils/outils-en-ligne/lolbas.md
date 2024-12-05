@@ -2,7 +2,9 @@
 
 ### **Tuto LOLBAS**
 
-**Introduction**
+⚠️ **Avertissement** : Ce contenu est strictement destiné à un usage éducatif et éthique dans le domaine de la cybersécurité. Toute utilisation illégale ou malveillante est interdite et engage la seule responsabilité de l’utilisateur.
+
+### **Introduction**
 
 LOLBAS (Living Off The Land Binaries and Scripts) est un référentiel en ligne qui recense les binaires, scripts, et bibliothèques Windows pouvant être détournés à des fins malveillantes ou pour des tests de sécurité.
 

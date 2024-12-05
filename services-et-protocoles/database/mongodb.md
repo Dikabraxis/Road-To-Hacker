@@ -2,6 +2,10 @@
 
 ### MongoDB : Exploitation d'une Base de Données
 
+⚠️ **Avertissement** : Ce contenu est strictement destiné à un usage éducatif et éthique dans le domaine de la cybersécurité. Toute utilisation illégale ou malveillante est interdite et engage la seule responsabilité de l’utilisateur.
+
+### **Introduction**
+
 Si la base de données MongoDB est hébergée sur un serveur distant, vous pouvez y accéder via l'adresse IP du serveur. Voici un guide détaillé pour interagir avec cette base de données distante.
 
 ***

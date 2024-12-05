@@ -1,5 +1,7 @@
 # Hash Cracking
 
+⚠️ **Avertissement** : Ce contenu est strictement destiné à un usage éducatif et éthique dans le domaine de la cybersécurité. Toute utilisation illégale ou malveillante est interdite et engage la seule responsabilité de l’utilisateur.
+
 Voici un tutoriel complet pour utiliser les différents sites permettant de décoder ou d'analyser des hachages, comme MD5, SHA-1, et d'autres types courants.
 
 ***

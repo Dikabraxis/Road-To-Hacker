@@ -2,6 +2,10 @@
 
 ### **Tuto RevShells : Générateur de Reverse Shells en ligne**
 
+⚠️ **Avertissement** : Ce contenu est strictement destiné à un usage éducatif et éthique dans le domaine de la cybersécurité. Toute utilisation illégale ou malveillante est interdite et engage la seule responsabilité de l’utilisateur.
+
+### **Introduction**
+
 RevShells est un outil en ligne qui aide à générer des commandes de reverse shells adaptées à différents environnements et langages. Il est particulièrement utile pour les tests de pénétration ou les exercices de cybersécurité.
 
 ***

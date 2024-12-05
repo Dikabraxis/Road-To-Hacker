@@ -2,6 +2,10 @@
 
 ### NFS (Network File System)
 
+⚠️ **Avertissement** : Ce contenu est strictement destiné à un usage éducatif et éthique dans le domaine de la cybersécurité. Toute utilisation illégale ou malveillante est interdite et engage la seule responsabilité de l’utilisateur.
+
+### **Introduction**
+
 NFS (Network File System) est un protocole utilisé pour partager des fichiers et des répertoires entre différents systèmes sur un réseau. Voici un guide complet pour interagir avec des partages NFS.
 
 ***

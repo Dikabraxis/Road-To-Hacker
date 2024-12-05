@@ -2,6 +2,8 @@
 
 ## Netcat - Guide Complet pour l'Utilisation et les Scénarios Pratiques
 
+⚠️ **Avertissement** : Ce contenu est strictement destiné à un usage éducatif et éthique dans le domaine de la cybersécurité. Toute utilisation illégale ou malveillante est interdite et engage la seule responsabilité de l’utilisateur.
+
 ***
 
 ### Introduction
