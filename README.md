@@ -62,7 +62,7 @@ Je me **désengage de toute responsabilité** quant à une utilisation malveilla
 
 **Liens utiles :**
 
-* Mentions légales
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
 * Politique de confidentialité
 * [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)
 
