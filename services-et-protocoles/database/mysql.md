@@ -346,7 +346,7 @@ mysql -u root -p1234 ecommerce < ecommerce_backup.sql
 
 ***
 
-#### **🔒 Étape 6 : Contre-Mesures et Sécurisation**
+### **🔒 Étape 6 : Contre-Mesures et Sécurisation**
 
 **6.1 Restreindre les Permissions**
 
@@ -379,7 +379,7 @@ DROP USER ''@'%';
 
 ***
 
-#### **Résumé des Commandes Clés**
+### **Résumé des Commandes Clés**
 
 | Commande SQL                           | Description                                         |
 | -------------------------------------- | --------------------------------------------------- |
