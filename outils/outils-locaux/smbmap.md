@@ -230,3 +230,11 @@ smbmap -H <IP_ADDRESS> --proxy http://127.0.0.1:8080
 ### Conclusion
 
 **Smbmap** est un outil essentiel pour les pentesters cherchant à auditer ou interagir avec des partages SMB. Grâce à ses fonctionnalités comme la découverte des permissions, la recherche de fichiers et le téléchargement ciblé, il simplifie grandement l'évaluation de la sécurité des réseaux SMB.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

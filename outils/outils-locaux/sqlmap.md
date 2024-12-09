@@ -263,3 +263,11 @@ sqlmap -u "http://example.com/login.php" --data="username=admin&password=1234" -
 ### Conclusion
 
 **Sqlmap** est un outil incontournable pour les pentesters et auditeurs de sécurité. Avec sa capacité à automatiser la détection et l'exploitation des injections SQL, il simplifie les tests tout en fournissant des options avancées pour répondre aux besoins les plus complexes.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

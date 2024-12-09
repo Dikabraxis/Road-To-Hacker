@@ -317,3 +317,11 @@ rules:
 3. **Personnalisez vos règles :** Créez des règles spécifiques adaptées à votre projet et langage.
 4. **Collaboration :** Partagez vos configurations et règles au sein de votre équipe pour un développement cohérent.
 5. **Formez votre équipe :** Familiarisez les développeurs avec Semgrep pour identifier et corriger les problèmes en amont.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)

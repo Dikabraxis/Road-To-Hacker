@@ -305,3 +305,11 @@ snmpwalk -v 2c -c private <target>
 | `snmpwalk -v 2c -c public <target> grep <mot_clé>` | Recherche d'informations ciblées |
 
 Avec ce guide, **snmpwalk** devient un outil puissant pour la gestion et la sécurité des appareils réseau. Sa simplicité et sa flexibilité en font un incontournable pour les administrateurs réseau et les pentesters.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)
