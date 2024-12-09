@@ -283,3 +283,11 @@ workspaces export <file_name>.json
 ### Conclusion
 
 **Recon-ng** est un outil puissant pour la collecte d’informations dans les tests de pénétration et les analyses OSINT. Grâce à ses nombreux modules et à son organisation en espaces de travail, il permet de structurer et d’automatiser vos recherches tout en exportant les résultats sous différents formats.
+
+***
+
+**Liens utiles :**
+
+* [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
+* [Politique de confidentialité](https://dika-1.gitbook.io/road-to-hacker/politique-de-confidentialite)
+* [Contactez-nous](mailto:dika-road-to-hacker@protonmail.com)
