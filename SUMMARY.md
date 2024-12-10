@@ -58,6 +58,7 @@
     * [SQLite3](services-et-protocoles/database/sqlite3.md)
   * [FTP](services-et-protocoles/ftp.md)
   * [IMAP/POP3](services-et-protocoles/imap-pop3.md)
+  * [IPMI](services-et-protocoles/ipmi.md)
   * [NFS](services-et-protocoles/nfs.md)
   * [RSYNC](services-et-protocoles/rsync.md)
   * [SNMP](services-et-protocoles/snmp.md)
