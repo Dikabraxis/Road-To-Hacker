@@ -1,6 +1,6 @@
 # MSSQL
 
-### **MSSQL - Guide Complet pour l'Énumération et l'Exploitation dans un Pentest**
+### **MSSQL - Guide Complet avec Commandes SQL Fondamentales**
 
 ⚠️ **Avertissement** : Ce contenu est strictement destiné à un usage éducatif et éthique dans le domaine de la cybersécurité. Toute utilisation illégale ou malveillante est interdite et engage la seule responsabilité de l’utilisateur.
 
