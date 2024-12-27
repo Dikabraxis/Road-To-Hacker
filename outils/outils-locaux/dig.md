@@ -54,7 +54,7 @@ DIG est inclus avec macOS via le package BIND. Si ce n’est pas le cas :
 2.  Installez BIND via Homebrew :
 
     ```bash
-    bashCopier le codebrew install bind
+    brew install bind
     ```
 3.  Vérifiez l’installation :
 
