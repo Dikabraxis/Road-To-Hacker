@@ -229,7 +229,7 @@ snmpset -v 2c -c private <target> 1.3.6.1.2.1.1.5.0 s "NewDeviceName"
 1.  Lancez Metasploit :
 
     ```bash
-    bashCopier le codemsfconsole
+    msfconsole
     ```
 2.  Chargez le module SNMP :
 
