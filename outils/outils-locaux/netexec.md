@@ -108,6 +108,11 @@ Ce guide décrit chaque fonctionnalité en détail avec des exemples pratiques e
     ```bash
     nxc ldap <IP> -u <user> -p <password> --query "(objectClass=computer)" "cn"
     ```
+*   **Forcer l'utilisation de Kerberos (-k)** :
+
+    ```bash
+    nxc ldap <IP> -u <user> -p <password> -k --users
+    ```
 
 ***
 
@@ -161,6 +166,11 @@ Ce guide décrit chaque fonctionnalité en détail avec des exemples pratiques e
 
     ```bash
     nxc smb <IP> -u <user> -p <password> --recursive-download share_name ./local_folder
+    ```
+*   **Utiliser Kerberos (-k)** :
+
+    ```bash
+    nxc smb <IP> -u <user> -p <password> -k --shares
     ```
 
 ***
@@ -273,6 +283,11 @@ Ce guide décrit chaque fonctionnalité en détail avec des exemples pratiques e
 
     ```bash
     nxc wmi <IP> -u <user> -p <password> --service-control "ServiceName" start|stop
+    ```
+*   **Forcer l'utilisation de Kerberos (-k)** :
+
+    ```
+    nxc wmi <IP> -u <user> -p <password> -k --exec "hostname"
     ```
 
 ***
