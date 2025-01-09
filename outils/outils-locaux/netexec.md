@@ -432,7 +432,7 @@ Ce guide décrit chaque fonctionnalité en détail avec des exemples pratiques e
 
 ***
 
-### Ressources Utiles:
+### Ressources Utiles
 
 [https://www.netexec.wiki/](https://www.netexec.wiki/)
 
