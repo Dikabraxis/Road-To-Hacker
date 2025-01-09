@@ -432,6 +432,10 @@ Ce guide décrit chaque fonctionnalité en détail avec des exemples pratiques e
 
 ***
 
+### Ressources Utiles:
+
+[https://www.netexec.wiki/](https://www.netexec.wiki/)
+
 **Liens utiles :**
 
 * [Mentions légales](https://dika-1.gitbook.io/road-to-hacker/mentions-legales)
