@@ -4,7 +4,7 @@
 
 ### Documentation des Modules NetExec
 
-Voici une documentation complète et détaillée de chaque module de NetExec, classée par ordre alphabétique. Chaque module est accompagné d'une description, du protocole pris en charge, des paramètres, des exemples de commandes typiques, ainsi que des usages avancés.
+Voici une documentation de chaque module de NetExec, classée par ordre alphabétique. Chaque module est accompagné d'une description, du protocole pris en charge, des paramètres, des exemples de commandes typiques, ainsi que des usages avancés.
 
 ***
 
