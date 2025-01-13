@@ -77,6 +77,7 @@
   * [Commandes de base Linux](tips/commandes-de-base-linux.md)
   * [Commandes de base Windows](tips/commandes-de-base-windows.md)
   * [Shell Stable et Reverse Shell](tips/shell-stable-et-reverse-shell.md)
+  * [xfreerdp / rdesktop](tips/xfreerdp-rdesktop.md)
 * [INFORMATIONS LEGALES](informations-legales/README.md)
   * [Mentions légales](informations-legales/mentions-legales.md)
   * [Politique de confidentialité](informations-legales/politique-de-confidentialite.md)
