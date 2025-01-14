@@ -10,6 +10,7 @@
     * [Burp Suite](outils/outils-locaux/burp-suite.md)
     * [Cewl](outils/outils-locaux/cewl.md)
     * [Crunch](outils/outils-locaux/crunch.md)
+    * [Cupp](outils/outils-locaux/cupp.md)
     * [cURL](outils/outils-locaux/curl.md)
     * [Dig](outils/outils-locaux/dig.md)
     * [Dirb](outils/outils-locaux/dirb.md)
