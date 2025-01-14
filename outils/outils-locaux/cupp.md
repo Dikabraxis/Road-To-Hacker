@@ -10,9 +10,9 @@
 
 ### **Introduction**
 
-**CUPP** (Common User Passwords Profiler) est un outil open-source permettant de générer des listes de mots de passe personnalisées basées sur des informations spécifiques sur une personne cible. Il est couramment utilisé dans les tests d'intrusion pour simuler des attaques par force brute ou par dictionnaire.
+**CUPP** (Common User Passwords Profiler) est un outil open-source permettant de générer des listes de mots de passe personnalisées basées sur des informations spécifiques sur une cible. Il est particulièrement utile pour les pentesters qui veulent optimiser les attaques par dictionnaire.
 
-L'objectif principal de CUPP est de rendre les listes de mots de passe plus pertinentes en utilisant des données personnelles qui pourraient être utilisées par la cible pour créer son mot de passe.
+Avec CUPP, vous pouvez générer une liste de mots de passe pertinente pour une cible en répondant à des questions interactives ou en profilant une liste existante.
 
 ***
 
@@ -25,7 +25,7 @@ L'objectif principal de CUPP est de rendre les listes de mots de passe plus pert
 
 **1.2 Installation sur Linux/MacOS**
 
-1.  Clonez le dépôt CUPP officiel :
+1.  Clonez le dépôt officiel de CUPP :
 
     ```bash
     git clone https://github.com/Mebus/cupp.git
@@ -34,7 +34,7 @@ L'objectif principal de CUPP est de rendre les listes de mots de passe plus pert
 2.  Donnez les permissions d'exécution au script principal :
 
     ```bash
-    chmod +x cupp.py
+    bashCopier le codechmod +x cupp.py
     ```
 3.  Vérifiez que CUPP fonctionne correctement :
 
@@ -42,12 +42,12 @@ L'objectif principal de CUPP est de rendre les listes de mots de passe plus pert
     python3 cupp.py -h
     ```
 
-    Une liste des options disponibles devrait s'afficher.
+    Une aide avec les options disponibles doit s'afficher.
 
 **1.3 Installation sur Windows**
 
 1. Téléchargez et installez Python depuis [python.org](https://www.python.org/downloads/).
-2. Clonez le dépôt avec Git ou téléchargez-le sous forme d'archive ZIP depuis [le dépôt GitHub](https://github.com/Mebus/cupp).
+2. Clonez le dépôt avec Git ou téléchargez-le sous forme d'archive ZIP depuis [le dépôt GitHub officiel](https://github.com/Mebus/cupp).
 3.  Naviguez dans le répertoire CUPP et exécutez le script avec Python :
 
     ```bash
@@ -56,98 +56,123 @@ L'objectif principal de CUPP est de rendre les listes de mots de passe plus pert
 
 ***
 
-### **🛠️ Étape 2 : Utilisation de Base de CUPP**
+### **🛠️ Étape 2 : Utilisation de CUPP**
 
-**2.1 Génération de Listes de Mots de Passe Personnalisées**
+**2.1 Génération de Liste de Mots de Passe Personnalisée**
 
-1.  Lancez CUPP avec la commande interactive :
+Pour générer une liste personnalisée en répondant à des questions interactives :
 
-    ```bash
-    python3 cupp.py -i
+```bash
+python3 cupp.py -i
+```
+
+**Étapes :**
+
+1. Le script vous demandera des informations sur la cible, telles que :
+   * Nom, surnom, et prénom.
+   * Date de naissance.
+   * Noms des proches (conjoint, enfants, etc.).
+   * Animaux de compagnie, loisirs, etc.
+2.  CUPP génère une liste de mots de passe basée sur ces données. Par exemple :
+
     ```
-2.  Répondez aux questions posées sur la cible (nom, date de naissance, surnom, etc.). Ces informations seront utilisées pour générer une liste de mots de passe.
-
-    **Exemple :**
-
-    * Nom : Alice
-    * Surnom : Ali
-    * Date de naissance : 1990
-    * Nom du conjoint : Bob
-    * Loisirs : peinture
-    * Enfants : Non
-    * Animaux : Oui (nom : Max)
-3.  La liste de mots de passe est générée dans un fichier `.txt`, prêt à être utilisé.
-
-    **Exemple de mots de passe générés :**
-
-    ```python-repl
     alice1990
-    ali123
-    max1990
-    bobali
-    ...
+    max123
+    ali_bob1990
     ```
+3. La liste est enregistrée dans un fichier texte dans le répertoire courant.
 
-**2.2 Utilisation de Listes de Mots de Passe Publiques**
+***
 
-Pour télécharger et utiliser des listes de mots de passe publiques intégrées dans CUPP, utilisez l’option `-w` :
+**2.2 Profilage d'une Liste Existante**
+
+Vous pouvez enrichir une liste de mots de passe existante avec l'option `-w` :
 
 ```bash
 python3 cupp.py -w
 ```
 
-Cela télécharge des listes populaires comme **rockyou.txt**, **crunch.txt**, et d'autres.
+Cela permet de :
+
+* Analyser une liste de mots de passe existante pour ajouter des variantes spécifiques.
+* Générer une liste optimisée.
 
 ***
 
-### **🔍 Étape 3 : Utilisation Avancée**
+**2.3 Téléchargement de Wordlists**
 
-**3.1 Ajouter des Informations Supplémentaires**
-
-Pour enrichir les mots de passe générés, vous pouvez ajouter vos propres informations dans un fichier `.txt` et demander à CUPP d'intégrer ces données :
+Pour télécharger des listes de mots de passe massives depuis le dépôt officiel de CUPP :
 
 ```bash
-python3 cupp.py -i --file additional_info.txt
+python3 cupp.py -l
 ```
 
+Cela télécharge des fichiers de dictionnaires tels que :
+
+* **rockyou.txt**
+* **phpbb.txt**
+* Autres wordlists pertinentes.
+
 ***
 
-**3.2 Mélanger plusieurs Fichiers**
+**2.4 Utilisation de la Base de Données Alecto**
 
-Pour combiner plusieurs listes de mots de passe dans un seul fichier :
+CUPP intègre la base de données **Alecto**, qui contient des combinaisons de noms d'utilisateur et de mots de passe par défaut provenant de périphériques réseau courants.
+
+Pour utiliser cette fonctionnalité :
 
 ```bash
-cat file1.txt file2.txt > combined.txt
+python3 cupp.py -a
 ```
 
+CUPP extrait et génère une liste basée sur ces informations pour des tests spécifiques à des équipements comme des routeurs ou des serveurs.
+
 ***
 
-**3.3 Générer des Combinaisons**
+**2.5 Vérification de la Version**
 
-CUPP peut générer des variations en combinant plusieurs champs pour maximiser les probabilités :
+Pour afficher la version actuelle de CUPP :
 
 ```bash
-python3 cupp.py -c
+python3 cupp.py -v
 ```
 
 ***
 
 ### **📖 Bonnes Pratiques**
 
-1. **Limiter l’utilisation à un cadre éthique :**\n Utilisez CUPP uniquement dans des environnements où vous avez reçu une autorisation explicite pour tester la sécurité.
-2. **Analyser la pertinence des listes :**\n Ne surchargez pas les attaques de force brute avec des listes inutiles. Les listes générées doivent être adaptées à la cible.
-3. **Sécuriser les données sensibles :**\n Chiffrez les fichiers de mots de passe générés pour éviter toute fuite accidentelle.
+1. **Utiliser CUPP dans un cadre légal :**
+   * N'exécutez CUPP que si vous avez une autorisation explicite pour effectuer des tests.
+2. **Analyser les listes générées :**
+   * Inspectez les listes pour éviter de générer des mots de passe inutiles ou non pertinents.
+3. **Sécuriser les listes générées :**
+   * Stockez les listes dans des emplacements sécurisés.
+   *   Utilisez des outils comme `gpg` pour les chiffrer si nécessaire :
+
+       ```bash
+       gpg --encrypt --recipient <email> password_list.txt
+       ```
+4. **Adapter les attaques aux cibles :**
+   * Utilisez CUPP avec d'autres outils comme Hydra ou John the Ripper pour maximiser l'efficacité des tests.
 
 ***
 
-#### **Résumé des Commandes Clés**
+#### **Résumé des Options Clés**
 
-| Commande                           | Description                                      |
-| ---------------------------------- | ------------------------------------------------ |
-| `python3 cupp.py -i`               | Générer une liste personnalisée interactivement. |
-| `python3 cupp.py -w`               | Télécharger et utiliser des listes publiques.    |
-| `python3 cupp.py -i --file <file>` | Ajouter des données supplémentaires.             |
-| `python3 cupp.py -c`               | Générer des combinaisons complexes.              |
+| Option | Description                                                                   |
+| ------ | ----------------------------------------------------------------------------- |
+| `-i`   | Questions interactives pour générer une liste personnalisée.                  |
+| `-w`   | Profilage et enrichissement d'une liste de mots de passe existante.           |
+| `-l`   | Téléchargement de wordlists massives depuis le dépôt officiel.                |
+| `-a`   | Génération de mots de passe par défaut à partir de la base de données Alecto. |
+| `-v`   | Affiche la version actuelle du programme.                                     |
+| `-h`   | Affiche l'aide et les options disponibles.                                    |
+
+***
+
+### **Conclusion**
+
+**CUPP** est un outil simple mais puissant pour générer des listes de mots de passe adaptées à des cibles spécifiques. En combinant ses fonctionnalités avec des outils comme Hydra, Hashcat ou Medusa, vous pouvez maximiser l'efficacité de vos tests de force brute. Assurez-vous de toujours respecter les règles éthiques et légales dans vos pratiques de cybersécurité.
 
 ***
 
