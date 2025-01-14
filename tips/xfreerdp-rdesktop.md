@@ -2,37 +2,45 @@
 
 ### Tutoriel : Utilisation de **xfreerdp** et **rdesktop** pour se connecter à un serveur RDP
 
+
+
 ⚠️ **Avertissement** : Ce contenu est strictement destiné à un usage éducatif et éthique dans le domaine de la cybersécurité. Toute utilisation illégale ou malveillante est interdite et engage la seule responsabilité de l’utilisateur.
+
+***
 
 ### Introduction
 
-Ce guide vous montre comment utiliser les outils **xfreerdp** et **rdesktop** pour vous connecter à un serveur RDP, configurer un clavier français et partager des dossiers locaux.
+Ce guide vous montre comment utiliser les outils xfreerdp et rdesktop pour vous connecter à un serveur RDP, configurer un clavier français, partager des dossiers locaux, et activer des fonctionnalités comme le multi-écran et le presse-papiers.
 
 ***
 
-### **1. Pré-requis**
+### 1. Pré-requis
 
-1. Assurez-vous que les outils sont installés sur votre système :
-   *   **Installer xfreerdp** :
+Assurez-vous que les outils sont installés sur votre système :
 
-       ```bash
-       sudo apt update
-       sudo apt install freerdp2-x11
-       ```
-   *   **Installer rdesktop** (si vous souhaitez tester également) :
+#### Installer xfreerdp :
 
-       ```bash
-       sudo apt install rdesktop
-       ```
-2. Ayez les informations nécessaires pour votre serveur RDP :
-   * Adresse IP ou nom du serveur.
-   * Nom d'utilisateur et mot de passe.
+```bash
+sudo apt update
+sudo apt install freerdp2-x11
+```
+
+#### Installer rdesktop (si vous souhaitez tester également) :
+
+```bash
+sudo apt install rdesktop
+```
+
+#### Ayez les informations nécessaires pour votre serveur RDP :
+
+* Adresse IP ou nom du serveur.
+* Nom d'utilisateur et mot de passe.
 
 ***
 
-### **2. Commandes avec xfreerdp**
+### 2. Commandes avec xfreerdp
 
-#### **Connexion basique**
+#### Connexion basique
 
 ```bash
 xfreerdp /u:<nom_utilisateur> /p:<mot_de_passe> /v:<adresse_ip_ou_nom_domaine>
@@ -44,9 +52,7 @@ xfreerdp /u:<nom_utilisateur> /p:<mot_de_passe> /v:<adresse_ip_ou_nom_domaine>
 xfreerdp /u:mon_utilisateur /p:mon_motdepasse /v:192.168.1.100
 ```
 
-***
-
-#### **Configurer un clavier français**
+#### Configurer un clavier français
 
 Ajoutez l'option `/kbd:0x0000040C` pour utiliser la disposition clavier français :
 
@@ -54,9 +60,7 @@ Ajoutez l'option `/kbd:0x0000040C` pour utiliser la disposition clavier françai
 xfreerdp /u:<nom_utilisateur> /p:<mot_de_passe> /v:<adresse_ip_ou_nom_domaine> /kbd:0x0000040C
 ```
 
-***
-
-#### **Partager un dossier local**
+#### Partager un dossier local
 
 Utilisez `/drive` pour partager un dossier local :
 
@@ -64,17 +68,13 @@ Utilisez `/drive` pour partager un dossier local :
 xfreerdp /u:<nom_utilisateur> /p:<mot_de_passe> /v:<adresse_ip_ou_nom_domaine> /drive:<nom_partage>,<chemin_local>
 ```
 
-**Exemple :**
-
-Partager le dossier `/home/user/partage` en tant que "MesPartages" :
+**Exemple :** Partager le dossier `/home/user/partage` en tant que "MesPartages" :
 
 ```bash
 xfreerdp /u:mon_utilisateur /p:mon_motdepasse /v:192.168.1.100 /drive:MesPartages,/home/user/partage
 ```
 
-***
-
-#### **Rediriger le presse-papiers**
+#### Rediriger le presse-papiers
 
 Ajoutez `/clipboard` pour copier-coller entre votre machine et le serveur :
 
@@ -82,9 +82,7 @@ Ajoutez `/clipboard` pour copier-coller entre votre machine et le serveur :
 xfreerdp /u:<nom_utilisateur> /p:<mot_de_passe> /v:<adresse_ip_ou_nom_domaine> /clipboard
 ```
 
-***
-
-#### **Rediriger le son**
+#### Rediriger le son
 
 Ajoutez `/sound` pour que le son du serveur soit redirigé vers votre machine :
 
@@ -92,21 +90,41 @@ Ajoutez `/sound` pour que le son du serveur soit redirigé vers votre machine :
 xfreerdp /u:<nom_utilisateur> /p:<mot_de_passe> /v:<adresse_ip_ou_nom_domaine> /sound
 ```
 
-***
+#### Activer le multi-écran
 
-#### **Commande complète (avec clavier, dossier, presse-papiers et son)**
+Ajoutez `+multimon` pour utiliser plusieurs écrans lors de votre session RDP :
+
+```bash
+xfreerdp /u:<nom_utilisateur> /p:<mot_de_passe> /v:<adresse_ip_ou_nom_domaine> +multimon
+```
+
+#### Sélectionner des moniteurs spécifiques
+
+Listez les moniteurs disponibles avec `/monitor-list` :
+
+```bash
+xfreerdp /monitor-list
+```
+
+Puis, spécifiez les moniteurs souhaités avec `/monitors` :
+
+```bash
+xfreerdp /u:<nom_utilisateur> /p:<mot_de_passe> /v:<adresse_ip_ou_nom_domaine> +multimon /monitors:0,1
+```
+
+#### Commande complète (avec clavier, multi-écran, dossier, presse-papiers et son)
 
 Voici une commande combinée pour inclure toutes les options :
 
 ```bash
-xfreerdp /u:mon_utilisateur /p:mon_motdepasse /v:192.168.1.100 /kbd:0x0000040C /drive:MesPartages,/home/user/partage /clipboard /sound
+xfreerdp /u:mon_utilisateur /p:mon_motdepasse /v:192.168.1.100 /kbd:0x0000040C /drive:MesPartages,/home/user/partage /clipboard /sound +multimon /monitors:0,1
 ```
 
 ***
 
-### **3. Commandes avec rdesktop**
+### 3. Commandes avec rdesktop
 
-#### **Connexion basique**
+#### Connexion basique
 
 ```bash
 rdesktop <adresse_ip_ou_nom_domaine> -u <nom_utilisateur> -p <mot_de_passe>
@@ -118,9 +136,7 @@ rdesktop <adresse_ip_ou_nom_domaine> -u <nom_utilisateur> -p <mot_de_passe>
 rdesktop 192.168.1.100 -u mon_utilisateur -p mon_motdepasse
 ```
 
-***
-
-#### **Configurer un clavier français**
+#### Configurer un clavier français
 
 Ajoutez l'option `-k fr` :
 
@@ -128,9 +144,7 @@ Ajoutez l'option `-k fr` :
 rdesktop <adresse_ip_ou_nom_domaine> -u <nom_utilisateur> -p <mot_de_passe> -k fr
 ```
 
-***
-
-#### **Partager un dossier local**
+#### Partager un dossier local
 
 Ajoutez `-r disk` pour partager un dossier local :
 
@@ -138,17 +152,13 @@ Ajoutez `-r disk` pour partager un dossier local :
 rdesktop <adresse_ip_ou_nom_domaine> -u <nom_utilisateur> -p <mot_de_passe> -r disk:<nom_partage>=<chemin_local>
 ```
 
-**Exemple :**
-
-Partager le dossier `/home/user/partage` en tant que "MesPartages" :
+**Exemple :** Partager le dossier `/home/user/partage` en tant que "MesPartages" :
 
 ```bash
 rdesktop 192.168.1.100 -u mon_utilisateur -p mon_motdepasse -r disk:MesPartages=/home/user/partage
 ```
 
-***
-
-#### **Rediriger le presse-papiers**
+#### Rediriger le presse-papiers
 
 Ajoutez l'option `-r clipboard:PRIMARYCLIPBOARD` :
 
@@ -156,9 +166,7 @@ Ajoutez l'option `-r clipboard:PRIMARYCLIPBOARD` :
 rdesktop <adresse_ip_ou_nom_domaine> -u <nom_utilisateur> -p <mot_de_passe> -r clipboard:PRIMARYCLIPBOARD
 ```
 
-***
-
-#### **Rediriger le son**
+#### Rediriger le son
 
 Ajoutez `-r sound:local` pour rediriger le son vers votre machine locale :
 
@@ -166,9 +174,7 @@ Ajoutez `-r sound:local` pour rediriger le son vers votre machine locale :
 rdesktop <adresse_ip_ou_nom_domaine> -u <nom_utilisateur> -p <mot_de_passe> -r sound:local
 ```
 
-***
-
-#### **Commande complète (avec clavier, dossier, presse-papiers et son)**
+#### Commande complète (avec clavier, dossier, presse-papiers et son)
 
 Voici une commande combinée pour inclure toutes les options :
 
@@ -178,19 +184,20 @@ rdesktop 192.168.1.100 -u mon_utilisateur -p mon_motdepasse -k fr -r disk:MesPar
 
 ***
 
-### **4. Différences entre xfreerdp et rdesktop**
+### 4. Différences entre xfreerdp et rdesktop
 
 * **xfreerdp** est plus moderne et prend en charge les nouvelles fonctionnalités RDP (comme le son, le presse-papiers ou les partages avancés).
 * **rdesktop** est plus léger, mais moins riche en fonctionnalités.
-* Si possible, préférez **xfreerdp**, car **rdesktop** n'est plus activement maintenu.
+
+**Si possible, préférez xfreerdp**, car rdesktop n'est plus activement maintenu.
 
 ***
 
-### **5. Dépannage**
+### 5. Dépannage
 
-* **Erreur de clavier :** Vérifiez que la disposition est bien spécifiée avec `/kbd` (xfreerdp) ou `-k` (rdesktop).
-* **Problème de connexion :** Assurez-vous que le port RDP (3389 par défaut) est ouvert sur le serveur.
-* **Partage de dossiers inaccessible :** Vérifiez que vous avez les permissions nécessaires sur le dossier partagé et que le serveur RDP autorise les partages.
+* **Erreur de clavier** : Vérifiez que la disposition est bien spécifiée avec `/kbd` (xfreerdp) ou `-k` (rdesktop).
+* **Problème de connexion** : Assurez-vous que le port RDP (3389 par défaut) est ouvert sur le serveur.
+* **Partage de dossiers inaccessible** : Vérifiez que vous avez les permissions nécessaires sur le dossier partagé et que le serveur RDP autorise les partages.
 
 ***
 
