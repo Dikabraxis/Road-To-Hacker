@@ -167,6 +167,7 @@ sudo tcpdump -r capture.pcap -l | grep 'password'
 | `tcpdump -i eth0 -w fichier.pcap`                                                                               | Enregistre la capture dans un fichier.                                                                                            |
 | `tcpdump -r fichier.pcap`                                                                                       | Relit un fichier de capture.                                                                                                      |
 | `tcpdump -i eth0 port 80`                                                                                       | Capture uniquement le trafic sur le port 80.                                                                                      |
+| `tcpdump -i eth0 portrange 0-1024`                                                                              | Permet de spécifier une plage de ports. (0-1024)                                                                                  |
 | `tcpdump -i eth0 host 192.168.1.1`                                                                              | Capture le trafic lié à une IP spécifique.                                                                                        |
 | `tcpdump -i eth0 -X`                                                                                            | Affiche les paquets en ASCII et hexadécimal.                                                                                      |
 | `tcpdump -i eth0 -XX`                                                                                           | Identique à X, mais spécifiera également les en-têtes Ethernet. (comme en utilisant Xe)                                           |
@@ -181,6 +182,8 @@ sudo tcpdump -r capture.pcap -l | grep 'password'
 | `tcpdump -i eth0 not udp`                                                                                       | Capture uniquement le trafic qui n’est pas UDP.                                                                                   |
 | `tcpdump -i eth0 host 192.168.1.10 or port 80`                                                                  | Capture uniquement le trafic de l'hôte 192.168.1.10 OU le traffic du port 80.                                                     |
 | `tcpdump -i eth0 host 192.168.1.10 and port 80`                                                                 | Capture uniquement le trafic de l'hôte 192.168.1.10 ET le traffic du port 80.                                                     |
+| `tcpdump -i eth0 src 192.168.1.10`                                                                              | Capture le traffic provenant de 192.168.1.10.                                                                                     |
+| `tcpdump -i eth0 dest 192.168.1.10`                                                                             | Capture le traffic à destination de 192.168.1.10.                                                                                 |
 
 ***
 
