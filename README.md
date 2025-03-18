@@ -33,14 +33,6 @@ L’objectif est de centraliser et structurer tout ce que j’apprends, tout en 
 
 ***
 
-### **Communauté**
-
-Un discord est disponible pour ceux qui souhaitent faire des CTF, échanger, partager et progresser ensemble :
-
-[**Discord Road To Hacker**](https://discord.gg/y8xfeAvCKg)
-
-***
-
 ### **Un engagement éthique**
 
 Ce site a une vocation **strictement éducative** et **éthique**. Mon intention est de promouvoir un apprentissage responsable et légal dans le domaine de la cybersécurité.
