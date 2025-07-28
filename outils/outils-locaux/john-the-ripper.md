@@ -58,7 +58,7 @@ Pour la dernière version de John, suivez ces étapes :
 4.  **Installer John** :
 
     ```bash
-    bashCopier le codesudo make install
+    sudo make install
     ```
 5.  **Vérifiez l’installation** :
 
